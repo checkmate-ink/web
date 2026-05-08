@@ -8,6 +8,11 @@
     "or": "or",
     "browse": "Browse files"
   },
+  "tests": {
+    "loading": {
+      "progress": "Progress"
+    }
+  },
   "landing": {
     "nav": {
       "logo": "checkmate.",
