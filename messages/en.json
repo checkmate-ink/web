@@ -1,5 +1,11 @@
 {
   "common": {
     "appName": "Checkmate"
+  },
+  "dropZone": {
+    "title": "Drag & drop your file here",
+    "description": "PDF, DOC up to 10MB",
+    "or": "or",
+    "browse": "Browse files"
   }
 }
