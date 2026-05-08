@@ -9005,6 +9005,21 @@
               "alignItems": "center",
               "children": [
                 {
+                  "id": "baxMt",
+                  "type": "ref",
+                  "ref": "wvS20",
+                  "name": "newTestBtn",
+                  "descendants": {
+                    "FHV0X": {
+                      "enabled": true,
+                      "iconFontName": "plus"
+                    },
+                    "shNEO": {
+                      "content": "Create New Test"
+                    }
+                  }
+                },
+                {
                   "type": "icon_font",
                   "id": "ehTtP",
                   "name": "backIcon",
@@ -11235,6 +11250,21 @@
               "gap": 16,
               "alignItems": "center",
               "children": [
+                {
+                  "id": "YIJ8q",
+                  "type": "ref",
+                  "ref": "wvS20",
+                  "name": "newTestBtn",
+                  "descendants": {
+                    "FHV0X": {
+                      "enabled": true,
+                      "iconFontName": "plus"
+                    },
+                    "shNEO": {
+                      "content": "Create New Test"
+                    }
+                  }
+                },
                 {
                   "type": "icon_font",
                   "id": "ntA0L",
