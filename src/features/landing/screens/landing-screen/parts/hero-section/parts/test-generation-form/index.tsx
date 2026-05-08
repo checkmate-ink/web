@@ -12,8 +12,7 @@ import { useTranslations } from 'next-intl'
 
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-
-import { FormField } from '../form-field'
+import { FormField } from '@/components/ui/form-field'
 
 export function TestGenerationForm() {
   const t = useTranslations('landing.testForm')
@@ -47,16 +46,18 @@ export function TestGenerationForm() {
       <hr className="border-deep-brown/5" />
 
       <div className="flex gap-5">
-        <FormField label={t('subject')} placeholder={t('subjectPlaceholder')} />
-        <FormField label={t('topic')} placeholder={t('topicPlaceholder')} />
+        <FormField className="flex-1" label={t('subject')} placeholder={t('subjectPlaceholder')} />
+        <FormField className="flex-1" label={t('topic')} placeholder={t('topicPlaceholder')} />
       </div>
 
       <div className="flex gap-5">
         <FormField
+          className="flex-1"
           label={t('language')}
           placeholder={t('languagePlaceholder')}
         />
         <FormField
+          className="flex-1"
           label={t('difficulty')}
           placeholder={t('difficultyPlaceholder')}
         />
@@ -64,6 +65,7 @@ export function TestGenerationForm() {
 
       <div className="flex gap-5">
         <FormField
+          className="flex-1"
           label={t('questionType')}
           placeholder={t('questionTypePlaceholder')}
         />
