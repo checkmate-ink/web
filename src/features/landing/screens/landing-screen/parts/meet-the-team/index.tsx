@@ -3,6 +3,8 @@
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 
+import { FadeIn } from '../fade-in'
+
 const members = [
   {
     nameKey: 'zarifName',
@@ -30,19 +32,20 @@ export function MeetTheTeam() {
       id="about"
       className="flex w-full flex-col items-center gap-15 px-20 py-25"
     >
-      <div className="flex flex-col items-center gap-4">
+      <FadeIn className="flex flex-col items-center gap-4">
         <h2 className="font-heading text-deep-brown text-center text-5xl font-bold">
           {t('title')}
         </h2>
         <p className="text-deep-brown/55 max-w-[650px] text-center text-lg leading-relaxed">
           {t('subtitle')}
         </p>
-      </div>
+      </FadeIn>
 
       <div className="flex w-full max-w-[1000px] gap-8">
-        {members.map((member) => (
-          <div
+        {members.map((member, i) => (
+          <FadeIn
             key={member.nameKey}
+            delay={i * 0.1}
             className="flex flex-1 flex-col items-center gap-4"
           >
             <Image
@@ -58,7 +61,7 @@ export function MeetTheTeam() {
             <p className="text-deep-brown/50 text-center text-sm">
               {t(member.roleKey)}
             </p>
-          </div>
+          </FadeIn>
         ))}
       </div>
     </section>

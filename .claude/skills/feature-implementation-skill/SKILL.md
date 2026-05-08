@@ -61,6 +61,10 @@ All user-facing strings **must** be translated via `next-intl`:
 
 - When merging class names dynamically (e.g. combining a base set of classes with a variable), always use the `cn()` utility from `@/lib/utils` instead of template literals.
 
+## UI Components
+
+- Never use raw HTML `<button>` elements — always use `Button` from `@/components/ui/button`.
+
 ## Exports
 
 - Never use `export default`. Always use named exports.

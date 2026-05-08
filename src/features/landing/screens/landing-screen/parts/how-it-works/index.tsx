@@ -2,6 +2,8 @@
 
 import { useTranslations } from 'next-intl'
 
+import { FadeIn } from '../fade-in'
+
 const steps = [
   { num: '1', titleKey: 'step1Title', descKey: 'step1Desc' },
   { num: '2', titleKey: 'step2Title', descKey: 'step2Desc' },
@@ -17,19 +19,20 @@ export function HowItWorks() {
       id="how-it-works"
       className="flex w-full flex-col items-center gap-15 px-20 py-25"
     >
-      <div className="flex flex-col items-center gap-4">
+      <FadeIn className="flex flex-col items-center gap-4">
         <h2 className="font-heading text-deep-brown text-center text-5xl font-bold">
           {t('title')}
         </h2>
         <p className="text-deep-brown/60 text-center text-xl">
           {t('subtitle')}
         </p>
-      </div>
+      </FadeIn>
 
       <div className="flex w-full max-w-[1100px] gap-8">
-        {steps.map((step) => (
-          <div
+        {steps.map((step, i) => (
+          <FadeIn
             key={step.num}
+            delay={i * 0.1}
             className="flex flex-1 flex-col items-center gap-4 rounded-[20px] bg-white px-6 py-8"
           >
             <div className="bg-warm-yellow flex size-11 items-center justify-center rounded-full">
@@ -43,7 +46,7 @@ export function HowItWorks() {
             <p className="text-deep-brown/55 text-center text-sm leading-relaxed">
               {t(step.descKey)}
             </p>
-          </div>
+          </FadeIn>
         ))}
       </div>
     </section>

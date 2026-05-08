@@ -5,6 +5,8 @@ import { useTranslations } from 'next-intl'
 
 import { cn } from '@/lib/utils'
 
+import { FadeIn } from '../fade-in'
+
 const features = [
   [
     {
@@ -44,16 +46,19 @@ export function FeaturesSection() {
       id="features"
       className="flex w-full flex-col items-center gap-15 px-20 py-25"
     >
-      <h2 className="font-heading text-deep-brown max-w-[800px] text-center text-5xl font-bold">
-        {t('title')}
-      </h2>
+      <FadeIn>
+        <h2 className="font-heading text-deep-brown max-w-[800px] text-center text-5xl font-bold">
+          {t('title')}
+        </h2>
+      </FadeIn>
 
       <div className="flex w-full max-w-[1100px] flex-col gap-6">
         {features.map((row, i) => (
           <div key={i} className="flex gap-6">
-            {row.map((feature) => (
-              <div
+            {row.map((feature, j) => (
+              <FadeIn
                 key={feature.titleKey}
+                delay={i * 0.15 + j * 0.1}
                 className={cn(
                   'flex flex-1 flex-col gap-4 rounded-[20px] p-9',
                   feature.bg,
@@ -66,7 +71,7 @@ export function FeaturesSection() {
                 <p className="text-md text-deep-brown/65 leading-relaxed">
                   {t(feature.descKey)}
                 </p>
-              </div>
+              </FadeIn>
             ))}
           </div>
         ))}

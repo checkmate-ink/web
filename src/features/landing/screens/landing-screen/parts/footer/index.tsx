@@ -3,15 +3,15 @@
 import { Mail, Phone } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 
+import { Logo } from '@/features/landing/parts/logo'
+
 export function Footer() {
   const t = useTranslations('landing')
 
   return (
     <footer className="border-deep-brown/7 flex w-full flex-col gap-6 border-t px-20 py-10">
       <div className="flex items-center justify-between">
-        <span className="font-heading text-deep-brown text-xl font-bold">
-          {t('nav.logo')}
-        </span>
+        <Logo className="text-xl" />
         <div className="flex items-center gap-8">
           <a
             href={`mailto:${t('contact.email')}`}

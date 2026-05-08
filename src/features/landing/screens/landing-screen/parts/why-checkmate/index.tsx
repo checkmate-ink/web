@@ -5,6 +5,8 @@ import { useTranslations } from 'next-intl'
 
 import { cn } from '@/lib/utils'
 
+import { FadeIn } from '../fade-in'
+
 const benefits = [
   {
     icon: Timer,
@@ -31,19 +33,20 @@ export function WhyCheckmate() {
 
   return (
     <section className="flex w-full flex-col items-center gap-15 px-20 py-25">
-      <div className="flex flex-col items-center gap-4">
+      <FadeIn className="flex flex-col items-center gap-4">
         <h2 className="font-heading text-deep-brown text-center text-5xl font-bold">
           {t('title')}
         </h2>
         <p className="text-deep-brown/60 text-center text-xl">
           {t('subtitle')}
         </p>
-      </div>
+      </FadeIn>
 
       <div className="flex w-full max-w-[1100px] gap-10">
-        {benefits.map((benefit) => (
-          <div
+        {benefits.map((benefit, i) => (
+          <FadeIn
             key={benefit.titleKey}
+            delay={i * 0.1}
             className="flex flex-1 flex-col items-center gap-4 rounded-[20px] bg-white p-8"
           >
             <div
@@ -60,7 +63,7 @@ export function WhyCheckmate() {
             <p className="text-md text-deep-brown/55 text-center leading-relaxed">
               {t(benefit.descKey)}
             </p>
-          </div>
+          </FadeIn>
         ))}
       </div>
     </section>

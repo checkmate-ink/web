@@ -4,6 +4,9 @@ import { ArrowRight, Store } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 
 import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+
+import { FadeIn } from '../fade-in'
 
 const cards = [
   {
@@ -34,7 +37,7 @@ export function Marketplace() {
 
   return (
     <section className="flex w-full flex-col items-center gap-12 px-20 py-25">
-      <div className="flex flex-col items-center gap-5">
+      <FadeIn className="flex flex-col items-center gap-5">
         <Badge variant="green" hasIcon>
           <Store />
           {t('badge')}
@@ -47,12 +50,13 @@ export function Marketplace() {
           <br />
           {t('subtitleLine2')}
         </p>
-      </div>
+      </FadeIn>
 
       <div className="flex w-full max-w-[1100px] gap-5">
-        {cards.map((card) => (
-          <div
+        {cards.map((card, i) => (
+          <FadeIn
             key={card.titleKey}
+            delay={i * 0.1}
             className="border-deep-brown/4 flex flex-1 flex-col gap-4 rounded-[20px] border bg-white p-6"
           >
             <Badge variant={card.badgeVariant}>{t(card.badgeKey)}</Badge>
@@ -63,14 +67,16 @@ export function Marketplace() {
             <p className="text-2xs text-deep-brown/50 font-medium">
               {t(card.authorKey)}
             </p>
-          </div>
+          </FadeIn>
         ))}
       </div>
 
-      <button className="text-deep-brown flex items-center gap-2 text-base font-semibold transition-opacity hover:opacity-70">
-        {t('browseAll')}
-        <ArrowRight className="size-4.5" />
-      </button>
+      <FadeIn delay={0.3}>
+        <Button variant="ghost">
+          {t('browseAll')}
+          <ArrowRight className="size-4.5" />
+        </Button>
+      </FadeIn>
     </section>
   )
 }

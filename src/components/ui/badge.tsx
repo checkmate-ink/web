@@ -1,4 +1,5 @@
 import { cva, type VariantProps } from "class-variance-authority"
+import * as m from "motion/react-client"
 
 import { cn } from "@/lib/utils"
 
@@ -24,22 +25,41 @@ const badgeVariants = cva(
   }
 )
 
+const spring = { type: "spring", stiffness: 400, damping: 17 } as const
+
 interface BadgeProps
   extends React.HTMLAttributes<HTMLSpanElement>,
-    VariantProps<typeof badgeVariants> {}
+    VariantProps<typeof badgeVariants> {
+  pressable?: boolean
+}
 
 function Badge({
   className,
   variant = "yellow",
   hasIcon,
+  pressable,
   ...props
 }: BadgeProps) {
+  const classes = cn(badgeVariants({ variant, hasIcon, className }))
+
+  if (pressable) {
+    const { children, ...rest } = props
+    return (
+      <m.div
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.98 }}
+        transition={spring}
+        className="inline-flex cursor-pointer"
+      >
+        <span data-slot="badge" className={classes} {...rest}>
+          {children}
+        </span>
+      </m.div>
+    )
+  }
+
   return (
-    <span
-      data-slot="badge"
-      className={cn(badgeVariants({ variant, hasIcon, className }))}
-      {...props}
-    />
+    <span data-slot="badge" className={classes} {...props} />
   )
 }
 
