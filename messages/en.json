@@ -10,7 +10,15 @@
   },
   "tests": {
     "loading": {
-      "progress": "Progress"
+      "progress": "Progress",
+      "title": "Generating Your Test...",
+      "subtitle": "This may take a moment",
+      "steps": {
+        "analyzing": "Analyzing your requirements",
+        "generating": "Generating questions",
+        "reviewing": "Reviewing difficulty levels",
+        "finalizing": "Finalizing your test"
+      }
     }
   },
   "landing": {
@@ -28,7 +36,8 @@
       "titleLine2": "Faster Grading.",
       "titleLine3": "Better Learning.",
       "subtitle": "Checkmate helps teachers handle routine tasks so they can focus on what truly matters — their students.",
-      "cta": "Generate your first test"
+      "cta": "Generate your first test",
+      "tryItOut": "Try it out! Generate your first test"
     },
     "testForm": {
       "presetsLabel": "Quick presets",
@@ -47,7 +56,24 @@
       "questionType": "Question Type",
       "questionTypePlaceholder": "e.g. Multiple Choice",
       "advanced": "Advanced configuration",
-      "generate": "Generate Test"
+      "generate": "Generate Test",
+      "difficulties": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced"
+      },
+      "questionTypes": {
+        "mcq_single": "Multiple Choice (Single)",
+        "mcq_multiple": "Multiple Choice (Multiple)",
+        "open_ended": "Open Ended",
+        "true_false": "True / False",
+        "fill_in": "Fill in the Blank",
+        "ordering": "Ordering",
+        "pairs": "Matching Pairs",
+        "categorization": "Categorization",
+        "short_answer": "Short Answer",
+        "numeric": "Numeric"
+      }
     },
     "why": {
       "title": "Why Checkmate?",
