@@ -1,19 +1,19 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
-import { Label } from './label'
-import { RadioGroup, RadioGroupItem } from './radio-group'
+import { Label } from "./label";
+import { RadioGroup, RadioGroupItem } from "./radio-group";
 
 const meta = {
-  title: 'UI/RadioGroup',
+  title: "UI/RadioGroup",
   component: RadioGroup,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
-} satisfies Meta<typeof RadioGroup>
+  tags: ["autodocs"],
+} satisfies Meta<typeof RadioGroup>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => (
@@ -32,7 +32,7 @@ export const Default: Story = {
       </div>
     </RadioGroup>
   ),
-}
+};
 
 export const WithDisabled: Story = {
   render: () => (
@@ -47,4 +47,4 @@ export const WithDisabled: Story = {
       </div>
     </RadioGroup>
   ),
-}
+};

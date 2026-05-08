@@ -1,4 +1,4 @@
-import { z } from 'zod'
-import { testFormSchema } from './presets'
+import { z } from "zod";
+import { testFormSchema } from "./presets";
 
-export type TestFormValues = z.infer<typeof testFormSchema>
+export type TestFormValues = z.infer<typeof testFormSchema>;

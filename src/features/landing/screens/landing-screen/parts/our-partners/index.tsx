@@ -1,13 +1,13 @@
-'use client'
+"use client";
 
-import { useTranslations } from 'next-intl'
+import { useTranslations } from "next-intl";
 
-import { FadeIn } from '../fade-in'
+import { FadeIn } from "../fade-in";
 
-const partners = ['BlockJam', 'Theta EdgeCloud', 'Theta Network', 'AWS']
+const partners = ["BlockJam", "Theta EdgeCloud", "Theta Network", "AWS"];
 
 export function OurPartners() {
-  const t = useTranslations('landing.partners')
+  const t = useTranslations("landing.partners");
 
   return (
     <section
@@ -16,16 +16,16 @@ export function OurPartners() {
     >
       <FadeIn className="flex flex-col items-center gap-4">
         <h2 className="font-heading text-deep-brown text-center text-5xl font-bold">
-          {t('title')}
+          {t("title")}
         </h2>
         <p className="text-deep-brown/55 max-w-[600px] text-center text-lg leading-relaxed">
-          {t('subtitle')}
+          {t("subtitle")}
         </p>
       </FadeIn>
 
       <FadeIn>
         <span className="text-2xs text-deep-brown/35 font-semibold tracking-[2px] uppercase">
-          {t('label')}
+          {t("label")}
         </span>
       </FadeIn>
 
@@ -43,5 +43,5 @@ export function OurPartners() {
         ))}
       </div>
     </section>
-  )
+  );
 }

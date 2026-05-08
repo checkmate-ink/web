@@ -1,25 +1,25 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
-import { Label } from './label'
+import { Label } from "./label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from './select'
+} from "./select";
 
 const meta = {
-  title: 'UI/Select',
+  title: "UI/Select",
   component: Select,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
-} satisfies Meta<typeof Select>
+  tags: ["autodocs"],
+} satisfies Meta<typeof Select>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => (
@@ -39,7 +39,7 @@ export const Default: Story = {
       </div>
     </div>
   ),
-}
+};
 
 export const WithPreselected: Story = {
   render: () => (
@@ -59,7 +59,7 @@ export const WithPreselected: Story = {
       </div>
     </div>
   ),
-}
+};
 
 export const Disabled: Story = {
   render: () => (
@@ -77,4 +77,4 @@ export const Disabled: Story = {
       </div>
     </div>
   ),
-}
+};

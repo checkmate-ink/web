@@ -1,94 +1,94 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { Check, Heart, Info, Star } from 'lucide-react'
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import { Check, Heart, Info, Star } from "lucide-react";
 
-import { Badge } from './badge'
+import { Badge } from "./badge";
 
 const meta = {
-  title: 'UI/Badge',
+  title: "UI/Badge",
   component: Badge,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     variant: {
-      control: 'select',
-      options: ['yellow', 'blue', 'green', 'pink'],
+      control: "select",
+      options: ["yellow", "blue", "green", "pink"],
     },
-    hasIcon: { control: 'boolean' },
+    hasIcon: { control: "boolean" },
   },
-} satisfies Meta<typeof Badge>
+} satisfies Meta<typeof Badge>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Yellow: Story = {
   args: {
-    variant: 'yellow',
-    children: 'Badge',
+    variant: "yellow",
+    children: "Badge",
   },
-}
+};
 
 export const Blue: Story = {
   args: {
-    variant: 'blue',
-    children: 'Badge',
+    variant: "blue",
+    children: "Badge",
   },
-}
+};
 
 export const Green: Story = {
   args: {
-    variant: 'green',
-    children: 'Badge',
+    variant: "green",
+    children: "Badge",
   },
-}
+};
 
 export const Pink: Story = {
   args: {
-    variant: 'pink',
-    children: 'Badge',
+    variant: "pink",
+    children: "Badge",
   },
-}
+};
 
 export const YellowWithIcon: Story = {
-  name: 'Yellow with Icon',
+  name: "Yellow with Icon",
   render: () => (
     <Badge variant="yellow" hasIcon>
       <Star />
       Badge
     </Badge>
   ),
-}
+};
 
 export const BlueWithIcon: Story = {
-  name: 'Blue with Icon',
+  name: "Blue with Icon",
   render: () => (
     <Badge variant="blue" hasIcon>
       <Info />
       Badge
     </Badge>
   ),
-}
+};
 
 export const GreenWithIcon: Story = {
-  name: 'Green with Icon',
+  name: "Green with Icon",
   render: () => (
     <Badge variant="green" hasIcon>
       <Check />
       Badge
     </Badge>
   ),
-}
+};
 
 export const PinkWithIcon: Story = {
-  name: 'Pink with Icon',
+  name: "Pink with Icon",
   render: () => (
     <Badge variant="pink" hasIcon>
       <Heart />
       Badge
     </Badge>
   ),
-}
+};
 
 export const AllVariants: Story = {
   render: () => (
@@ -119,4 +119,4 @@ export const AllVariants: Story = {
       </div>
     </div>
   ),
-}
+};

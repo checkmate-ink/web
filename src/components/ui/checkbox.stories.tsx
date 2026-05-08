@@ -1,44 +1,44 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
-import { Checkbox } from './checkbox'
-import { Label } from './label'
+import { Checkbox } from "./checkbox";
+import { Label } from "./label";
 
 const meta = {
-  title: 'UI/Checkbox',
+  title: "UI/Checkbox",
   component: Checkbox,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
-    disabled: { control: 'boolean' },
-    defaultChecked: { control: 'boolean' },
+    disabled: { control: "boolean" },
+    defaultChecked: { control: "boolean" },
   },
-} satisfies Meta<typeof Checkbox>
+} satisfies Meta<typeof Checkbox>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Off: Story = {}
+export const Off: Story = {};
 
 export const On: Story = {
   args: {
     defaultChecked: true,
   },
-}
+};
 
 export const Disabled: Story = {
   args: {
     disabled: true,
   },
-}
+};
 
 export const DisabledChecked: Story = {
   args: {
     defaultChecked: true,
     disabled: true,
   },
-}
+};
 
 export const WithLabel: Story = {
   render: () => (
@@ -47,7 +47,7 @@ export const WithLabel: Story = {
       <Label htmlFor="terms">I agree to the terms and conditions</Label>
     </div>
   ),
-}
+};
 
 export const AllStates: Story = {
   render: () => (
@@ -70,4 +70,4 @@ export const AllStates: Story = {
       </div>
     </div>
   ),
-}
+};

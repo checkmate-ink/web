@@ -1,8 +1,8 @@
-import { Button as ButtonPrimitive } from "@base-ui/react/button"
-import { cva, type VariantProps } from "class-variance-authority"
-import * as m from "motion/react-client"
+import { Button as ButtonPrimitive } from "@base-ui/react/button";
+import { cva, type VariantProps } from "class-variance-authority";
+import * as m from "motion/react-client";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
   "inline-flex shrink-0 items-center justify-center rounded-full text-md font-semibold whitespace-nowrap transition-all outline-none select-none focus-visible:ring-2 focus-visible:ring-warm-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-cream-background disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4.5",
@@ -13,10 +13,8 @@ const buttonVariants = cva(
           "bg-warm-yellow text-deep-brown hover:bg-warm-yellow/85 disabled:bg-disabled-fill disabled:text-disabled-text",
         secondary:
           "border-2 border-deep-brown/20 bg-transparent text-deep-brown hover:bg-deep-brown/5 disabled:border-deep-brown/8 disabled:text-disabled-text",
-        destructive:
-          "bg-error text-white hover:bg-error/90",
-        ghost:
-          "text-deep-brown hover:bg-deep-brown/5",
+        destructive: "bg-error text-white hover:bg-error/90",
+        ghost: "text-deep-brown hover:bg-deep-brown/5",
         link: "text-deep-brown underline-offset-4 hover:underline",
       },
       size: {
@@ -30,10 +28,10 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
-)
+  },
+);
 
-const spring = { type: "spring", stiffness: 400, damping: 17 } as const
+const spring = { type: "spring", stiffness: 400, damping: 17 } as const;
 
 function Button({
   className,
@@ -54,7 +52,7 @@ function Button({
         {...props}
       />
     </m.div>
-  )
+  );
 }
 
-export { Button, buttonVariants }
+export { Button, buttonVariants };

@@ -1,44 +1,44 @@
-'use client'
+"use client";
 
-import { ChartBar, Heart, Timer } from 'lucide-react'
-import { useTranslations } from 'next-intl'
+import { ChartBar, Heart, Timer } from "lucide-react";
+import { useTranslations } from "next-intl";
 
-import { cn } from '@/lib/utils'
+import { cn } from "@/lib/utils";
 
-import { FadeIn } from '../fade-in'
+import { FadeIn } from "../fade-in";
 
 const benefits = [
   {
     icon: Timer,
-    titleKey: 'saveHoursTitle',
-    descKey: 'saveHoursDesc',
-    iconBg: 'bg-cream-yellow',
+    titleKey: "saveHoursTitle",
+    descKey: "saveHoursDesc",
+    iconBg: "bg-cream-yellow",
   },
   {
     icon: ChartBar,
-    titleKey: 'analyticsTitle',
-    descKey: 'analyticsDesc',
-    iconBg: 'bg-soft-blue',
+    titleKey: "analyticsTitle",
+    descKey: "analyticsDesc",
+    iconBg: "bg-soft-blue",
   },
   {
     icon: Heart,
-    titleKey: 'potentialTitle',
-    descKey: 'potentialDesc',
-    iconBg: 'bg-light-olive',
+    titleKey: "potentialTitle",
+    descKey: "potentialDesc",
+    iconBg: "bg-light-olive",
   },
-] as const
+] as const;
 
 export function WhyCheckmate() {
-  const t = useTranslations('landing.why')
+  const t = useTranslations("landing.why");
 
   return (
     <section className="flex w-full flex-col items-center gap-15 px-20 py-25">
       <FadeIn className="flex flex-col items-center gap-4">
         <h2 className="font-heading text-deep-brown text-center text-5xl font-bold">
-          {t('title')}
+          {t("title")}
         </h2>
         <p className="text-deep-brown/60 text-center text-xl">
-          {t('subtitle')}
+          {t("subtitle")}
         </p>
       </FadeIn>
 
@@ -51,7 +51,7 @@ export function WhyCheckmate() {
           >
             <div
               className={cn(
-                'flex size-14 items-center justify-center rounded-2xl',
+                "flex size-14 items-center justify-center rounded-2xl",
                 benefit.iconBg,
               )}
             >
@@ -67,5 +67,5 @@ export function WhyCheckmate() {
         ))}
       </div>
     </section>
-  )
+  );
 }

@@ -1,31 +1,31 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import { useTranslations } from 'next-intl'
+import Image from "next/image";
+import { useTranslations } from "next-intl";
 
-import { FadeIn } from '../fade-in'
+import { FadeIn } from "../fade-in";
 
 const members = [
   {
-    nameKey: 'zarifName',
-    roleKey: 'zarifRole',
-    avatar: '/images/team/zarif.png',
+    nameKey: "zarifName",
+    roleKey: "zarifRole",
+    avatar: "/images/team/zarif.png",
   },
   {
-    nameKey: 'kayleeName',
-    roleKey: 'kayleeRole',
-    avatar: '/images/team/kaylee.png',
+    nameKey: "kayleeName",
+    roleKey: "kayleeRole",
+    avatar: "/images/team/kaylee.png",
   },
   {
-    nameKey: 'filipName',
-    roleKey: 'filipRole',
-    avatar: '/images/team/filip.png',
+    nameKey: "filipName",
+    roleKey: "filipRole",
+    avatar: "/images/team/filip.png",
   },
-  { nameKey: 'janName', roleKey: 'janRole', avatar: '/images/team/jan.png' },
-] as const
+  { nameKey: "janName", roleKey: "janRole", avatar: "/images/team/jan.png" },
+] as const;
 
 export function MeetTheTeam() {
-  const t = useTranslations('landing.team')
+  const t = useTranslations("landing.team");
 
   return (
     <section
@@ -34,10 +34,10 @@ export function MeetTheTeam() {
     >
       <FadeIn className="flex flex-col items-center gap-4">
         <h2 className="font-heading text-deep-brown text-center text-5xl font-bold">
-          {t('title')}
+          {t("title")}
         </h2>
         <p className="text-deep-brown/55 max-w-[650px] text-center text-lg leading-relaxed">
-          {t('subtitle')}
+          {t("subtitle")}
         </p>
       </FadeIn>
 
@@ -65,5 +65,5 @@ export function MeetTheTeam() {
         ))}
       </div>
     </section>
-  )
+  );
 }

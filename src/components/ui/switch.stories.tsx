@@ -1,37 +1,37 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
-import { Label } from './label'
-import { Switch } from './switch'
+import { Label } from "./label";
+import { Switch } from "./switch";
 
 const meta = {
-  title: 'UI/Switch',
+  title: "UI/Switch",
   component: Switch,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
-    disabled: { control: 'boolean' },
-    defaultChecked: { control: 'boolean' },
+    disabled: { control: "boolean" },
+    defaultChecked: { control: "boolean" },
   },
-} satisfies Meta<typeof Switch>
+} satisfies Meta<typeof Switch>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Off: Story = {}
+export const Off: Story = {};
 
 export const On: Story = {
   args: {
     defaultChecked: true,
   },
-}
+};
 
 export const Disabled: Story = {
   args: {
     disabled: true,
   },
-}
+};
 
 export const WithLabel: Story = {
   render: () => (
@@ -40,7 +40,7 @@ export const WithLabel: Story = {
       <Label htmlFor="notifications">Enable notifications</Label>
     </div>
   ),
-}
+};
 
 export const AllStates: Story = {
   render: () => (
@@ -63,4 +63,4 @@ export const AllStates: Story = {
       </div>
     </div>
   ),
-}
+};

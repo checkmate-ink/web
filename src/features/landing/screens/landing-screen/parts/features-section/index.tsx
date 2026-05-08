@@ -1,45 +1,45 @@
-'use client'
+"use client";
 
-import { BookOpen, CircleCheck, TrendingUp, Zap } from 'lucide-react'
-import { useTranslations } from 'next-intl'
+import { BookOpen, CircleCheck, TrendingUp, Zap } from "lucide-react";
+import { useTranslations } from "next-intl";
 
-import { cn } from '@/lib/utils'
+import { cn } from "@/lib/utils";
 
-import { FadeIn } from '../fade-in'
+import { FadeIn } from "../fade-in";
 
 const features = [
   [
     {
       icon: Zap,
-      titleKey: 'createTitle',
-      descKey: 'createDesc',
-      bg: 'bg-cream-yellow',
+      titleKey: "createTitle",
+      descKey: "createDesc",
+      bg: "bg-cream-yellow",
     },
     {
       icon: CircleCheck,
-      titleKey: 'gradingTitle',
-      descKey: 'gradingDesc',
-      bg: 'bg-soft-blue',
+      titleKey: "gradingTitle",
+      descKey: "gradingDesc",
+      bg: "bg-soft-blue",
     },
   ],
   [
     {
       icon: TrendingUp,
-      titleKey: 'analyticsTitle',
-      descKey: 'analyticsDesc',
-      bg: 'bg-light-olive',
+      titleKey: "analyticsTitle",
+      descKey: "analyticsDesc",
+      bg: "bg-light-olive",
     },
     {
       icon: BookOpen,
-      titleKey: 'studyTitle',
-      descKey: 'studyDesc',
-      bg: 'bg-soft-peach',
+      titleKey: "studyTitle",
+      descKey: "studyDesc",
+      bg: "bg-soft-peach",
     },
   ],
-] as const
+] as const;
 
 export function FeaturesSection() {
-  const t = useTranslations('landing.features')
+  const t = useTranslations("landing.features");
 
   return (
     <section
@@ -48,7 +48,7 @@ export function FeaturesSection() {
     >
       <FadeIn>
         <h2 className="font-heading text-deep-brown max-w-[800px] text-center text-5xl font-bold">
-          {t('title')}
+          {t("title")}
         </h2>
       </FadeIn>
 
@@ -60,7 +60,7 @@ export function FeaturesSection() {
                 key={feature.titleKey}
                 delay={i * 0.15 + j * 0.1}
                 className={cn(
-                  'flex flex-1 flex-col gap-4 rounded-[20px] p-9',
+                  "flex flex-1 flex-col gap-4 rounded-[20px] p-9",
                   feature.bg,
                 )}
               >
@@ -77,5 +77,5 @@ export function FeaturesSection() {
         ))}
       </div>
     </section>
-  )
+  );
 }

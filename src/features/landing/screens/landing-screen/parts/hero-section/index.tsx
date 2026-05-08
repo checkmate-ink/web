@@ -1,41 +1,41 @@
-'use client'
+"use client";
 
-import { useTranslations } from 'next-intl'
+import { useTranslations } from "next-intl";
 
-import { FadeIn } from '../fade-in'
+import { FadeIn } from "../fade-in";
 
-import { TestGenerationForm } from './parts/test-generation-form'
+import { TestGenerationForm } from "./parts/test-generation-form";
 
 export function HeroSection() {
-  const t = useTranslations('landing.hero')
+  const t = useTranslations("landing.hero");
 
   return (
     <section className="flex w-full flex-col items-center gap-8 px-20 pt-20 pb-25">
       <FadeIn delay={0.1}>
         <h1 className="font-heading text-deep-brown max-w-[900px] text-center text-[64px] leading-[1.1] font-bold">
-          {t('titleLine1')}
+          {t("titleLine1")}
           <br />
-          {t('titleLine2')}
+          {t("titleLine2")}
           <br />
-          {t('titleLine3')}
+          {t("titleLine3")}
         </h1>
       </FadeIn>
 
       <FadeIn delay={0.2}>
         <p className="text-deep-brown/60 max-w-[620px] text-center text-xl leading-relaxed">
-          {t('subtitle')}
+          {t("subtitle")}
         </p>
       </FadeIn>
 
       <FadeIn delay={0.3}>
         <p className="text-deep-brown/50 text-sm font-medium">
-          ✨ {t('tryItOut')}
+          ✨ {t("tryItOut")}
         </p>
       </FadeIn>
 
-      <FadeIn delay={0.4} className="w-full flex justify-center">
+      <FadeIn delay={0.4} className="flex w-full justify-center">
         <TestGenerationForm />
       </FadeIn>
     </section>
-  )
+  );
 }

@@ -74,7 +74,7 @@ All user-facing strings **must** be translated via `next-intl`:
 Expo Router route files in `app/` are **thin wrappers** — they only re-export the screen as default (required by Expo Router):
 
 ```tsx
-export { WelcomeScreen as default } from '~/features/welcome/screens/welcome-screen'
+export { WelcomeScreen as default } from "~/features/welcome/screens/welcome-screen";
 ```
 
 Do NOT put screen logic, layout, or UI code directly in `app/` route files.

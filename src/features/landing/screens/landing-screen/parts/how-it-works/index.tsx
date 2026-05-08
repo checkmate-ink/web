@@ -1,18 +1,18 @@
-'use client'
+"use client";
 
-import { useTranslations } from 'next-intl'
+import { useTranslations } from "next-intl";
 
-import { FadeIn } from '../fade-in'
+import { FadeIn } from "../fade-in";
 
 const steps = [
-  { num: '1', titleKey: 'step1Title', descKey: 'step1Desc' },
-  { num: '2', titleKey: 'step2Title', descKey: 'step2Desc' },
-  { num: '3', titleKey: 'step3Title', descKey: 'step3Desc' },
-  { num: '4', titleKey: 'step4Title', descKey: 'step4Desc' },
-] as const
+  { num: "1", titleKey: "step1Title", descKey: "step1Desc" },
+  { num: "2", titleKey: "step2Title", descKey: "step2Desc" },
+  { num: "3", titleKey: "step3Title", descKey: "step3Desc" },
+  { num: "4", titleKey: "step4Title", descKey: "step4Desc" },
+] as const;
 
 export function HowItWorks() {
-  const t = useTranslations('landing.howItWorks')
+  const t = useTranslations("landing.howItWorks");
 
   return (
     <section
@@ -21,10 +21,10 @@ export function HowItWorks() {
     >
       <FadeIn className="flex flex-col items-center gap-4">
         <h2 className="font-heading text-deep-brown text-center text-5xl font-bold">
-          {t('title')}
+          {t("title")}
         </h2>
         <p className="text-deep-brown/60 text-center text-xl">
-          {t('subtitle')}
+          {t("subtitle")}
         </p>
       </FadeIn>
 
@@ -50,5 +50,5 @@ export function HowItWorks() {
         ))}
       </div>
     </section>
-  )
+  );
 }

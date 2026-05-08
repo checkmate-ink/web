@@ -1,7 +1,7 @@
-import { cva, type VariantProps } from "class-variance-authority"
-import * as m from "motion/react-client"
+import { cva, type VariantProps } from "class-variance-authority";
+import * as m from "motion/react-client";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 const badgeVariants = cva(
   "inline-flex w-fit shrink-0 items-center justify-center rounded-full text-xs font-semibold text-deep-brown whitespace-nowrap [&_svg]:pointer-events-none [&_svg]:size-3.5",
@@ -22,15 +22,16 @@ const badgeVariants = cva(
       variant: "yellow",
       hasIcon: false,
     },
-  }
-)
+  },
+);
 
-const spring = { type: "spring", stiffness: 400, damping: 17 } as const
+const spring = { type: "spring", stiffness: 400, damping: 17 } as const;
 
 interface BadgeProps
-  extends React.HTMLAttributes<HTMLSpanElement>,
+  extends
+    React.HTMLAttributes<HTMLSpanElement>,
     VariantProps<typeof badgeVariants> {
-  pressable?: boolean
+  pressable?: boolean;
 }
 
 function Badge({
@@ -40,10 +41,10 @@ function Badge({
   pressable,
   ...props
 }: BadgeProps) {
-  const classes = cn(badgeVariants({ variant, hasIcon, className }))
+  const classes = cn(badgeVariants({ variant, hasIcon, className }));
 
   if (pressable) {
-    const { children, ...rest } = props
+    const { children, ...rest } = props;
     return (
       <m.div
         whileHover={{ scale: 1.05 }}
@@ -55,12 +56,10 @@ function Badge({
           {children}
         </span>
       </m.div>
-    )
+    );
   }
 
-  return (
-    <span data-slot="badge" className={classes} {...props} />
-  )
+  return <span data-slot="badge" className={classes} {...props} />;
 }
 
-export { Badge, badgeVariants }
+export { Badge, badgeVariants };

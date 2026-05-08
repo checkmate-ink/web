@@ -1,19 +1,19 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { Eye, Pencil, LayoutGrid, List, Columns } from 'lucide-react'
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import { Eye, Pencil, LayoutGrid, List, Columns } from "lucide-react";
 
-import { ToggleGroup, ToggleGroupItem } from './toggle-group'
+import { ToggleGroup, ToggleGroupItem } from "./toggle-group";
 
 const meta = {
-  title: 'UI/ToggleGroup',
+  title: "UI/ToggleGroup",
   component: ToggleGroup,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
-} satisfies Meta<typeof ToggleGroup>
+  tags: ["autodocs"],
+} satisfies Meta<typeof ToggleGroup>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => (
@@ -28,7 +28,7 @@ export const Default: Story = {
       </ToggleGroupItem>
     </ToggleGroup>
   ),
-}
+};
 
 export const SecondActive: Story = {
   render: () => (
@@ -43,7 +43,7 @@ export const SecondActive: Story = {
       </ToggleGroupItem>
     </ToggleGroup>
   ),
-}
+};
 
 export const ThreeTabs: Story = {
   render: () => (
@@ -62,7 +62,7 @@ export const ThreeTabs: Story = {
       </ToggleGroupItem>
     </ToggleGroup>
   ),
-}
+};
 
 export const TextOnly: Story = {
   render: () => (
@@ -72,4 +72,4 @@ export const TextOnly: Story = {
       <ToggleGroupItem value="archived">Archived</ToggleGroupItem>
     </ToggleGroup>
   ),
-}
+};

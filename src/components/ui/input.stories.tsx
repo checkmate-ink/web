@@ -1,20 +1,20 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
-import { FormField } from './form-field'
-import { Input } from './input'
-import { Label } from './label'
+import { FormField } from "./form-field";
+import { Input } from "./input";
+import { Label } from "./label";
 
 const meta = {
-  title: 'UI/Input',
+  title: "UI/Input",
   component: Input,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
-} satisfies Meta<typeof Input>
+  tags: ["autodocs"],
+} satisfies Meta<typeof Input>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => (
@@ -25,7 +25,7 @@ export const Default: Story = {
       </div>
     </div>
   ),
-}
+};
 
 export const WithValue: Story = {
   render: () => (
@@ -36,7 +36,7 @@ export const WithValue: Story = {
       </div>
     </div>
   ),
-}
+};
 
 export const ErrorState: Story = {
   render: () => (
@@ -44,11 +44,11 @@ export const ErrorState: Story = {
       <div className="flex flex-col gap-1.5">
         <Label htmlFor="error">Label</Label>
         <Input id="error" aria-invalid defaultValue="Invalid value" />
-        <p className="text-xs text-error">This field is required</p>
+        <p className="text-error text-xs">This field is required</p>
       </div>
     </div>
   ),
-}
+};
 
 export const Disabled: Story = {
   render: () => (
@@ -59,19 +59,19 @@ export const Disabled: Story = {
       </div>
     </div>
   ),
-}
+};
 
 export const FormFieldDefault: Story = {
-  name: 'FormField - Default',
+  name: "FormField - Default",
   render: () => (
     <div className="w-80">
       <FormField label="Email" placeholder="Enter your email..." />
     </div>
   ),
-}
+};
 
 export const FormFieldError: Story = {
-  name: 'FormField - Error',
+  name: "FormField - Error",
   render: () => (
     <div className="w-80">
       <FormField
@@ -81,4 +81,4 @@ export const FormFieldError: Story = {
       />
     </div>
   ),
-}
+};

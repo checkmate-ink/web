@@ -1,2 +1,1 @@
-export type StepStatus = 'completed' | 'in-progress' | 'pending'
-
+export type StepStatus = "completed" | "in-progress" | "pending";

@@ -1,7 +1,11 @@
 {
   "$schema": "https://unpkg.com/knip@6/schema.json",
-  "entry": ["src/app/**/*.{ts,tsx}", "src/app/**/layout.{ts,tsx}", "src/app/**/page.{ts,tsx}"],
+  "entry": [
+    "src/app/**/*.{ts,tsx}",
+    "src/app/**/layout.{ts,tsx}",
+    "src/app/**/page.{ts,tsx}"
+  ],
   "project": ["src/**/*.{ts,tsx}"],
   "ignore": ["src/components/ui/**"],
-  "ignoreDependencies": ["@tailwindcss/postcss", "tw-animate-css"]
+  "ignoreDependencies": ["tailwindcss", "tw-animate-css", "shadcn"]
 }

@@ -35,7 +35,7 @@ export default async function RootLayout({
       lang={locale}
       className={`${workSans.variable} ${besley.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="flex min-h-full flex-col">
         <NextIntlClientProvider messages={messages}>
           <Providers>{children}</Providers>
         </NextIntlClientProvider>

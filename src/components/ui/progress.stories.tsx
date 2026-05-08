@@ -1,21 +1,21 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
-import { Progress, ProgressLabel, ProgressValue } from './progress'
+import { Progress, ProgressLabel, ProgressValue } from "./progress";
 
 const meta = {
-  title: 'UI/Progress',
+  title: "UI/Progress",
   component: Progress,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   args: {
     value: 65,
   },
-} satisfies Meta<typeof Progress>
+} satisfies Meta<typeof Progress>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
@@ -29,7 +29,7 @@ export const Default: Story = {
       </Progress>
     </div>
   ),
-}
+};
 
 export const Empty: Story = {
   args: {
@@ -43,7 +43,7 @@ export const Empty: Story = {
       </Progress>
     </div>
   ),
-}
+};
 
 export const Full: Story = {
   args: {
@@ -57,7 +57,7 @@ export const Full: Story = {
       </Progress>
     </div>
   ),
-}
+};
 
 export const AllVariations: Story = {
   args: {
@@ -83,4 +83,4 @@ export const AllVariations: Story = {
       </Progress>
     </div>
   ),
-}
+};

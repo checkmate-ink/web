@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
-import { Button } from './button'
+import { Button } from "./button";
 import {
   Card,
   CardContent,
@@ -8,19 +8,19 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from './card'
+} from "./card";
 
 const meta = {
-  title: 'UI/Card',
+  title: "UI/Card",
   component: Card,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
-} satisfies Meta<typeof Card>
+  tags: ["autodocs"],
+} satisfies Meta<typeof Card>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => (
@@ -30,7 +30,7 @@ export const Default: Story = {
         <CardDescription>A short description goes here.</CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="h-20 rounded-xl bg-cream-background" />
+        <div className="bg-cream-background h-20 rounded-xl" />
       </CardContent>
       <CardFooter>
         <Button variant="secondary">Cancel</Button>
@@ -38,7 +38,7 @@ export const Default: Story = {
       </CardFooter>
     </Card>
   ),
-}
+};
 
 export const WithContent: Story = {
   render: () => (
@@ -51,13 +51,13 @@ export const WithContent: Story = {
       </CardHeader>
       <CardContent>
         <div className="flex flex-col gap-3">
-          <div className="flex items-center justify-between rounded-lg border border-deep-brown/10 px-3 py-2">
+          <div className="border-deep-brown/10 flex items-center justify-between rounded-lg border px-3 py-2">
             <span className="text-sm">auth.spec.ts</span>
-            <span className="text-xs text-deep-brown/50">12KB</span>
+            <span className="text-deep-brown/50 text-xs">12KB</span>
           </div>
-          <div className="flex items-center justify-between rounded-lg border border-deep-brown/10 px-3 py-2">
+          <div className="border-deep-brown/10 flex items-center justify-between rounded-lg border px-3 py-2">
             <span className="text-sm">login.spec.ts</span>
-            <span className="text-xs text-deep-brown/50">8KB</span>
+            <span className="text-deep-brown/50 text-xs">8KB</span>
           </div>
         </div>
       </CardContent>
@@ -67,7 +67,7 @@ export const WithContent: Story = {
       </CardFooter>
     </Card>
   ),
-}
+};
 
 export const HeaderOnly: Story = {
   render: () => (
@@ -78,4 +78,4 @@ export const HeaderOnly: Story = {
       </CardHeader>
     </Card>
   ),
-}
+};

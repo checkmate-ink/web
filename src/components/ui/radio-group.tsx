@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { Radio as RadioPrimitive } from "@base-ui/react/radio"
-import { RadioGroup as RadioGroupPrimitive } from "@base-ui/react/radio-group"
+import { Radio as RadioPrimitive } from "@base-ui/react/radio";
+import { RadioGroup as RadioGroupPrimitive } from "@base-ui/react/radio-group";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 function RadioGroup({ className, ...props }: RadioGroupPrimitive.Props) {
   return (
@@ -12,7 +12,7 @@ function RadioGroup({ className, ...props }: RadioGroupPrimitive.Props) {
       className={cn("grid w-full gap-2", className)}
       {...props}
     />
-  )
+  );
 }
 
 function RadioGroupItem({ className, ...props }: RadioPrimitive.Root.Props) {
@@ -20,8 +20,8 @@ function RadioGroupItem({ className, ...props }: RadioPrimitive.Root.Props) {
     <RadioPrimitive.Root
       data-slot="radio-group-item"
       className={cn(
-        "peer relative flex size-[22px] shrink-0 items-center justify-center rounded-full border-[1.5px] border-deep-brown/30 outline-none transition-colors focus-visible:ring-2 focus-visible:ring-warm-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-cream-background disabled:cursor-not-allowed disabled:opacity-50 data-checked:border-olive-green data-checked:bg-olive-green",
-        className
+        "peer border-deep-brown/30 focus-visible:ring-warm-yellow focus-visible:ring-offset-cream-background data-checked:border-olive-green data-checked:bg-olive-green relative flex size-[22px] shrink-0 items-center justify-center rounded-full border-[1.5px] transition-colors outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+        className,
       )}
       {...props}
     >
@@ -32,7 +32,7 @@ function RadioGroupItem({ className, ...props }: RadioPrimitive.Root.Props) {
         <span className="size-2 rounded-full bg-white" />
       </RadioPrimitive.Indicator>
     </RadioPrimitive.Root>
-  )
+  );
 }
 
-export { RadioGroup, RadioGroupItem }
+export { RadioGroup, RadioGroupItem };

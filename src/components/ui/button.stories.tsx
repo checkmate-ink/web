@@ -1,58 +1,58 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { Download, FileUp, Sparkles } from 'lucide-react'
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import { Download, FileUp, Sparkles } from "lucide-react";
 
-import { Button } from './button'
+import { Button } from "./button";
 
 const meta = {
-  title: 'UI/Button',
+  title: "UI/Button",
   component: Button,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     variant: {
-      control: 'select',
-      options: ['default', 'secondary', 'destructive', 'ghost', 'link'],
+      control: "select",
+      options: ["default", "secondary", "destructive", "ghost", "link"],
     },
     size: {
-      control: 'select',
-      options: ['default', 'sm', 'lg', 'icon'],
+      control: "select",
+      options: ["default", "sm", "lg", "icon"],
     },
-    disabled: { control: 'boolean' },
+    disabled: { control: "boolean" },
   },
-} satisfies Meta<typeof Button>
+} satisfies Meta<typeof Button>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    children: 'Button',
+    children: "Button",
   },
-}
+};
 
 export const Secondary: Story = {
   args: {
-    variant: 'secondary',
-    children: 'Button',
+    variant: "secondary",
+    children: "Button",
   },
-}
+};
 
 export const PrimaryDisabled: Story = {
   args: {
-    children: 'Button',
+    children: "Button",
     disabled: true,
   },
-}
+};
 
 export const SecondaryDisabled: Story = {
   args: {
-    variant: 'secondary',
-    children: 'Button',
+    variant: "secondary",
+    children: "Button",
     disabled: true,
   },
-}
+};
 
 export const PrimaryWithIcon: Story = {
   render: () => (
@@ -61,7 +61,7 @@ export const PrimaryWithIcon: Story = {
       Generate
     </Button>
   ),
-}
+};
 
 export const SecondaryWithIcon: Story = {
   render: () => (
@@ -70,7 +70,7 @@ export const SecondaryWithIcon: Story = {
       Export
     </Button>
   ),
-}
+};
 
 export const BrowseFiles: Story = {
   render: () => (
@@ -79,21 +79,21 @@ export const BrowseFiles: Story = {
       Browse files
     </Button>
   ),
-}
+};
 
 export const Destructive: Story = {
   args: {
-    variant: 'destructive',
-    children: 'Delete',
+    variant: "destructive",
+    children: "Delete",
   },
-}
+};
 
 export const Ghost: Story = {
   args: {
-    variant: 'ghost',
-    children: 'Ghost',
+    variant: "ghost",
+    children: "Ghost",
   },
-}
+};
 
 export const AllVariants: Story = {
   render: () => (
@@ -122,4 +122,4 @@ export const AllVariants: Story = {
       </div>
     </div>
   ),
-}
+};
