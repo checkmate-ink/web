@@ -7,5 +7,136 @@
     "description": "PDF, DOC up to 10MB",
     "or": "or",
     "browse": "Browse files"
+  },
+  "landing": {
+    "nav": {
+      "logo": "checkmate.",
+      "features": "Features",
+      "howItWorks": "How It Works",
+      "about": "About",
+      "partners": "Partners",
+      "cta": "Try it free"
+    },
+    "hero": {
+      "badge": "AI-Powered Test Generation",
+      "titleLine1": "Smarter Tests.",
+      "titleLine2": "Faster Grading.",
+      "titleLine3": "Better Learning.",
+      "subtitle": "Checkmate helps teachers handle routine tasks so they can focus on what truly matters — their students.",
+      "cta": "Generate your first test"
+    },
+    "testForm": {
+      "presetsLabel": "Quick presets",
+      "presetBiology": "Biology Quiz",
+      "presetEnglish": "English Grammar",
+      "presetHistory": "History Final",
+      "presetMath": "Math Practice",
+      "subject": "Subject",
+      "subjectPlaceholder": "e.g. Biology",
+      "topic": "Topic",
+      "topicPlaceholder": "e.g. Photosynthesis",
+      "language": "Language",
+      "languagePlaceholder": "e.g. English",
+      "difficulty": "Difficulty Level",
+      "difficultyPlaceholder": "e.g. Intermediate",
+      "questionType": "Question Type",
+      "questionTypePlaceholder": "e.g. Multiple Choice",
+      "advanced": "Advanced configuration",
+      "generate": "Generate Test"
+    },
+    "why": {
+      "title": "Why Checkmate?",
+      "subtitle": "Teaching is complex. We make it simpler.",
+      "saveHoursTitle": "Save Hours Weekly",
+      "saveHoursDesc": "Save hours of work each week with AI-generated tests from your own materials.",
+      "analyticsTitle": "Instant Analytics",
+      "analyticsDesc": "Analyze student progress in one click. Discover who's excelling and who needs help.",
+      "potentialTitle": "Student Potential",
+      "potentialDesc": "Help every student reach their full potential with personalized feedback and study tools."
+    },
+    "features": {
+      "title": "From Making Tests to Helping Students",
+      "createTitle": "Create tests instantly",
+      "createDesc": "Generate complete, high-quality tests from your own materials. No templates, no repetition.",
+      "gradingTitle": "Automatic grading",
+      "gradingDesc": "Grades student responses in seconds, identifies common mistakes, and provides clear explanations.",
+      "analyticsTitle": "Results & Analytics",
+      "analyticsDesc": "Visualize trends across students and classes. Discover who's excelling, who needs help, and where to adapt.",
+      "studyTitle": "Smart Study Assistant",
+      "studyDesc": "Helps students learn smarter with clear explanations, flashcards, and gentle guidance at their own pace."
+    },
+    "marketplace": {
+      "badge": "Community",
+      "title": "Test Marketplace",
+      "subtitleLine1": "Browse ready-made tests created by teachers.",
+      "subtitleLine2": "Use them as-is or customize them to fit your classroom.",
+      "card1Badge": "Biology",
+      "card1Title": "Photosynthesis & Cell Energy",
+      "card1Meta": "15 questions · Intermediate · Multiple Choice",
+      "card1Author": "by Mrs. Johnson",
+      "card2Badge": "English",
+      "card2Title": "Present Tenses Grammar Quiz",
+      "card2Meta": "10 questions · Beginner · Fill-in-the-blank",
+      "card2Author": "by Mr. Davis",
+      "card3Badge": "History",
+      "card3Title": "World War II: Causes & Effects",
+      "card3Meta": "20 questions · Advanced · Open-ended",
+      "card3Author": "by Dr. Martinez",
+      "browseAll": "Browse all tests"
+    },
+    "howItWorks": {
+      "title": "Simple. Powerful. Teacher-friendly.",
+      "subtitle": "Checkmate integrates seamlessly into your existing workflow.",
+      "step1Title": "Create a Test",
+      "step1Desc": "Upload your materials or describe what you need — AI builds a test matching your content.",
+      "step2Title": "Print or Share",
+      "step2Desc": "Distribute digitally or on paper — whatever works best for your class.",
+      "step3Title": "AI Does the Grading",
+      "step3Desc": "Checkmate automatically evaluates every response and highlights key patterns.",
+      "step4Title": "Personalized Learning",
+      "step4Desc": "Students receive individualized feedback, explanations, and adaptive practice questions."
+    },
+    "team": {
+      "title": "Meet the Team",
+      "subtitle": "Backed by investors and innovators who share our mission, we're developing Checkmate in close collaboration with Czech educators.",
+      "zarifName": "Zarif Abdalimov",
+      "zarifRole": "User Experience & Design",
+      "kayleeName": "Kaylee Reed",
+      "kayleeRole": "Infrastructure & Operations",
+      "filipName": "Filip Ohanka",
+      "filipRole": "Business Strategy & Research",
+      "janName": "Jan Zabloudil",
+      "janRole": "Product Vision & Development"
+    },
+    "helpUs": {
+      "title": "For Teachers, Backed by Teachers",
+      "subtitle": "Help us build a tool for real classrooms.",
+      "cta": "Take the 3-minute survey"
+    },
+    "partners": {
+      "title": "Our Partners",
+      "subtitle": "With support from Theta Network, AWS, and BlockJam, we're bringing smarter education technology to life.",
+      "label": "Technology Partners"
+    },
+    "hackathon": {
+      "badge": "1st Place Winner",
+      "title": "First Place at BlockJam Hackathon",
+      "description": "Our journey began at the BlockJam Hackathon, where Checkmate won first place for its potential to transform education through AI.",
+      "photoAlt": "Checkmate team at BlockJam Hackathon"
+    },
+    "cta": {
+      "title": "Ready to transform your classroom?",
+      "subtitle": "Join teachers who are already saving hours every week with AI-powered test generation.",
+      "button": "Get started for free"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "email": "info@checkmate.ink",
+      "phone": "+420 721 518 984"
+    },
+    "footer": {
+      "tagline": "Transforming education with AI-powered assessments",
+      "copyright": "© 2025 CheckMate.ink"
+    }
   }
 }
