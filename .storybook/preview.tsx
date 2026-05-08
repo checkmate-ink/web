@@ -1,5 +1,7 @@
 import type { Preview } from '@storybook/nextjs-vite'
+import { NextIntlClientProvider } from 'next-intl'
 
+import messages from '../messages/en.json'
 import '../src/app/globals.css'
 
 const preview: Preview = {
@@ -12,9 +14,6 @@ const preview: Preview = {
     },
 
     a11y: {
-      // 'todo' - show a11y violations in the test UI only
-      // 'error' - fail CI on a11y violations
-      // 'off' - skip a11y checks entirely
       test: 'todo',
     },
   },
@@ -39,7 +38,11 @@ const preview: Preview = {
         `
         document.head.appendChild(style)
       }
-      return Story()
+      return (
+        <NextIntlClientProvider locale="en" messages={messages}>
+          <Story />
+        </NextIntlClientProvider>
+      )
     },
   ],
 }
