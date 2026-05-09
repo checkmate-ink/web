@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
 import { QUESTION_TYPE_BADGE } from "../../../../../../presets";
-import type { QuestionType } from "../../../../../../types";
+import type { QuestionType } from "@/features/tests/types";
 
 interface QuestionHeaderProps {
   questionNumber: number;

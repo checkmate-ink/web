@@ -16,16 +16,17 @@ export function TestNav() {
         <Logo className="text-2xl" />
       </Link>
       <div className="flex items-center gap-4">
-        <Button variant="secondary" size="sm">
-          <Plus className="size-4.5" />
-          {t("createNew")}
-        </Button>
-        <Link
-          href="/"
-          className="text-deep-brown flex items-center gap-2 transition-opacity hover:opacity-70"
-        >
-          <ArrowLeft className="size-5" />
-          <span className="text-sm">{t("back")}</span>
+        <Link href="/tests">
+          <Button variant="secondary" size="sm">
+            <Plus className="size-4.5" />
+            {t("createNew")}
+          </Button>
+        </Link>
+        <Link href="/">
+          <Button variant="ghost" size="sm">
+            <ArrowLeft className="size-4.5" />
+            {t("back")}
+          </Button>
         </Link>
       </div>
     </nav>

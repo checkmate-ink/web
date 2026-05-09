@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/badge";
 
 import { SECTION_BADGE_VARIANTS, SECTION_NUMBER_COLORS } from "../../presets";
-import type { ResponseGroup } from "../../types";
+import type { ResponseGroup } from "@/features/tests/types";
 import { QuestionCard } from "./parts/question-card";
 
 interface SectionGroupProps {

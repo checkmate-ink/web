@@ -11,7 +11,7 @@
   "tests": {
     "nav": {
       "createNew": "Create New Test",
-      "back": "Back to editor"
+      "back": "Back to home"
     },
     "loading": {
       "progress": "Progress",
@@ -22,6 +22,38 @@
         "generating": "Generating questions",
         "reviewing": "Reviewing difficulty levels",
         "finalizing": "Finalizing your test"
+      }
+    },
+    "creation": {
+      "title": "Create a New Test",
+      "subtitle": "Configure your test settings, add question sections, and generate.",
+      "settingsTitle": "Test Settings",
+      "subject": "Subject",
+      "subjectPlaceholder": "e.g. Biology",
+      "language": "Language",
+      "difficulty": "Difficulty Level",
+      "difficultyPlaceholder": "Intermediate",
+      "sectionsTitle": "Question Sections",
+      "sectionLabel": "Section {number}",
+      "topic": "Topic",
+      "topicPlaceholder": "e.g. Photosynthesis",
+      "questions": "Questions",
+      "questionType": "Question Type",
+      "questionTypePlaceholder": "Select question type",
+      "addSection": "Add Section",
+      "summary": "{sections, plural, one {# section} other {# sections}} · {questions} questions total",
+      "generate": "Generate Test",
+      "questionTypes": {
+        "MCQ_SINGLE": "Multiple Choice (Single)",
+        "MCQ_MULTIPLE": "Multiple Choice (Multiple)",
+        "OPEN_ENDED": "Open Ended",
+        "TRUE_FALSE": "True / False",
+        "FILL_IN": "Fill in the Blank",
+        "ORDERING": "Ordering",
+        "PAIRS": "Matching Pairs",
+        "CATEGORIZATION": "Categorization",
+        "SHORT_ANSWER": "Short Answer",
+        "NUMERIC": "Numeric"
       }
     },
     "preview": {

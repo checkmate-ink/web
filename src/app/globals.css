@@ -10,8 +10,6 @@
   --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
   --font-heading: var(--font-heading);
-  --font-size-2xs: 0.8125rem; /* 13px */
-  --font-size-md: 0.9375rem; /* 15px */
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -64,6 +62,19 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
   --shadow-card: 0 12px 40px #351c070f;
+}
+
+@theme {
+  --text-2xs: 0.8125rem;
+  --text-2xs--line-height: 1.25rem;
+  --text-md: 0.9375rem;
+  --text-md--line-height: 1.5rem;
+  --text-lg-plus: 1.0625rem;
+  --text-lg-plus--line-height: 1.75rem;
+  --text-xl-plus: 1.375rem;
+  --text-xl-plus--line-height: 1.75rem;
+  --text-3xl-plus: 2rem;
+  --text-3xl-plus--line-height: 2.5rem;
 }
 
 :root {

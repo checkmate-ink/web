@@ -1,6 +1,6 @@
 "use client";
 
-import type { TestItemV2 } from "./types";
+import type { TestItemV2 } from "@/features/tests/types";
 import { SectionGroup } from "./parts/section-group";
 import { TestHeader } from "./parts/test-header";
 
@@ -23,7 +23,7 @@ export function TestPreview({ test }: TestPreviewProps) {
   }, []);
 
   return (
-    <div className="flex w-[760px] flex-col gap-8">
+    <div className="flex w-190 flex-col gap-8">
       <TestHeader
         title={metadata.name}
         totalQuestions={totalQuestions}

@@ -1,21 +1,13 @@
 "use client";
 
-import {
-  ArrowRight,
-  BookOpen,
-  Calculator,
-  FlaskConical,
-  Landmark,
-  Loader,
-  Sparkles,
-} from "lucide-react";
+import { ArrowRight, Loader, Sparkles } from "lucide-react";
 import { AnimatePresence } from "motion/react";
 import * as m from "motion/react-client";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useTranslations } from "next-intl";
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -33,11 +25,17 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useTestPollingQuery } from "@/features/tests/hooks/use-test-polling-query";
+import { PresetBadges } from "@/features/tests/parts/preset-badges";
+import { PRESETS } from "@/features/tests/parts/preset-badges/presets";
 import { TestLoadingCard } from "@/features/tests/parts/test-loading-card";
 import { $api } from "@/lib/api/client";
 
 import { useTestForm } from "./hooks/use-test-form";
-import { DIFFICULTY_LEVELS, PRESETS, QUESTION_TYPES } from "./presets";
+import {
+  DIFFICULTY_LEVELS,
+  QUESTION_TYPES,
+} from "@/features/tests/presets";
 import { type TestFormValues } from "./types";
 
 export function TestGenerationForm() {
@@ -46,18 +44,7 @@ export function TestGenerationForm() {
   const form = useTestForm();
   const createTest = $api.useMutation("post", "/v2/tests");
   const testId = createTest.data?.test_id;
-  const testStatus = $api.useQuery(
-    "get",
-    "/v2/tests/{testId}",
-    { params: { path: { testId: testId! } } },
-    {
-      enabled: !!testId,
-      refetchInterval: (query) => {
-        const status = query.state.data?.status;
-        return status === "pending" ? 1000 : false;
-      },
-    },
-  );
+  const testStatus = useTestPollingQuery(testId);
 
   const isGenerating = !!testId && testStatus.data?.status === "pending";
 
@@ -66,6 +53,17 @@ export function TestGenerationForm() {
       router.push(`/tests/${testId}`);
     }
   }, [testId, testStatus.data?.status, router]);
+
+  function handlePresetSelect(key: string) {
+    const preset = PRESETS[key];
+    form.reset({
+      subject: preset.subject,
+      topic: preset.sections[0].topic,
+      language: preset.language,
+      difficulty: preset.difficulty,
+      questionType: preset.sections[0].questionType,
+    });
+  }
 
   function onSubmit(data: TestFormValues) {
     createTest.mutate({
@@ -126,44 +124,7 @@ export function TestGenerationForm() {
                 <span className="text-2xs text-deep-brown/45 font-medium">
                   {t("landing.testForm.presetsLabel")}
                 </span>
-                <div className="flex flex-wrap gap-2.5">
-                  <Badge
-                    variant="yellow"
-                    hasIcon
-                    pressable
-                    onClick={() => form.reset(PRESETS.biology)}
-                  >
-                    <FlaskConical />
-                    {t("landing.testForm.presetBiology")}
-                  </Badge>
-                  <Badge
-                    variant="blue"
-                    hasIcon
-                    pressable
-                    onClick={() => form.reset(PRESETS.english)}
-                  >
-                    <BookOpen />
-                    {t("landing.testForm.presetEnglish")}
-                  </Badge>
-                  <Badge
-                    variant="green"
-                    hasIcon
-                    pressable
-                    onClick={() => form.reset(PRESETS.history)}
-                  >
-                    <Landmark />
-                    {t("landing.testForm.presetHistory")}
-                  </Badge>
-                  <Badge
-                    variant="pink"
-                    hasIcon
-                    pressable
-                    onClick={() => form.reset(PRESETS.math)}
-                  >
-                    <Calculator />
-                    {t("landing.testForm.presetMath")}
-                  </Badge>
-                </div>
+                <PresetBadges onSelect={handlePresetSelect} />
               </div>
 
               <hr className="border-deep-brown/5" />
@@ -300,15 +261,17 @@ export function TestGenerationForm() {
               </div>
 
               <div className="flex items-center justify-between">
-                <Button
-                  type="button"
-                  variant="ghost"
-                  size="sm"
-                  className="text-deep-brown/50 hover:text-deep-brown/70 hover:bg-transparent"
-                >
-                  {t("landing.testForm.advanced")}
-                  <ArrowRight className="size-4" />
-                </Button>
+                <Link href="/tests">
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="sm"
+                    className="text-deep-brown/50 hover:text-deep-brown/70 hover:bg-transparent"
+                  >
+                    {t("landing.testForm.advanced")}
+                    <ArrowRight className="size-4" />
+                  </Button>
+                </Link>
                 <Button type="submit" disabled={createTest.isPending}>
                   {createTest.isPending ? (
                     <Loader className="animate-spin" />

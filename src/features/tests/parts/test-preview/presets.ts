@@ -1,4 +1,4 @@
-import type { BadgeVariant, QuestionType } from "./types";
+import type { BadgeVariant, QuestionType } from "@/features/tests/types";
 
 export const QUESTION_TYPE_BADGE: Record<QuestionType, BadgeVariant> = {
   MCQ_SINGLE: "yellow",

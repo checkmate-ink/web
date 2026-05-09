@@ -1,4 +1,4 @@
-import type { ResponseQuestion } from "../../../../types";
+import type { ResponseQuestion } from "@/features/tests/types";
 
 import { CategorizationCard } from "./parts/categorization-card";
 import { FillInCard } from "./parts/fill-in-card";

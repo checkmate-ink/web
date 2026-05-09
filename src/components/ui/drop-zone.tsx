@@ -56,7 +56,7 @@ function DropZone({
     <div
       data-slot="drop-zone"
       className={cn(
-        "border-deep-brown/30 relative flex h-65 w-full items-center justify-center rounded-2xl border-3 border-dashed transition-colors",
+        "border-deep-brown/30 relative flex h-65 w-full items-center justify-center rounded-2xl border-2 border-dashed transition-colors",
         isDragging && "border-warm-yellow bg-warm-yellow/5",
         className,
       )}
