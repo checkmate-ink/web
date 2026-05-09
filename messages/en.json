@@ -9,6 +9,10 @@
     "browse": "Browse files"
   },
   "tests": {
+    "nav": {
+      "createNew": "Create New Test",
+      "back": "Back to editor"
+    },
     "loading": {
       "progress": "Progress",
       "title": "Generating Your Test...",
@@ -18,6 +22,27 @@
         "generating": "Generating questions",
         "reviewing": "Reviewing difficulty levels",
         "finalizing": "Finalizing your test"
+      }
+    },
+    "preview": {
+      "preview": "Preview",
+      "edit": "Edit",
+      "subtitle": "{count} questions · {difficulty} · {language}",
+      "sectionTitle": "Section {number}: {name}",
+      "exportPdf": "Export PDF",
+      "answer": "Answer:",
+      "questionCount": "{count} questions",
+      "questionTypes": {
+        "MCQ_SINGLE": "Multiple Choice",
+        "MCQ_MULTIPLE": "Multi Select",
+        "TRUE_FALSE": "True / False",
+        "FILL_IN": "Fill in the Blank",
+        "OPEN_ENDED": "Open Ended",
+        "SHORT_ANSWER": "Short Answer",
+        "ORDERING": "Ordering",
+        "PAIRS": "Matching Pairs",
+        "CATEGORIZATION": "Categorization",
+        "NUMERIC": "Numeric"
       }
     }
   },
@@ -63,16 +88,16 @@
         "advanced": "Advanced"
       },
       "questionTypes": {
-        "mcq_single": "Multiple Choice (Single)",
-        "mcq_multiple": "Multiple Choice (Multiple)",
-        "open_ended": "Open Ended",
-        "true_false": "True / False",
-        "fill_in": "Fill in the Blank",
-        "ordering": "Ordering",
-        "pairs": "Matching Pairs",
-        "categorization": "Categorization",
-        "short_answer": "Short Answer",
-        "numeric": "Numeric"
+        "MCQ_SINGLE": "Multiple Choice (Single)",
+        "MCQ_MULTIPLE": "Multiple Choice (Multiple)",
+        "OPEN_ENDED": "Open Ended",
+        "TRUE_FALSE": "True / False",
+        "FILL_IN": "Fill in the Blank",
+        "ORDERING": "Ordering",
+        "PAIRS": "Matching Pairs",
+        "CATEGORIZATION": "Categorization",
+        "SHORT_ANSWER": "Short Answer",
+        "NUMERIC": "Numeric"
       }
     },
     "why": {

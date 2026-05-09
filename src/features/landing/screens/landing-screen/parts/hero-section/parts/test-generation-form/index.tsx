@@ -11,6 +11,8 @@ import {
 } from "lucide-react";
 import { AnimatePresence } from "motion/react";
 import * as m from "motion/react-client";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 import { useTranslations } from "next-intl";
 
 import { Badge } from "@/components/ui/badge";
@@ -40,12 +42,13 @@ import { type TestFormValues } from "./types";
 
 export function TestGenerationForm() {
   const t = useTranslations();
+  const router = useRouter();
   const form = useTestForm();
-  const createTest = $api.useMutation("post", "/v1/tests");
+  const createTest = $api.useMutation("post", "/v2/tests");
   const testId = createTest.data?.test_id;
   const testStatus = $api.useQuery(
     "get",
-    "/v1/tests/{testId}",
+    "/v2/tests/{testId}",
     { params: { path: { testId: testId! } } },
     {
       enabled: !!testId,
@@ -58,17 +61,27 @@ export function TestGenerationForm() {
 
   const isGenerating = !!testId && testStatus.data?.status === "pending";
 
+  useEffect(() => {
+    if (testId && testStatus.data?.status === "completed") {
+      router.push(`/tests/${testId}`);
+    }
+  }, [testId, testStatus.data?.status, router]);
+
   function onSubmit(data: TestFormValues) {
     createTest.mutate({
       body: {
         test_request: {
           subject: data.subject,
           difficulty_level: data.difficulty,
-          language: data.language || "English",
-          [data.questionType ?? "mcq_single"]: {
-            amount: 5,
-            topic: data.topic || undefined,
-          },
+          language: data.language,
+          groups: [
+            {
+              name: data.topic,
+              type: data.questionType,
+              amount: 5,
+              topic: data.topic || undefined,
+            },
+          ],
         },
       },
     });

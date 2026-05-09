@@ -1,0 +1,38 @@
+import { GripVertical } from "lucide-react";
+
+import type { components } from "@/lib/api/schema";
+
+type CategorizationQuestion = components["schemas"]["CategorizationQuestion"];
+
+interface CategorizationCardProps {
+  question: CategorizationQuestion;
+}
+
+export function CategorizationCard({ question }: CategorizationCardProps) {
+  return (
+    <div className="flex gap-4">
+      {question.category_items.map((cat) => (
+        <div
+          key={cat.category}
+          className="bg-cream-background flex flex-1 flex-col gap-2 rounded-xl p-4"
+        >
+          <span className="text-deep-brown text-sm font-semibold">
+            {cat.category}
+          </span>
+          <div className="bg-deep-brown/5 h-px w-full" />
+          <div className="flex flex-col gap-1.5">
+            {cat.items.map((item) => (
+              <div
+                key={item}
+                className="border-deep-brown/4 flex items-center gap-2 rounded-lg border bg-white px-3.5 py-2.5"
+              >
+                <GripVertical className="text-deep-brown/25 size-3.5 shrink-0" />
+                <span className="text-deep-brown text-2xs">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}

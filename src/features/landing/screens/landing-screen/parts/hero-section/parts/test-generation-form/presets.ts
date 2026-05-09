@@ -2,23 +2,10 @@ import { components } from "@/lib/api/schema";
 import z from "zod";
 import type { TestFormValues } from "./types";
 
-type GenerationRequest = components["schemas"]["GenerationRequest"];
+export type DifficultyLevel =
+  components["schemas"]["GenerationRequestV2"]["difficulty_level"];
 
-export type DifficultyLevel = GenerationRequest["difficulty_level"];
-
-export type QuestionType = Extract<
-  keyof GenerationRequest,
-  | "mcq_single"
-  | "mcq_multiple"
-  | "open_ended"
-  | "true_false"
-  | "fill_in"
-  | "ordering"
-  | "pairs"
-  | "categorization"
-  | "short_answer"
-  | "numeric"
->;
+export type QuestionType = components["schemas"]["GroupConfig"]["type"];
 
 export const PRESETS: Record<string, TestFormValues> = {
   biology: {
@@ -26,28 +13,28 @@ export const PRESETS: Record<string, TestFormValues> = {
     topic: "Photosynthesis",
     language: "English",
     difficulty: "intermediate",
-    questionType: "mcq_single",
+    questionType: "MCQ_SINGLE",
   },
   english: {
     subject: "English Grammar",
     topic: "Present Tenses",
     language: "English",
     difficulty: "beginner",
-    questionType: "fill_in",
+    questionType: "FILL_IN",
   },
   history: {
     subject: "History",
     topic: "World War II",
     language: "English",
     difficulty: "advanced",
-    questionType: "open_ended",
+    questionType: "OPEN_ENDED",
   },
   math: {
     subject: "Mathematics",
     topic: "Quadratic Equations",
     language: "English",
     difficulty: "intermediate",
-    questionType: "numeric",
+    questionType: "NUMERIC",
   },
 };
 export const DIFFICULTY_LEVELS: DifficultyLevel[] = [
@@ -57,16 +44,16 @@ export const DIFFICULTY_LEVELS: DifficultyLevel[] = [
 ];
 
 export const QUESTION_TYPES: QuestionType[] = [
-  "mcq_single",
-  "mcq_multiple",
-  "open_ended",
-  "true_false",
-  "fill_in",
-  "ordering",
-  "pairs",
-  "categorization",
-  "short_answer",
-  "numeric",
+  "MCQ_SINGLE",
+  "MCQ_MULTIPLE",
+  "OPEN_ENDED",
+  "TRUE_FALSE",
+  "FILL_IN",
+  "ORDERING",
+  "PAIRS",
+  "CATEGORIZATION",
+  "SHORT_ANSWER",
+  "NUMERIC",
 ];
 
 export const testFormSchema = z.object({
@@ -74,5 +61,5 @@ export const testFormSchema = z.object({
   topic: z.string(),
   language: z.string(),
   difficulty: z.enum(DIFFICULTY_LEVELS),
-  questionType: z.enum(QUESTION_TYPES).optional(),
+  questionType: z.enum(QUESTION_TYPES),
 });

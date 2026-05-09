@@ -1,0 +1,33 @@
+"use client";
+
+import { ArrowLeft, Plus } from "lucide-react";
+import Link from "next/link";
+import { useTranslations } from "next-intl";
+
+import { Button } from "@/components/ui/button";
+import { Logo } from "@/features/landing/parts/logo";
+
+export function TestNav() {
+  const t = useTranslations("tests.nav");
+
+  return (
+    <nav className="border-deep-brown/5 flex h-16 w-full items-center justify-between border-b px-10">
+      <Link href="/">
+        <Logo className="text-2xl" />
+      </Link>
+      <div className="flex items-center gap-4">
+        <Button variant="secondary" size="sm">
+          <Plus className="size-4.5" />
+          {t("createNew")}
+        </Button>
+        <Link
+          href="/"
+          className="text-deep-brown flex items-center gap-2 transition-opacity hover:opacity-70"
+        >
+          <ArrowLeft className="size-5" />
+          <span className="text-sm">{t("back")}</span>
+        </Link>
+      </div>
+    </nav>
+  );
+}
