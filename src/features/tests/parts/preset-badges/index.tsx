@@ -1,9 +1,4 @@
-import {
-  BookOpen,
-  Calculator,
-  FlaskConical,
-  Landmark,
-} from "lucide-react";
+import { BookOpen, Calculator, FlaskConical, Landmark } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Badge } from "@/components/ui/badge";
@@ -44,12 +39,7 @@ export function PresetBadges({ onSelect }: PresetBadgesProps) {
         <Landmark />
         {t("presetHistory")}
       </Badge>
-      <Badge
-        variant="pink"
-        hasIcon
-        pressable
-        onClick={() => onSelect("math")}
-      >
+      <Badge variant="pink" hasIcon pressable onClick={() => onSelect("math")}>
         <Calculator />
         {t("presetMath")}
       </Badge>

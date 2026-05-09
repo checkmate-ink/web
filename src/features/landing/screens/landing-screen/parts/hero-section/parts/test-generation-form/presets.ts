@@ -1,9 +1,6 @@
 import { z } from "zod";
 
-import {
-  DIFFICULTY_LEVELS,
-  QUESTION_TYPES,
-} from "@/features/tests/presets";
+import { DIFFICULTY_LEVELS, QUESTION_TYPES } from "@/features/tests/presets";
 
 export const testFormSchema = z.object({
   subject: z.string().min(1),

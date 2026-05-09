@@ -32,10 +32,7 @@ import { TestLoadingCard } from "@/features/tests/parts/test-loading-card";
 import { $api } from "@/lib/api/client";
 
 import { useTestForm } from "./hooks/use-test-form";
-import {
-  DIFFICULTY_LEVELS,
-  QUESTION_TYPES,
-} from "@/features/tests/presets";
+import { DIFFICULTY_LEVELS, QUESTION_TYPES } from "@/features/tests/presets";
 import { type TestFormValues } from "./types";
 
 export function TestGenerationForm() {

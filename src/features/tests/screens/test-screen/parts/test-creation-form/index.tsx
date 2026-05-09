@@ -143,9 +143,7 @@ export function TestCreationForm() {
                         <FormLabel>{t("tests.creation.subject")}</FormLabel>
                         <FormControl>
                           <Input
-                            placeholder={t(
-                              "tests.creation.subjectPlaceholder",
-                            )}
+                            placeholder={t("tests.creation.subjectPlaceholder")}
                             {...field}
                             value={field.value ?? ""}
                           />
