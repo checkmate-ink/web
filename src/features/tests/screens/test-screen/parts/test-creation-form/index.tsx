@@ -3,7 +3,7 @@
 import { Plus, Sparkles } from "lucide-react";
 import { AnimatePresence } from "motion/react";
 import * as m from "motion/react-client";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
 import { useEffect } from "react";
 import { useFieldArray } from "react-hook-form";
 import { useTranslations } from "next-intl";
@@ -32,7 +32,7 @@ import { TestLoadingCard } from "@/features/tests/parts/test-loading-card";
 import { $api } from "@/lib/api/client";
 
 import { useTestCreationForm } from "./hooks/use-test-creation-form";
-import { PRESETS } from "@/features/tests/parts/preset-badges/presets";
+import { getPreset } from "@/features/tests/parts/preset-badges/presets";
 import { DIFFICULTY_LEVELS } from "@/features/tests/presets";
 import { DEFAULT_SECTION } from "./presets";
 import { SectionCard } from "./parts/section-card";
@@ -131,7 +131,11 @@ export function TestCreationForm() {
                   {t("tests.creation.settingsTitle")}
                 </h2>
                 <PresetBadges
-                  onSelect={(preset) => form.reset(PRESETS[preset])}
+                  onSelect={(key) =>
+                    form.reset(
+                      getPreset(key, (k) => t(`landing.testForm.presets.${k}`)),
+                    )
+                  }
                 />
 
                 <div className="flex gap-4">

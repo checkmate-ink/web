@@ -11,38 +11,83 @@ export interface TestPreset {
   }[];
 }
 
-export const PRESETS: Record<string, TestPreset> = {
+interface PresetTemplate {
+  subjectKey: string;
+  languageKey: string;
+  difficulty: DifficultyLevel;
+  sections: {
+    topicKey: string;
+    amount: number;
+    questionType: QuestionType;
+  }[];
+}
+
+const PRESET_TEMPLATES: Record<string, PresetTemplate> = {
   biology: {
-    subject: "Biology",
-    language: "English",
+    subjectKey: "biology.subject",
+    languageKey: "biology.language",
     difficulty: "intermediate",
     sections: [
-      { topic: "Photosynthesis", amount: 10, questionType: "MCQ_SINGLE" },
-      { topic: "Cell Division", amount: 5, questionType: "TRUE_FALSE" },
+      {
+        topicKey: "biology.topics.photosynthesis",
+        amount: 10,
+        questionType: "MCQ_SINGLE",
+      },
+      {
+        topicKey: "biology.topics.cellDivision",
+        amount: 5,
+        questionType: "TRUE_FALSE",
+      },
     ],
   },
   english: {
-    subject: "English Grammar",
-    language: "English",
+    subjectKey: "english.subject",
+    languageKey: "english.language",
     difficulty: "beginner",
     sections: [
-      { topic: "Present Tenses", amount: 10, questionType: "FILL_IN" },
+      {
+        topicKey: "english.topics.presentTenses",
+        amount: 10,
+        questionType: "FILL_IN",
+      },
     ],
   },
   history: {
-    subject: "History",
-    language: "English",
+    subjectKey: "history.subject",
+    languageKey: "history.language",
     difficulty: "advanced",
     sections: [
-      { topic: "World War II", amount: 10, questionType: "OPEN_ENDED" },
+      {
+        topicKey: "history.topics.worldWarII",
+        amount: 10,
+        questionType: "OPEN_ENDED",
+      },
     ],
   },
   math: {
-    subject: "Mathematics",
-    language: "English",
+    subjectKey: "math.subject",
+    languageKey: "math.language",
     difficulty: "intermediate",
     sections: [
-      { topic: "Quadratic Equations", amount: 10, questionType: "NUMERIC" },
+      {
+        topicKey: "math.topics.quadraticEquations",
+        amount: 10,
+        questionType: "NUMERIC",
+      },
     ],
   },
 };
+
+export function getPreset(key: string, t: (key: string) => string): TestPreset {
+  const template = PRESET_TEMPLATES[key];
+  return {
+    subject: t(template.subjectKey),
+    language: t(template.languageKey),
+    difficulty: template.difficulty,
+    sections: template.sections.map((s) => ({
+      topic: t(s.topicKey),
+      amount: s.amount,
+      questionType: s.questionType,
+    })),
+  };
+}

@@ -3,8 +3,7 @@
 import { ArrowRight, Loader, Sparkles } from "lucide-react";
 import { AnimatePresence } from "motion/react";
 import * as m from "motion/react-client";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { Link, useRouter } from "@/i18n/navigation";
 import { useEffect } from "react";
 import { useTranslations } from "next-intl";
 
@@ -27,7 +26,7 @@ import {
 } from "@/components/ui/select";
 import { useTestPollingQuery } from "@/features/tests/hooks/use-test-polling-query";
 import { PresetBadges } from "@/features/tests/parts/preset-badges";
-import { PRESETS } from "@/features/tests/parts/preset-badges/presets";
+import { getPreset } from "@/features/tests/parts/preset-badges/presets";
 import { TestLoadingCard } from "@/features/tests/parts/test-loading-card";
 import { $api } from "@/lib/api/client";
 
@@ -52,7 +51,7 @@ export function TestGenerationForm() {
   }, [testId, testStatus.data?.status, router]);
 
   function handlePresetSelect(key: string) {
-    const preset = PRESETS[key];
+    const preset = getPreset(key, (k) => t(`landing.testForm.presets.${k}`));
     form.reset({
       subject: preset.subject,
       topic: preset.sections[0].topic,

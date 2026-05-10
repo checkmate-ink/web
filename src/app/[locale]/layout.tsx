@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Besley, Work_Sans } from "next/font/google";
+import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
-import { getLocale, getMessages } from "next-intl/server";
+import { getMessages } from "next-intl/server";
 
 import { Providers } from "@/providers";
+import { routing, type Locale } from "@/i18n/routing";
 
-import "./globals.css";
+import "../globals.css";
 
 const workSans = Work_Sans({
   variable: "--font-sans",
@@ -22,12 +24,23 @@ export const metadata: Metadata = {
   description: "Checkmate — AI-Powered Test Generation",
 };
 
-export default async function RootLayout({
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export default async function LocaleLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
-  const locale = await getLocale();
+  const { locale } = await params;
+
+  if (!routing.locales.includes(locale as Locale)) {
+    notFound();
+  }
+
   const messages = await getMessages();
 
   return (

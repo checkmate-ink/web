@@ -127,6 +127,37 @@
       "difficultyPlaceholder": "e.g. Intermediate",
       "questionType": "Question Type",
       "questionTypePlaceholder": "e.g. Multiple Choice",
+      "presets": {
+        "biology": {
+          "subject": "Biology",
+          "language": "English",
+          "topics": {
+            "photosynthesis": "Photosynthesis",
+            "cellDivision": "Cell Division"
+          }
+        },
+        "english": {
+          "subject": "English Grammar",
+          "language": "English",
+          "topics": {
+            "presentTenses": "Present Tenses"
+          }
+        },
+        "history": {
+          "subject": "History",
+          "language": "English",
+          "topics": {
+            "worldWarII": "World War II"
+          }
+        },
+        "math": {
+          "subject": "Mathematics",
+          "language": "English",
+          "topics": {
+            "quadraticEquations": "Quadratic Equations"
+          }
+        }
+      },
       "advanced": "Advanced configuration",
       "generate": "Generate Test",
       "difficulties": {

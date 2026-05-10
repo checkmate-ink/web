@@ -1,0 +1,276 @@
+{
+  "common": {
+    "appName": "Checkmate"
+  },
+  "dropZone": {
+    "title": "Přetáhněte soubor sem",
+    "description": "PDF, DOC do 10 MB",
+    "or": "nebo",
+    "browse": "Procházet soubory"
+  },
+  "tests": {
+    "nav": {
+      "createNew": "Vytvořit nový test",
+      "back": "Zpět na úvod"
+    },
+    "loading": {
+      "progress": "Průběh",
+      "title": "Generování testu...",
+      "subtitle": "Může to chvíli trvat",
+      "steps": {
+        "analyzing": "Analýza vašich požadavků",
+        "generating": "Generování otázek",
+        "reviewing": "Kontrola úrovně obtížnosti",
+        "finalizing": "Dokončování testu"
+      }
+    },
+    "creation": {
+      "title": "Vytvořit nový test",
+      "subtitle": "Nastavte parametry testu, přidejte sekce otázek a vygenerujte.",
+      "settingsTitle": "Nastavení testu",
+      "subject": "Předmět",
+      "subjectPlaceholder": "např. Biologie",
+      "language": "Jazyk",
+      "difficulty": "Úroveň obtížnosti",
+      "difficultyPlaceholder": "Středně pokročilý",
+      "sectionsTitle": "Sekce otázek",
+      "sectionLabel": "Sekce {number}",
+      "topic": "Téma",
+      "topicPlaceholder": "např. Fotosyntéza",
+      "questions": "Otázky",
+      "questionType": "Typ otázky",
+      "questionTypePlaceholder": "Vyberte typ otázky",
+      "addSection": "Přidat sekci",
+      "summary": "{sections, plural, one {# sekce} few {# sekce} other {# sekcí}} · {questions} otázek celkem",
+      "generate": "Vygenerovat test",
+      "questionTypes": {
+        "MCQ_SINGLE": "Výběr z možností (jedna)",
+        "MCQ_MULTIPLE": "Výběr z možností (více)",
+        "OPEN_ENDED": "Otevřená odpověď",
+        "TRUE_FALSE": "Pravda / Nepravda",
+        "FILL_IN": "Doplňování",
+        "ORDERING": "Řazení",
+        "PAIRS": "Přiřazování dvojic",
+        "CATEGORIZATION": "Kategorizace",
+        "SHORT_ANSWER": "Krátká odpověď",
+        "NUMERIC": "Číselná odpověď"
+      }
+    },
+    "preview": {
+      "preview": "Náhled",
+      "edit": "Upravit",
+      "subtitle": "{count} otázek · {difficulty} · {language}",
+      "sectionTitle": "Sekce {number}: {name}",
+      "exportPdf": "Exportovat PDF",
+      "answer": "Odpověď:",
+      "questionCount": "{count} otázek",
+      "questionTypes": {
+        "MCQ_SINGLE": "Výběr z možností",
+        "MCQ_MULTIPLE": "Vícenásobný výběr",
+        "TRUE_FALSE": "Pravda / Nepravda",
+        "FILL_IN": "Doplňování",
+        "OPEN_ENDED": "Otevřená odpověď",
+        "SHORT_ANSWER": "Krátká odpověď",
+        "ORDERING": "Řazení",
+        "PAIRS": "Přiřazování dvojic",
+        "CATEGORIZATION": "Kategorizace",
+        "NUMERIC": "Číselná odpověď"
+      }
+    },
+    "edit": {
+      "addQuestion": "Přidat otázku",
+      "addOption": "Přidat možnost",
+      "addItem": "Přidat položku",
+      "addPair": "Přidat dvojici",
+      "addCategory": "Přidat kategorii",
+      "addKeyword": "Přidat",
+      "addAnswer": "Přidat",
+      "correctAnswer": "Správná odpověď:",
+      "expectedKeywords": "Očekávaná klíčová slova:",
+      "acceptedAnswers": "Přijímané odpovědi:",
+      "answerOptions": "Možnosti odpovědí:",
+      "answer": "Odpověď",
+      "tolerance": "Tolerance"
+    }
+  },
+  "landing": {
+    "nav": {
+      "logo": "checkmate.",
+      "features": "Funkce",
+      "howItWorks": "Jak to funguje",
+      "about": "O nás",
+      "partners": "Partneři",
+      "cta": "Vyzkoušet zdarma"
+    },
+    "hero": {
+      "badge": "Testy s pomocí AI",
+      "titleLine1": "Chytřejší testy.",
+      "titleLine2": "Rychlejší hodnocení.",
+      "titleLine3": "Lepší učení.",
+      "subtitle": "Checkmate pomáhá učitelům s rutinními úkoly, aby se mohli soustředit na to, co je skutečně důležité — na své studenty.",
+      "cta": "Vygenerujte svůj první test",
+      "tryItOut": "Vyzkoušejte to! Vygenerujte svůj první test"
+    },
+    "testForm": {
+      "presetsLabel": "Rychlé předvolby",
+      "presetBiology": "Kvíz z biologie",
+      "presetEnglish": "Anglická gramatika",
+      "presetHistory": "Závěrečka z dějepisu",
+      "presetMath": "Procvičování matematiky",
+      "subject": "Předmět",
+      "subjectPlaceholder": "např. Biologie",
+      "topic": "Téma",
+      "topicPlaceholder": "např. Fotosyntéza",
+      "language": "Jazyk",
+      "languagePlaceholder": "např. Čeština",
+      "difficulty": "Úroveň obtížnosti",
+      "difficultyPlaceholder": "např. Středně pokročilý",
+      "questionType": "Typ otázky",
+      "questionTypePlaceholder": "např. Výběr z možností",
+      "presets": {
+        "biology": {
+          "subject": "Biologie",
+          "language": "Čeština",
+          "topics": {
+            "photosynthesis": "Fotosyntéza",
+            "cellDivision": "Buněčné dělení"
+          }
+        },
+        "english": {
+          "subject": "Anglická gramatika",
+          "language": "Čeština",
+          "topics": {
+            "presentTenses": "Přítomné časy"
+          }
+        },
+        "history": {
+          "subject": "Dějepis",
+          "language": "Čeština",
+          "topics": {
+            "worldWarII": "Druhá světová válka"
+          }
+        },
+        "math": {
+          "subject": "Matematika",
+          "language": "Čeština",
+          "topics": {
+            "quadraticEquations": "Kvadratické rovnice"
+          }
+        }
+      },
+      "advanced": "Pokročilé nastavení",
+      "generate": "Vygenerovat test",
+      "difficulties": {
+        "beginner": "Začátečník",
+        "intermediate": "Středně pokročilý",
+        "advanced": "Pokročilý"
+      },
+      "questionTypes": {
+        "MCQ_SINGLE": "Výběr z možností (jedna)",
+        "MCQ_MULTIPLE": "Výběr z možností (více)",
+        "OPEN_ENDED": "Otevřená odpověď",
+        "TRUE_FALSE": "Pravda / Nepravda",
+        "FILL_IN": "Doplňování",
+        "ORDERING": "Řazení",
+        "PAIRS": "Přiřazování dvojic",
+        "CATEGORIZATION": "Kategorizace",
+        "SHORT_ANSWER": "Krátká odpověď",
+        "NUMERIC": "Číselná odpověď"
+      }
+    },
+    "why": {
+      "title": "Proč Checkmate?",
+      "subtitle": "Učení je složité. My ho zjednodušujeme.",
+      "saveHoursTitle": "Ušetřete hodiny týdně",
+      "saveHoursDesc": "Ušetřete hodiny práce každý týden díky testům generovaným AI z vašich vlastních materiálů.",
+      "analyticsTitle": "Okamžitá analytika",
+      "analyticsDesc": "Analyzujte pokrok studentů jedním kliknutím. Zjistěte, kdo vyniká a kdo potřebuje pomoc.",
+      "potentialTitle": "Potenciál studentů",
+      "potentialDesc": "Pomozte každému studentovi dosáhnout jeho plného potenciálu díky personalizované zpětné vazbě a studijním nástrojům."
+    },
+    "features": {
+      "title": "Od tvorby testů k pomoci studentům",
+      "createTitle": "Vytvářejte testy okamžitě",
+      "createDesc": "Generujte kompletní, kvalitní testy z vašich vlastních materiálů. Žádné šablony, žádné opakování.",
+      "gradingTitle": "Automatické hodnocení",
+      "gradingDesc": "Ohodnotí odpovědi studentů během sekund, identifikuje časté chyby a poskytne srozumitelná vysvětlení.",
+      "analyticsTitle": "Výsledky a analytika",
+      "analyticsDesc": "Vizualizujte trendy napříč studenty a třídami. Zjistěte, kdo vyniká, kdo potřebuje pomoc a kde se přizpůsobit.",
+      "studyTitle": "Chytrý studijní asistent",
+      "studyDesc": "Pomáhá studentům učit se chytřeji díky srozumitelným vysvětlením, kartičkám a jemnému vedení vlastním tempem."
+    },
+    "marketplace": {
+      "badge": "Komunita",
+      "title": "Tržiště testů",
+      "subtitleLine1": "Procházejte hotové testy vytvořené učiteli.",
+      "subtitleLine2": "Použijte je tak, jak jsou, nebo si je přizpůsobte pro svou třídu.",
+      "card1Badge": "Biologie",
+      "card1Title": "Fotosyntéza a buněčná energie",
+      "card1Meta": "15 otázek · Středně pokročilý · Výběr z možností",
+      "card1Author": "od paní Johnsonové",
+      "card2Badge": "Angličtina",
+      "card2Title": "Kvíz na přítomné časy",
+      "card2Meta": "10 otázek · Začátečník · Doplňování",
+      "card2Author": "od pana Davise",
+      "card3Badge": "Dějepis",
+      "card3Title": "Druhá světová válka: příčiny a důsledky",
+      "card3Meta": "20 otázek · Pokročilý · Otevřené odpovědi",
+      "card3Author": "od Dr. Martineze",
+      "browseAll": "Procházet všechny testy"
+    },
+    "howItWorks": {
+      "title": "Jednoduché. Výkonné. Pro učitele.",
+      "subtitle": "Checkmate se bezproblémově začleňuje do vašeho stávajícího pracovního postupu.",
+      "step1Title": "Vytvořte test",
+      "step1Desc": "Nahrajte své materiály nebo popište, co potřebujete — AI vytvoří test odpovídající vašemu obsahu.",
+      "step2Title": "Vytiskněte nebo sdílejte",
+      "step2Desc": "Distribuujte digitálně nebo na papíře — cokoliv, co vaší třídě vyhovuje nejlépe.",
+      "step3Title": "AI ohodnotí",
+      "step3Desc": "Checkmate automaticky vyhodnotí každou odpověď a zvýrazní klíčové vzory.",
+      "step4Title": "Personalizované učení",
+      "step4Desc": "Studenti obdrží individuální zpětnou vazbu, vysvětlení a adaptivní cvičební otázky."
+    },
+    "team": {
+      "title": "Náš tým",
+      "subtitle": "S podporou investorů a inovátorů, kteří sdílejí naši misi, vyvíjíme Checkmate v úzké spolupráci s českými pedagogy.",
+      "zarifName": "Zarif Abdalimov",
+      "zarifRole": "Uživatelský zážitek a design",
+      "kayleeName": "Kaylee Reed",
+      "kayleeRole": "Infrastruktura a provoz",
+      "filipName": "Filip Ohanka",
+      "filipRole": "Obchodní strategie a výzkum",
+      "janName": "Jan Zabloudil",
+      "janRole": "Produktová vize a vývoj"
+    },
+    "helpUs": {
+      "title": "Pro učitele, s podporou učitelů",
+      "subtitle": "Pomozte nám vytvořit nástroj pro skutečné třídy.",
+      "cta": "Vyplňte 3minutový dotazník"
+    },
+    "partners": {
+      "title": "Naši partneři",
+      "subtitle": "S podporou Theta Network, AWS a BlockJam přinášíme chytřejší vzdělávací technologie k životu.",
+      "label": "Technologičtí partneři"
+    },
+    "hackathon": {
+      "badge": "Vítěz 1. místa",
+      "title": "První místo na BlockJam Hackathonu",
+      "description": "Naše cesta začala na BlockJam Hackathonu, kde Checkmate získal první místo za svůj potenciál transformovat vzdělávání pomocí AI.",
+      "photoAlt": "Tým Checkmate na BlockJam Hackathonu"
+    },
+    "cta": {
+      "title": "Připraveni proměnit svou třídu?",
+      "subtitle": "Připojte se k učitelům, kteří již šetří hodiny každý týden díky generování testů s pomocí AI.",
+      "button": "Začněte zdarma"
+    },
+    "contact": {
+      "title": "Kontaktujte nás",
+      "email": "info@checkmate.ink",
+      "phone": "+420 721 518 984"
+    },
+    "footer": {
+      "tagline": "Transformujeme vzdělávání pomocí hodnocení poháněných AI",
+      "copyright": "© 2025 CheckMate.ink"
+    }
+  }
+}

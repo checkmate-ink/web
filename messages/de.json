@@ -1,0 +1,276 @@
+{
+  "common": {
+    "appName": "Checkmate"
+  },
+  "dropZone": {
+    "title": "Datei hierher ziehen & ablegen",
+    "description": "PDF, DOC bis zu 10 MB",
+    "or": "oder",
+    "browse": "Dateien durchsuchen"
+  },
+  "tests": {
+    "nav": {
+      "createNew": "Neuen Test erstellen",
+      "back": "Zurück zur Startseite"
+    },
+    "loading": {
+      "progress": "Fortschritt",
+      "title": "Test wird generiert...",
+      "subtitle": "Dies kann einen Moment dauern",
+      "steps": {
+        "analyzing": "Ihre Anforderungen werden analysiert",
+        "generating": "Fragen werden generiert",
+        "reviewing": "Schwierigkeitsgrade werden überprüft",
+        "finalizing": "Test wird fertiggestellt"
+      }
+    },
+    "creation": {
+      "title": "Neuen Test erstellen",
+      "subtitle": "Konfigurieren Sie die Testeinstellungen, fügen Sie Fragenabschnitte hinzu und generieren Sie.",
+      "settingsTitle": "Testeinstellungen",
+      "subject": "Fach",
+      "subjectPlaceholder": "z. B. Biologie",
+      "language": "Sprache",
+      "difficulty": "Schwierigkeitsgrad",
+      "difficultyPlaceholder": "Mittel",
+      "sectionsTitle": "Fragenabschnitte",
+      "sectionLabel": "Abschnitt {number}",
+      "topic": "Thema",
+      "topicPlaceholder": "z. B. Photosynthese",
+      "questions": "Fragen",
+      "questionType": "Fragetyp",
+      "questionTypePlaceholder": "Fragetyp auswählen",
+      "addSection": "Abschnitt hinzufügen",
+      "summary": "{sections, plural, one {# Abschnitt} other {# Abschnitte}} · {questions} Fragen insgesamt",
+      "generate": "Test generieren",
+      "questionTypes": {
+        "MCQ_SINGLE": "Multiple Choice (Einzelauswahl)",
+        "MCQ_MULTIPLE": "Multiple Choice (Mehrfachauswahl)",
+        "OPEN_ENDED": "Offene Frage",
+        "TRUE_FALSE": "Richtig / Falsch",
+        "FILL_IN": "Lückentext",
+        "ORDERING": "Reihenfolge",
+        "PAIRS": "Zuordnung",
+        "CATEGORIZATION": "Kategorisierung",
+        "SHORT_ANSWER": "Kurzantwort",
+        "NUMERIC": "Numerisch"
+      }
+    },
+    "preview": {
+      "preview": "Vorschau",
+      "edit": "Bearbeiten",
+      "subtitle": "{count} Fragen · {difficulty} · {language}",
+      "sectionTitle": "Abschnitt {number}: {name}",
+      "exportPdf": "PDF exportieren",
+      "answer": "Antwort:",
+      "questionCount": "{count} Fragen",
+      "questionTypes": {
+        "MCQ_SINGLE": "Multiple Choice",
+        "MCQ_MULTIPLE": "Mehrfachauswahl",
+        "TRUE_FALSE": "Richtig / Falsch",
+        "FILL_IN": "Lückentext",
+        "OPEN_ENDED": "Offene Frage",
+        "SHORT_ANSWER": "Kurzantwort",
+        "ORDERING": "Reihenfolge",
+        "PAIRS": "Zuordnung",
+        "CATEGORIZATION": "Kategorisierung",
+        "NUMERIC": "Numerisch"
+      }
+    },
+    "edit": {
+      "addQuestion": "Frage hinzufügen",
+      "addOption": "Option hinzufügen",
+      "addItem": "Element hinzufügen",
+      "addPair": "Paar hinzufügen",
+      "addCategory": "Kategorie hinzufügen",
+      "addKeyword": "Hinzufügen",
+      "addAnswer": "Hinzufügen",
+      "correctAnswer": "Richtige Antwort:",
+      "expectedKeywords": "Erwartete Schlüsselwörter:",
+      "acceptedAnswers": "Akzeptierte Antworten:",
+      "answerOptions": "Antwortmöglichkeiten:",
+      "answer": "Antwort",
+      "tolerance": "Toleranz"
+    }
+  },
+  "landing": {
+    "nav": {
+      "logo": "checkmate.",
+      "features": "Funktionen",
+      "howItWorks": "So funktioniert's",
+      "about": "Über uns",
+      "partners": "Partner",
+      "cta": "Kostenlos testen"
+    },
+    "hero": {
+      "badge": "KI-gestützte Testerstellung",
+      "titleLine1": "Intelligentere Tests.",
+      "titleLine2": "Schnellere Bewertung.",
+      "titleLine3": "Besseres Lernen.",
+      "subtitle": "Checkmate hilft Lehrkräften bei Routineaufgaben, damit sie sich auf das konzentrieren können, was wirklich zählt — ihre Schüler.",
+      "cta": "Erstellen Sie Ihren ersten Test",
+      "tryItOut": "Probieren Sie es aus! Erstellen Sie Ihren ersten Test"
+    },
+    "testForm": {
+      "presetsLabel": "Schnellvorlagen",
+      "presetBiology": "Biologie-Quiz",
+      "presetEnglish": "Englische Grammatik",
+      "presetHistory": "Geschichte-Abschlusstest",
+      "presetMath": "Mathe-Übung",
+      "subject": "Fach",
+      "subjectPlaceholder": "z. B. Biologie",
+      "topic": "Thema",
+      "topicPlaceholder": "z. B. Photosynthese",
+      "language": "Sprache",
+      "languagePlaceholder": "z. B. Deutsch",
+      "difficulty": "Schwierigkeitsgrad",
+      "difficultyPlaceholder": "z. B. Mittel",
+      "questionType": "Fragetyp",
+      "questionTypePlaceholder": "z. B. Multiple Choice",
+      "presets": {
+        "biology": {
+          "subject": "Biologie",
+          "language": "Deutsch",
+          "topics": {
+            "photosynthesis": "Photosynthese",
+            "cellDivision": "Zellteilung"
+          }
+        },
+        "english": {
+          "subject": "Englische Grammatik",
+          "language": "Deutsch",
+          "topics": {
+            "presentTenses": "Gegenwartszeiten"
+          }
+        },
+        "history": {
+          "subject": "Geschichte",
+          "language": "Deutsch",
+          "topics": {
+            "worldWarII": "Zweiter Weltkrieg"
+          }
+        },
+        "math": {
+          "subject": "Mathematik",
+          "language": "Deutsch",
+          "topics": {
+            "quadraticEquations": "Quadratische Gleichungen"
+          }
+        }
+      },
+      "advanced": "Erweiterte Konfiguration",
+      "generate": "Test generieren",
+      "difficulties": {
+        "beginner": "Anfänger",
+        "intermediate": "Mittel",
+        "advanced": "Fortgeschritten"
+      },
+      "questionTypes": {
+        "MCQ_SINGLE": "Multiple Choice (Einzelauswahl)",
+        "MCQ_MULTIPLE": "Multiple Choice (Mehrfachauswahl)",
+        "OPEN_ENDED": "Offene Frage",
+        "TRUE_FALSE": "Richtig / Falsch",
+        "FILL_IN": "Lückentext",
+        "ORDERING": "Reihenfolge",
+        "PAIRS": "Zuordnung",
+        "CATEGORIZATION": "Kategorisierung",
+        "SHORT_ANSWER": "Kurzantwort",
+        "NUMERIC": "Numerisch"
+      }
+    },
+    "why": {
+      "title": "Warum Checkmate?",
+      "subtitle": "Unterrichten ist komplex. Wir machen es einfacher.",
+      "saveHoursTitle": "Stunden pro Woche sparen",
+      "saveHoursDesc": "Sparen Sie jede Woche Stunden mit KI-generierten Tests aus Ihren eigenen Materialien.",
+      "analyticsTitle": "Sofortige Analytik",
+      "analyticsDesc": "Analysieren Sie den Fortschritt der Schüler mit einem Klick. Erkennen Sie, wer herausragend ist und wer Hilfe braucht.",
+      "potentialTitle": "Schülerpotenzial",
+      "potentialDesc": "Helfen Sie jedem Schüler, sein volles Potenzial mit personalisiertem Feedback und Lernwerkzeugen zu entfalten."
+    },
+    "features": {
+      "title": "Von der Testerstellung zur Schülerförderung",
+      "createTitle": "Tests sofort erstellen",
+      "createDesc": "Generieren Sie vollständige, hochwertige Tests aus Ihren eigenen Materialien. Keine Vorlagen, keine Wiederholungen.",
+      "gradingTitle": "Automatische Bewertung",
+      "gradingDesc": "Bewertet Schülerantworten in Sekunden, identifiziert häufige Fehler und liefert klare Erklärungen.",
+      "analyticsTitle": "Ergebnisse & Analytik",
+      "analyticsDesc": "Visualisieren Sie Trends über Schüler und Klassen hinweg. Erkennen Sie, wer herausragend ist, wer Hilfe braucht und wo Anpassungen nötig sind.",
+      "studyTitle": "Intelligenter Lernassistent",
+      "studyDesc": "Hilft Schülern, klüger zu lernen — mit verständlichen Erklärungen, Karteikarten und behutsamer Anleitung im eigenen Tempo."
+    },
+    "marketplace": {
+      "badge": "Community",
+      "title": "Test-Marktplatz",
+      "subtitleLine1": "Durchsuchen Sie fertige Tests von Lehrkräften.",
+      "subtitleLine2": "Verwenden Sie sie direkt oder passen Sie sie für Ihren Unterricht an.",
+      "card1Badge": "Biologie",
+      "card1Title": "Photosynthese & Zellenergie",
+      "card1Meta": "15 Fragen · Mittel · Multiple Choice",
+      "card1Author": "von Frau Johnson",
+      "card2Badge": "Englisch",
+      "card2Title": "Quiz zu Gegenwartszeiten",
+      "card2Meta": "10 Fragen · Anfänger · Lückentext",
+      "card2Author": "von Herrn Davis",
+      "card3Badge": "Geschichte",
+      "card3Title": "Zweiter Weltkrieg: Ursachen & Auswirkungen",
+      "card3Meta": "20 Fragen · Fortgeschritten · Offene Fragen",
+      "card3Author": "von Dr. Martinez",
+      "browseAll": "Alle Tests durchsuchen"
+    },
+    "howItWorks": {
+      "title": "Einfach. Leistungsstark. Lehrerfreundlich.",
+      "subtitle": "Checkmate fügt sich nahtlos in Ihren bestehenden Arbeitsablauf ein.",
+      "step1Title": "Test erstellen",
+      "step1Desc": "Laden Sie Ihre Materialien hoch oder beschreiben Sie, was Sie brauchen — die KI erstellt einen Test passend zu Ihrem Inhalt.",
+      "step2Title": "Drucken oder teilen",
+      "step2Desc": "Digital oder auf Papier verteilen — was für Ihre Klasse am besten funktioniert.",
+      "step3Title": "KI bewertet",
+      "step3Desc": "Checkmate bewertet automatisch jede Antwort und hebt wichtige Muster hervor.",
+      "step4Title": "Personalisiertes Lernen",
+      "step4Desc": "Schüler erhalten individuelles Feedback, Erklärungen und adaptive Übungsaufgaben."
+    },
+    "team": {
+      "title": "Unser Team",
+      "subtitle": "Unterstützt von Investoren und Innovatoren, die unsere Mission teilen, entwickeln wir Checkmate in enger Zusammenarbeit mit tschechischen Pädagogen.",
+      "zarifName": "Zarif Abdalimov",
+      "zarifRole": "User Experience & Design",
+      "kayleeName": "Kaylee Reed",
+      "kayleeRole": "Infrastruktur & Betrieb",
+      "filipName": "Filip Ohanka",
+      "filipRole": "Geschäftsstrategie & Forschung",
+      "janName": "Jan Zabloudil",
+      "janRole": "Produktvision & Entwicklung"
+    },
+    "helpUs": {
+      "title": "Für Lehrer, unterstützt von Lehrern",
+      "subtitle": "Helfen Sie uns, ein Werkzeug für echte Klassenzimmer zu entwickeln.",
+      "cta": "Nehmen Sie an der 3-Minuten-Umfrage teil"
+    },
+    "partners": {
+      "title": "Unsere Partner",
+      "subtitle": "Mit Unterstützung von Theta Network, AWS und BlockJam bringen wir intelligentere Bildungstechnologie zum Leben.",
+      "label": "Technologiepartner"
+    },
+    "hackathon": {
+      "badge": "1. Platz Gewinner",
+      "title": "Erster Platz beim BlockJam Hackathon",
+      "description": "Unsere Reise begann beim BlockJam Hackathon, wo Checkmate den ersten Platz für sein Potenzial gewann, Bildung durch KI zu transformieren.",
+      "photoAlt": "Checkmate-Team beim BlockJam Hackathon"
+    },
+    "cta": {
+      "title": "Bereit, Ihren Unterricht zu verändern?",
+      "subtitle": "Schließen Sie sich Lehrkräften an, die bereits jede Woche Stunden mit KI-gestützter Testerstellung sparen.",
+      "button": "Kostenlos starten"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "email": "info@checkmate.ink",
+      "phone": "+420 721 518 984"
+    },
+    "footer": {
+      "tagline": "Bildung transformieren mit KI-gestützten Prüfungen",
+      "copyright": "© 2025 CheckMate.ink"
+    }
+  }
+}

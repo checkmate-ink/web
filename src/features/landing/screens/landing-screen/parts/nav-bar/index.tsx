@@ -1,13 +1,35 @@
 "use client";
 
-import { Sparkles } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
-import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Logo } from "@/features/landing/parts/logo";
+import { usePathname, useRouter } from "@/i18n/navigation";
+import { routing, type Locale } from "@/i18n/routing";
+
+const LOCALE_LABELS: Record<Locale, { flag: string; label: string }> = {
+  en: { flag: "🇬🇧", label: "English" },
+  cs: { flag: "🇨🇿", label: "Čeština" },
+  de: { flag: "🇩🇪", label: "Deutsch" },
+};
 
 export function NavBar() {
   const t = useTranslations("landing.nav");
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  function handleLocaleChange(value: string | null) {
+    if (value) {
+      router.replace(pathname, { locale: value as Locale });
+    }
+  }
 
   return (
     <nav className="flex h-[72px] w-full items-center justify-between px-20">
@@ -40,10 +62,23 @@ export function NavBar() {
         </a>
       </div>
 
-      <Button size="sm">
-        <Sparkles className="size-4.5" />
-        {t("cta")}
-      </Button>
+      <Select value={locale} onValueChange={handleLocaleChange}>
+        <SelectTrigger className="w-auto gap-2 border-0 py-2 text-sm font-medium">
+          <SelectValue>
+            {(value: string | null) => {
+              const { flag, label } = LOCALE_LABELS[(value as Locale) ?? "en"];
+              return `${flag} ${label}`;
+            }}
+          </SelectValue>
+        </SelectTrigger>
+        <SelectContent align="end">
+          {routing.locales.map((loc) => (
+            <SelectItem key={loc} value={loc}>
+              {LOCALE_LABELS[loc].flag} {LOCALE_LABELS[loc].label}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
     </nav>
   );
 }
