@@ -40,18 +40,20 @@ function Button({
   ...props
 }: ButtonPrimitive.Props & VariantProps<typeof buttonVariants>) {
   return (
-    <m.div
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.98 }}
-      transition={spring}
-      className="inline-flex"
-    >
-      <ButtonPrimitive
-        data-slot="button"
-        className={cn(buttonVariants({ variant, size, className }))}
-        {...props}
-      />
-    </m.div>
+    <div>
+      <m.div
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.98 }}
+        transition={spring}
+        className="inline-flex"
+      >
+        <ButtonPrimitive
+          data-slot="button"
+          className={cn(buttonVariants({ variant, size, className }))}
+          {...props}
+        />
+      </m.div>
+    </div>
   );
 }
 

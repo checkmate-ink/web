@@ -1,38 +1,26 @@
-import { cva } from "class-variance-authority";
-
-import type { components } from "@/lib/api/schema";
-
-type FillInQuestion = components["schemas"]["FillInQuestion"];
-
-const optionVariants = cva(
-  "flex flex-1 items-center justify-center rounded-md px-4 py-3 [&_span]:text-deep-brown [&_span]:text-sm",
-  {
-    variants: {
-      correct: {
-        true: "bg-light-olive [&_span]:font-semibold",
-        false: "bg-cream-background [&_span]:font-normal",
-      },
-    },
-  },
-);
+import { useTestEditMode } from "../../../../../../context";
+import type { EditableQuestion } from "../../../../../../types";
+import { FillInEdit } from "./parts/edit";
+import { FillInPreview } from "./parts/preview";
 
 interface FillInCardProps {
-  question: FillInQuestion;
+  question: EditableQuestion;
+  sectionIndex: number;
+  questionIndex: number;
 }
 
-export function FillInCard({ question }: FillInCardProps) {
-  return (
-    <div className="flex flex-wrap gap-2.5">
-      {question.options.map((option) => (
-        <div
-          key={option.label}
-          className={optionVariants({ correct: option.is_correct })}
-        >
-          <span>
-            {option.label}) {option.text}
-          </span>
-        </div>
-      ))}
-    </div>
-  );
+export function FillInCard({
+  question,
+  sectionIndex,
+  questionIndex,
+}: FillInCardProps) {
+  const { mode } = useTestEditMode();
+
+  if (mode === "edit") {
+    return (
+      <FillInEdit sectionIndex={sectionIndex} questionIndex={questionIndex} />
+    );
+  }
+
+  return <FillInPreview question={question} />;
 }

@@ -11,6 +11,7 @@ interface QuestionHeaderProps {
   questionText: string;
   questionType: QuestionType;
   numberColorClass: string;
+  compact?: boolean;
 }
 
 export function QuestionHeader({
@@ -18,6 +19,7 @@ export function QuestionHeader({
   questionText,
   questionType,
   numberColorClass,
+  compact,
 }: QuestionHeaderProps) {
   const t = useTranslations("tests.preview.questionTypes");
 
@@ -31,9 +33,11 @@ export function QuestionHeader({
       >
         {questionNumber}
       </div>
-      <p className="text-deep-brown text-md min-w-0 flex-1 font-medium">
-        {questionText}
-      </p>
+      {!compact && (
+        <p className="text-deep-brown text-md min-w-0 flex-1 font-medium">
+          {questionText}
+        </p>
+      )}
       <Badge variant={QUESTION_TYPE_BADGE[questionType]} className="shrink-0">
         {t(questionType)}
       </Badge>

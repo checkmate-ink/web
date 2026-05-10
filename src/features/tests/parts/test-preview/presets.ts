@@ -1,5 +1,19 @@
 import type { BadgeVariant, QuestionType } from "@/features/tests/types";
 
+import type { EditableQuestion } from "./types";
+
+export const QUESTION_DEFAULTS: Omit<EditableQuestion, "type" | "question"> = {
+  options: [],
+  is_true: false,
+  correct_keywords: [],
+  possible_answers: [],
+  ordering_items: [],
+  pair_items: [],
+  category_items: [],
+  answer: 0,
+  tolerance: 0,
+};
+
 export const QUESTION_TYPE_BADGE: Record<QuestionType, BadgeVariant> = {
   MCQ_SINGLE: "yellow",
   MCQ_MULTIPLE: "blue",

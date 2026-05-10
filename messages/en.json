@@ -76,6 +76,21 @@
         "CATEGORIZATION": "Categorization",
         "NUMERIC": "Numeric"
       }
+    },
+    "edit": {
+      "addQuestion": "Add Question",
+      "addOption": "Add option",
+      "addItem": "Add item",
+      "addPair": "Add pair",
+      "addCategory": "Add category",
+      "addKeyword": "Add",
+      "addAnswer": "Add",
+      "correctAnswer": "Correct answer:",
+      "expectedKeywords": "Expected keywords:",
+      "acceptedAnswers": "Accepted answers:",
+      "answerOptions": "Answer options:",
+      "answer": "Answer",
+      "tolerance": "Tolerance"
     }
   },
   "landing": {
