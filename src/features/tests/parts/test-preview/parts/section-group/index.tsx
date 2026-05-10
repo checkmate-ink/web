@@ -1,3 +1,17 @@
+import {
+  closestCenter,
+  DndContext,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+  type DragEndEvent,
+} from "@dnd-kit/core";
+import {
+  SortableContext,
+  sortableKeyboardCoordinates,
+  verticalListSortingStrategy,
+} from "@dnd-kit/sortable";
 import { Plus } from "lucide-react";
 import { useFieldArray } from "react-hook-form";
 import { useTranslations } from "next-intl";
@@ -11,6 +25,7 @@ import { SECTION_BADGE_VARIANTS, SECTION_NUMBER_COLORS } from "../../presets";
 import type { EditableGroup, TestEditValues } from "../../types";
 import { createDefaultQuestion } from "./presets";
 import { QuestionCard } from "./parts/question-card";
+import { SortableQuestionCard } from "./parts/sortable-question-card";
 
 interface SectionGroupProps {
   group: EditableGroup;
@@ -26,10 +41,17 @@ export function SectionGroup({
   const t = useTranslations();
   const { mode } = useTestEditMode();
   const { control } = useTestEditFormContext();
-  const { fields, append, remove } = useFieldArray<TestEditValues>({
+  const { fields, append, remove, move } = useFieldArray<TestEditValues>({
     control,
     name: `groups.${sectionIndex}.questions`,
   });
+
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    }),
+  );
 
   const badgeVariant =
     SECTION_BADGE_VARIANTS[sectionIndex % SECTION_BADGE_VARIANTS.length];
@@ -39,6 +61,17 @@ export function SectionGroup({
   function handleAddQuestion() {
     append(createDefaultQuestion(group.type));
   }
+
+  function handleDragEnd(event: DragEndEvent) {
+    const { active, over } = event;
+    if (over && active.id !== over.id) {
+      const oldIndex = fields.findIndex((f) => f.id === active.id);
+      const newIndex = fields.findIndex((f) => f.id === over.id);
+      move(oldIndex, newIndex);
+    }
+  }
+
+  const isEdit = mode === "edit";
 
   return (
     <div className="flex flex-col gap-5">
@@ -55,7 +88,7 @@ export function SectionGroup({
               count: group.questions.length,
             })}
           </Badge>
-          {mode === "edit" && (
+          {isEdit && (
             <Button
               type="button"
               variant="secondary"
@@ -69,17 +102,43 @@ export function SectionGroup({
         </div>
       </div>
       <div className="flex flex-col gap-4">
-        {fields.map((field, i) => (
-          <QuestionCard
-            key={field.id}
-            question={group.questions[i]}
-            questionNumber={startNumber + i}
-            numberColorClass={numberColor}
-            sectionIndex={sectionIndex}
-            questionIndex={i}
-            onDelete={() => remove(i)}
-          />
-        ))}
+        {isEdit ? (
+          <DndContext
+            sensors={sensors}
+            collisionDetection={closestCenter}
+            onDragEnd={handleDragEnd}
+          >
+            <SortableContext
+              items={fields.map((f) => f.id)}
+              strategy={verticalListSortingStrategy}
+            >
+              {fields.map((field, i) => (
+                <SortableQuestionCard
+                  key={field.id}
+                  id={field.id}
+                  question={group.questions[i]}
+                  questionNumber={startNumber + i}
+                  numberColorClass={numberColor}
+                  sectionIndex={sectionIndex}
+                  questionIndex={i}
+                  onDelete={() => remove(i)}
+                />
+              ))}
+            </SortableContext>
+          </DndContext>
+        ) : (
+          fields.map((field, i) => (
+            <QuestionCard
+              key={field.id}
+              question={group.questions[i]}
+              questionNumber={startNumber + i}
+              numberColorClass={numberColor}
+              sectionIndex={sectionIndex}
+              questionIndex={i}
+              onDelete={() => remove(i)}
+            />
+          ))
+        )}
       </div>
     </div>
   );

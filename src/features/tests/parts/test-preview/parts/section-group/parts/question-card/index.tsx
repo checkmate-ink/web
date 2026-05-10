@@ -1,3 +1,4 @@
+import type { useSortable } from "@dnd-kit/sortable";
 import { GripVertical, Trash2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -18,6 +19,8 @@ import { QuestionHeader } from "./parts/question-header";
 import { ShortAnswerCard } from "./parts/short-answer-card";
 import { TrueFalseCard } from "./parts/true-false-card";
 
+type UseSortableReturn = ReturnType<typeof useSortable>;
+
 interface QuestionCardProps {
   question: EditableQuestion;
   questionNumber: number;
@@ -25,6 +28,8 @@ interface QuestionCardProps {
   sectionIndex: number;
   questionIndex: number;
   onDelete: () => void;
+  dragHandleAttributes?: UseSortableReturn["attributes"];
+  dragHandleListeners?: UseSortableReturn["listeners"];
 }
 
 export function QuestionCard({
@@ -34,6 +39,8 @@ export function QuestionCard({
   sectionIndex,
   questionIndex,
   onDelete,
+  dragHandleAttributes,
+  dragHandleListeners,
 }: QuestionCardProps) {
   const { mode } = useTestEditMode();
   const { register } = useTestEditFormContext();
@@ -46,7 +53,16 @@ export function QuestionCard({
     return (
       <div className="flex w-full">
         <div className="flex w-10 shrink-0 items-start justify-center pt-6">
-          <GripVertical className="text-deep-brown/25 size-5 cursor-grab" />
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            className="text-deep-brown/25 size-8 cursor-grab"
+            {...dragHandleAttributes}
+            {...dragHandleListeners}
+          >
+            <GripVertical className="size-5" />
+          </Button>
         </div>
         <div className="border-deep-brown/4 flex min-w-0 flex-1 flex-col gap-4 rounded-2xl border bg-white p-6">
           <div className="flex items-center justify-between">
