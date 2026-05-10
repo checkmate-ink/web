@@ -8,6 +8,32 @@
     "or": "or",
     "browse": "Browse files"
   },
+  "marketplace": {
+    "title": "Test Marketplace",
+    "subtitle": "Browse ready-made tests created by teachers. Use them as-is or customize them to fit your classroom.",
+    "searchPlaceholder": "Search tests...",
+    "empty": "No tests found",
+    "createOwn": "Create Your Own Test",
+    "back": "Back to home",
+    "questions": "{count} questions",
+    "questionTypes": {
+      "MCQ_SINGLE": "Multiple Choice",
+      "MCQ_MULTIPLE": "Multi Select",
+      "TRUE_FALSE": "True / False",
+      "FILL_IN": "Fill in the Blank",
+      "OPEN_ENDED": "Open Ended",
+      "SHORT_ANSWER": "Short Answer",
+      "ORDERING": "Ordering",
+      "PAIRS": "Matching Pairs",
+      "CATEGORIZATION": "Categorization",
+      "NUMERIC": "Numeric"
+    },
+    "difficulties": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    }
+  },
   "tests": {
     "nav": {
       "createNew": "Create New Test",
@@ -204,18 +230,6 @@
       "title": "Test Marketplace",
       "subtitleLine1": "Browse ready-made tests created by teachers.",
       "subtitleLine2": "Use them as-is or customize them to fit your classroom.",
-      "card1Badge": "Biology",
-      "card1Title": "Photosynthesis & Cell Energy",
-      "card1Meta": "15 questions · Intermediate · Multiple Choice",
-      "card1Author": "by Mrs. Johnson",
-      "card2Badge": "English",
-      "card2Title": "Present Tenses Grammar Quiz",
-      "card2Meta": "10 questions · Beginner · Fill-in-the-blank",
-      "card2Author": "by Mr. Davis",
-      "card3Badge": "History",
-      "card3Title": "World War II: Causes & Effects",
-      "card3Meta": "20 questions · Advanced · Open-ended",
-      "card3Author": "by Dr. Martinez",
       "browseAll": "Browse all tests"
     },
     "howItWorks": {

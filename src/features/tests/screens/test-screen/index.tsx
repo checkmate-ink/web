@@ -20,7 +20,7 @@ export function TestScreen({ testId }: TestScreenProps) {
 
   return (
     <div className="bg-cream-background flex min-h-full flex-col">
-      <TestNav />
+      <TestNav showCreateNew={!!testId} />
       <main className="flex flex-1 justify-center py-10">
         <AnimatePresence mode="wait">
           {testId ? (

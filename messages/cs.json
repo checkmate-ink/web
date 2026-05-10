@@ -8,6 +8,32 @@
     "or": "nebo",
     "browse": "Procházet soubory"
   },
+  "marketplace": {
+    "title": "Tržiště testů",
+    "subtitle": "Procházejte hotové testy vytvořené učiteli. Použijte je tak, jak jsou, nebo si je přizpůsobte pro svou třídu.",
+    "searchPlaceholder": "Hledat testy...",
+    "empty": "Žádné testy nenalezeny",
+    "createOwn": "Vytvořit vlastní test",
+    "back": "Zpět na hlavní stránku",
+    "questions": "{count} otázek",
+    "questionTypes": {
+      "MCQ_SINGLE": "Výběr z možností",
+      "MCQ_MULTIPLE": "Více odpovědí",
+      "TRUE_FALSE": "Pravda / Nepravda",
+      "FILL_IN": "Doplňování",
+      "OPEN_ENDED": "Otevřené odpovědi",
+      "SHORT_ANSWER": "Krátká odpověď",
+      "ORDERING": "Řazení",
+      "PAIRS": "Přiřazování",
+      "CATEGORIZATION": "Kategorizace",
+      "NUMERIC": "Číselná odpověď"
+    },
+    "difficulties": {
+      "beginner": "Začátečník",
+      "intermediate": "Středně pokročilý",
+      "advanced": "Pokročilý"
+    }
+  },
   "tests": {
     "nav": {
       "createNew": "Vytvořit nový test",
@@ -204,18 +230,6 @@
       "title": "Tržiště testů",
       "subtitleLine1": "Procházejte hotové testy vytvořené učiteli.",
       "subtitleLine2": "Použijte je tak, jak jsou, nebo si je přizpůsobte pro svou třídu.",
-      "card1Badge": "Biologie",
-      "card1Title": "Fotosyntéza a buněčná energie",
-      "card1Meta": "15 otázek · Středně pokročilý · Výběr z možností",
-      "card1Author": "od paní Johnsonové",
-      "card2Badge": "Angličtina",
-      "card2Title": "Kvíz na přítomné časy",
-      "card2Meta": "10 otázek · Začátečník · Doplňování",
-      "card2Author": "od pana Davise",
-      "card3Badge": "Dějepis",
-      "card3Title": "Druhá světová válka: příčiny a důsledky",
-      "card3Meta": "20 otázek · Pokročilý · Otevřené odpovědi",
-      "card3Author": "od Dr. Martineze",
       "browseAll": "Procházet všechny testy"
     },
     "howItWorks": {

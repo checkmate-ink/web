@@ -7,7 +7,11 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/features/landing/parts/logo";
 
-export function TestNav() {
+interface TestNavProps {
+  showCreateNew?: boolean;
+}
+
+export function TestNav({ showCreateNew }: TestNavProps) {
   const t = useTranslations("tests.nav");
 
   return (
@@ -16,12 +20,14 @@ export function TestNav() {
         <Logo className="text-2xl" />
       </Link>
       <div className="flex items-center gap-4">
-        <Link href="/tests">
-          <Button variant="secondary" size="sm">
-            <Plus className="size-4.5" />
-            {t("createNew")}
-          </Button>
-        </Link>
+        {showCreateNew && (
+          <Link href="/tests">
+            <Button variant="secondary" size="sm">
+              <Plus className="size-4.5" />
+              {t("createNew")}
+            </Button>
+          </Link>
+        )}
         <Link href="/">
           <Button variant="ghost" size="sm">
             <ArrowLeft className="size-4.5" />

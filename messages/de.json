@@ -8,6 +8,32 @@
     "or": "oder",
     "browse": "Dateien durchsuchen"
   },
+  "marketplace": {
+    "title": "Test-Marktplatz",
+    "subtitle": "Durchsuchen Sie fertige Tests von Lehrkräften. Verwenden Sie sie direkt oder passen Sie sie für Ihren Unterricht an.",
+    "searchPlaceholder": "Tests suchen...",
+    "empty": "Keine Tests gefunden",
+    "createOwn": "Eigenen Test erstellen",
+    "back": "Zurück zur Startseite",
+    "questions": "{count} Fragen",
+    "questionTypes": {
+      "MCQ_SINGLE": "Multiple Choice",
+      "MCQ_MULTIPLE": "Mehrfachauswahl",
+      "TRUE_FALSE": "Richtig / Falsch",
+      "FILL_IN": "Lückentext",
+      "OPEN_ENDED": "Offene Fragen",
+      "SHORT_ANSWER": "Kurzantwort",
+      "ORDERING": "Reihenfolge",
+      "PAIRS": "Zuordnung",
+      "CATEGORIZATION": "Kategorisierung",
+      "NUMERIC": "Numerisch"
+    },
+    "difficulties": {
+      "beginner": "Anfänger",
+      "intermediate": "Mittel",
+      "advanced": "Fortgeschritten"
+    }
+  },
   "tests": {
     "nav": {
       "createNew": "Neuen Test erstellen",
@@ -204,18 +230,6 @@
       "title": "Test-Marktplatz",
       "subtitleLine1": "Durchsuchen Sie fertige Tests von Lehrkräften.",
       "subtitleLine2": "Verwenden Sie sie direkt oder passen Sie sie für Ihren Unterricht an.",
-      "card1Badge": "Biologie",
-      "card1Title": "Photosynthese & Zellenergie",
-      "card1Meta": "15 Fragen · Mittel · Multiple Choice",
-      "card1Author": "von Frau Johnson",
-      "card2Badge": "Englisch",
-      "card2Title": "Quiz zu Gegenwartszeiten",
-      "card2Meta": "10 Fragen · Anfänger · Lückentext",
-      "card2Author": "von Herrn Davis",
-      "card3Badge": "Geschichte",
-      "card3Title": "Zweiter Weltkrieg: Ursachen & Auswirkungen",
-      "card3Meta": "20 Fragen · Fortgeschritten · Offene Fragen",
-      "card3Author": "von Dr. Martinez",
       "browseAll": "Alle Tests durchsuchen"
     },
     "howItWorks": {
