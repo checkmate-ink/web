@@ -38,10 +38,10 @@ export function MeetTheTeam() {
   return (
     <section
       id="about"
-      className="flex w-full flex-col items-center gap-15 px-20 py-25"
+      className="flex w-full flex-col items-center gap-10 px-5 py-16 md:px-10 lg:gap-15 lg:px-20 lg:py-25"
     >
       <FadeIn className="flex flex-col items-center gap-4">
-        <h2 className="font-heading text-deep-brown text-center text-5xl font-bold">
+        <h2 className="font-heading text-deep-brown text-center text-3xl font-bold md:text-4xl lg:text-5xl">
           {t("title")}
         </h2>
         <p className="text-deep-brown/55 max-w-[650px] text-center text-lg leading-relaxed">
@@ -49,12 +49,12 @@ export function MeetTheTeam() {
         </p>
       </FadeIn>
 
-      <div className="flex w-full max-w-[1000px] gap-8">
+      <div className="grid w-full max-w-[1000px] grid-cols-2 gap-8 lg:grid-cols-4">
         {members.map((member, i) => (
           <FadeIn
             key={member.nameKey}
             delay={i * 0.1}
-            className="flex flex-1 flex-col items-center gap-4"
+            className="flex flex-col items-center gap-4"
           >
             <a
               href={member.linkedin}

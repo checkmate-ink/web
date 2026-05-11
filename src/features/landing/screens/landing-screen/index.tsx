@@ -1,5 +1,4 @@
 import { ContactUs } from "./parts/contact-us";
-import { CtaSection } from "./parts/cta-section";
 import { FeaturesSection } from "./parts/features-section";
 import { Footer } from "./parts/footer";
 import { Hackathon } from "./parts/hackathon";

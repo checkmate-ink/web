@@ -44,17 +44,17 @@ export function FeaturesSection() {
   return (
     <section
       id="features"
-      className="flex w-full flex-col items-center gap-15 px-20 py-25"
+      className="flex w-full flex-col items-center gap-10 px-5 py-16 md:px-10 lg:gap-15 lg:px-20 lg:py-25"
     >
       <FadeIn>
-        <h2 className="font-heading text-deep-brown max-w-[800px] text-center text-5xl font-bold">
+        <h2 className="font-heading text-deep-brown max-w-[800px] text-center text-3xl font-bold md:text-4xl lg:text-5xl">
           {t("title")}
         </h2>
       </FadeIn>
 
       <div className="flex w-full max-w-[1100px] flex-col gap-6">
         {features.map((row, i) => (
-          <div key={i} className="flex gap-6">
+          <div key={i} className="flex flex-col gap-6 md:flex-row">
             {row.map((feature, j) => (
               <FadeIn
                 key={feature.titleKey}

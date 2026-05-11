@@ -9,10 +9,10 @@ export function Footer() {
   const t = useTranslations("landing");
 
   return (
-    <footer className="border-deep-brown/7 flex w-full flex-col gap-6 border-t px-20 py-10">
-      <div className="flex items-center justify-between">
+    <footer className="border-deep-brown/7 flex w-full flex-col gap-4 border-t px-5 py-6 md:gap-6 md:px-10 md:py-10 lg:px-20">
+      <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
         <Logo className="text-xl" />
-        <div className="flex items-center gap-8">
+        <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-8">
           <a
             href={`mailto:${t("contact.email")}`}
             className="flex items-center gap-2 transition-opacity hover:opacity-70"
@@ -33,7 +33,7 @@ export function Footer() {
           </a>
         </div>
       </div>
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col items-center gap-2 sm:flex-row sm:justify-between">
         <span className="text-deep-brown/40 text-sm">
           {t("footer.tagline")}
         </span>

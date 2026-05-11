@@ -21,9 +21,9 @@ export function HelpUs() {
   const surveyHref = surveyLinks[locale] ?? surveyLinks.en;
 
   return (
-    <section className="flex w-full flex-col items-center px-20 py-20">
-      <FadeIn className="bg-cream-yellow flex w-full flex-col items-center gap-6 rounded-3xl px-15 py-16">
-        <h2 className="font-heading text-deep-brown text-center text-4xl font-bold">
+    <section className="flex w-full flex-col items-center px-5 py-12 md:px-10 lg:px-20 lg:py-20">
+      <FadeIn className="bg-cream-yellow flex w-full flex-col items-center gap-6 rounded-3xl px-6 py-10 md:px-15 md:py-16">
+        <h2 className="font-heading text-deep-brown text-center text-2xl font-bold md:text-4xl">
           {t("title")}
         </h2>
         <p className="text-deep-brown/60 text-center text-lg">

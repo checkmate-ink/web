@@ -17,10 +17,10 @@ export function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="flex w-full flex-col items-center gap-15 px-20 py-25"
+      className="flex w-full flex-col items-center gap-10 px-5 py-16 md:px-10 lg:gap-15 lg:px-20 lg:py-25"
     >
       <FadeIn className="flex flex-col items-center gap-4">
-        <h2 className="font-heading text-deep-brown text-center text-5xl font-bold">
+        <h2 className="font-heading text-deep-brown text-center text-3xl font-bold md:text-4xl lg:text-5xl">
           {t("title")}
         </h2>
         <p className="text-deep-brown/60 text-center text-xl">
@@ -28,7 +28,7 @@ export function HowItWorks() {
         </p>
       </FadeIn>
 
-      <div className="flex w-full max-w-[1100px] gap-8">
+      <div className="flex w-full max-w-[1100px] flex-col gap-6 lg:flex-row lg:gap-8">
         {steps.map((step, i) => (
           <FadeIn
             key={step.num}

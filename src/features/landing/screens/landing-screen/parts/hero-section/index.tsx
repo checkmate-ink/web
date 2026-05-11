@@ -10,9 +10,9 @@ export function HeroSection() {
   const t = useTranslations("landing.hero");
 
   return (
-    <section className="flex w-full flex-col items-center gap-8 px-20 pt-20 pb-25">
+    <section className="flex w-full flex-col items-center gap-6 px-5 pt-10 pb-16 md:gap-8 md:px-10 md:pt-20 md:pb-25 lg:px-20">
       <FadeIn delay={0.1}>
-        <h1 className="font-heading text-deep-brown max-w-[900px] text-center text-[64px] leading-[1.1] font-bold">
+        <h1 className="font-heading text-deep-brown max-w-[900px] text-center text-4xl leading-[1.1] font-bold md:text-5xl lg:text-[64px]">
           {t("titleLine1")}
           <br />
           {t("titleLine2")}
@@ -22,7 +22,7 @@ export function HeroSection() {
       </FadeIn>
 
       <FadeIn delay={0.2}>
-        <p className="text-deep-brown/60 max-w-[620px] text-center text-xl leading-relaxed">
+        <p className="text-deep-brown/60 max-w-[620px] text-center text-base leading-relaxed md:text-xl">
           {t("subtitle")}
         </p>
       </FadeIn>

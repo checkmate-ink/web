@@ -1,84 +1,88 @@
 "use client";
 
-import { useLocale, useTranslations } from "next-intl";
+import { Menu } from "lucide-react";
+import { useState } from "react";
+import { useTranslations } from "next-intl";
 
+import { Button } from "@/components/ui/button";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { Logo } from "@/features/landing/parts/logo";
-import { usePathname, useRouter } from "@/i18n/navigation";
-import { routing, type Locale } from "@/i18n/routing";
 
-const LOCALE_LABELS: Record<Locale, { flag: string; label: string }> = {
-  en: { flag: "🇬🇧", label: "English" },
-  cs: { flag: "🇨🇿", label: "Čeština" },
-  de: { flag: "🇩🇪", label: "Deutsch" },
-};
+import { LanguageSelect } from "./parts/language-select";
 
 export function NavBar() {
   const t = useTranslations("landing.nav");
-  const locale = useLocale();
-  const router = useRouter();
-  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
 
-  function handleLocaleChange(value: string | null) {
-    if (value) {
-      router.replace(pathname, { locale: value as Locale });
-    }
-  }
+  const navLinks = [
+    { href: "#features", label: t("features") },
+    { href: "#how-it-works", label: t("howItWorks") },
+    { href: "#about", label: t("about") },
+    { href: "#partners", label: t("partners") },
+  ];
 
   return (
-    <nav className="flex h-[72px] w-full items-center justify-between px-20">
-      <Logo className="text-2xl" />
-
-      <div className="flex items-center gap-10">
-        <a
-          href="#features"
-          className="text-md text-deep-brown font-medium transition-opacity hover:opacity-70"
-        >
-          {t("features")}
-        </a>
-        <a
-          href="#how-it-works"
-          className="text-md text-deep-brown font-medium transition-opacity hover:opacity-70"
-        >
-          {t("howItWorks")}
-        </a>
-        <a
-          href="#about"
-          className="text-md text-deep-brown font-medium transition-opacity hover:opacity-70"
-        >
-          {t("about")}
-        </a>
-        <a
-          href="#partners"
-          className="text-md text-deep-brown font-medium transition-opacity hover:opacity-70"
-        >
-          {t("partners")}
-        </a>
+    <nav className="flex h-[72px] w-full items-center justify-between px-5 md:px-10 lg:px-20">
+      <div className="flex min-w-0 flex-1 items-center">
+        <Logo className="text-2xl" />
       </div>
 
-      <Select value={locale} onValueChange={handleLocaleChange}>
-        <SelectTrigger className="w-auto gap-2 border-0 py-2 text-sm font-medium">
-          <SelectValue>
-            {(value: string | null) => {
-              const { flag, label } = LOCALE_LABELS[(value as Locale) ?? "en"];
-              return `${flag} ${label}`;
-            }}
-          </SelectValue>
-        </SelectTrigger>
-        <SelectContent align="end">
-          {routing.locales.map((loc) => (
-            <SelectItem key={loc} value={loc}>
-              {LOCALE_LABELS[loc].flag} {LOCALE_LABELS[loc].label}
-            </SelectItem>
+      <div className="hidden items-center lg:flex">
+        {navLinks.map((link) => (
+          <a key={link.href} href={link.href}>
+            <Button variant="ghost" size="sm">
+              {link.label}
+            </Button>
+          </a>
+        ))}
+      </div>
+
+      <div className="hidden min-w-0 flex-1 justify-end lg:flex">
+        <LanguageSelect />
+      </div>
+
+      <Sheet open={open} onOpenChange={setOpen}>
+        <SheetTrigger
+          nativeButton={false}
+          render={
+            <Button
+              variant="ghost"
+              size="icon"
+              className="lg:hidden"
+              aria-label="Open menu"
+            />
+          }
+        >
+          <Menu className="size-5" />
+        </SheetTrigger>
+        <SheetContent side="right" className="bg-cream-background">
+          <SheetHeader>
+            <SheetTitle>{t("menu")}</SheetTitle>
+          </SheetHeader>
+          {navLinks.map((link) => (
+            <SheetClose
+              key={link.href}
+              nativeButton={false}
+              render={<a href={link.href} />}
+            >
+              <Button variant="ghost" className="w-full justify-start">
+                {link.label}
+              </Button>
+            </SheetClose>
           ))}
-        </SelectContent>
-      </Select>
+          <SheetFooter className="border-t">
+            <LanguageSelect />
+          </SheetFooter>
+        </SheetContent>
+      </Sheet>
     </nav>
   );
 }

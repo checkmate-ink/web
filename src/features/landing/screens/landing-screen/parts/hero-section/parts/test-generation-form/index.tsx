@@ -114,7 +114,7 @@ export function TestGenerationForm() {
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className="shadow-card flex w-full max-w-[1000px] flex-col gap-6 rounded-3xl bg-white p-8"
+              className="shadow-card flex w-full max-w-[1000px] flex-col gap-6 rounded-3xl bg-white p-5 md:p-8"
             >
               <div className="flex flex-col gap-2.5">
                 <span className="text-2xs text-deep-brown/45 font-medium">
@@ -125,7 +125,7 @@ export function TestGenerationForm() {
 
               <hr className="border-deep-brown/5" />
 
-              <div className="flex gap-5">
+              <div className="flex flex-col gap-5 md:flex-row">
                 <FormField
                   control={form.control}
                   name="subject"
@@ -160,7 +160,7 @@ export function TestGenerationForm() {
                 />
               </div>
 
-              <div className="flex gap-5">
+              <div className="flex flex-col gap-5 md:flex-row">
                 <FormField
                   control={form.control}
                   name="language"
@@ -216,7 +216,7 @@ export function TestGenerationForm() {
                 />
               </div>
 
-              <div className="flex gap-5">
+              <div className="flex flex-col gap-5 md:flex-row">
                 <FormField
                   control={form.control}
                   name="questionType"
@@ -256,7 +256,7 @@ export function TestGenerationForm() {
                 />
               </div>
 
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <Link href="/tests">
                   <Button
                     type="button"

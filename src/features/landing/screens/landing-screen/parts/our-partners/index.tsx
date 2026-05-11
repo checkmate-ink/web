@@ -6,10 +6,26 @@ import { useTranslations } from "next-intl";
 import { FadeIn } from "../fade-in";
 
 const partners = [
-  { name: "BlockJam", image: "/images/sponzors/block-jam.png", href: "https://theta-euro.com/block-jam/" },
-  { name: "Theta EdgeCloud", image: "/images/sponzors/theta-edge-cloud.png", href: "https://www.thetaedgecloud.com/" },
-  { name: "Theta Network", image: "/images/sponzors/theta.png", href: "https://www.thetatoken.org/" },
-  { name: "AWS", image: "/images/sponzors/aws.png", href: "https://aws.amazon.com/" },
+  {
+    name: "BlockJam",
+    image: "/images/sponzors/block-jam.png",
+    href: "https://theta-euro.com/block-jam/",
+  },
+  {
+    name: "Theta EdgeCloud",
+    image: "/images/sponzors/theta-edge-cloud.png",
+    href: "https://www.thetaedgecloud.com/",
+  },
+  {
+    name: "Theta Network",
+    image: "/images/sponzors/theta.png",
+    href: "https://www.thetatoken.org/",
+  },
+  {
+    name: "AWS",
+    image: "/images/sponzors/aws.png",
+    href: "https://aws.amazon.com/",
+  },
 ];
 
 export function OurPartners() {
@@ -18,10 +34,10 @@ export function OurPartners() {
   return (
     <section
       id="partners"
-      className="flex w-full flex-col items-center gap-12 px-20 py-25"
+      className="flex w-full flex-col items-center gap-8 px-5 py-16 md:gap-12 md:px-10 lg:px-20 lg:py-25"
     >
       <FadeIn className="flex flex-col items-center gap-4">
-        <h2 className="font-heading text-deep-brown text-center text-5xl font-bold">
+        <h2 className="font-heading text-deep-brown text-center text-3xl font-bold md:text-4xl lg:text-5xl">
           {t("title")}
         </h2>
         <p className="text-deep-brown/55 max-w-[600px] text-center text-lg leading-relaxed">
@@ -35,13 +51,9 @@ export function OurPartners() {
         </span>
       </FadeIn>
 
-      <div className="flex w-full max-w-[1000px] items-center justify-center gap-6">
+      <div className="grid w-full max-w-[1000px] grid-cols-2 gap-4 md:gap-6 lg:grid-cols-4">
         {partners.map((partner, i) => (
-          <FadeIn
-            key={partner.name}
-            delay={i * 0.1}
-            className="flex-1"
-          >
+          <FadeIn key={partner.name} delay={i * 0.1} className="">
             <a
               href={partner.href}
               target="_blank"

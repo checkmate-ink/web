@@ -32,9 +32,9 @@ export function WhyCheckmate() {
   const t = useTranslations("landing.why");
 
   return (
-    <section className="flex w-full flex-col items-center gap-15 px-20 py-25">
+    <section className="flex w-full flex-col items-center gap-10 px-5 py-16 md:px-10 lg:gap-15 lg:px-20 lg:py-25">
       <FadeIn className="flex flex-col items-center gap-4">
-        <h2 className="font-heading text-deep-brown text-center text-5xl font-bold">
+        <h2 className="font-heading text-deep-brown text-center text-3xl font-bold md:text-4xl lg:text-5xl">
           {t("title")}
         </h2>
         <p className="text-deep-brown/60 text-center text-xl">
@@ -42,7 +42,7 @@ export function WhyCheckmate() {
         </p>
       </FadeIn>
 
-      <div className="flex w-full max-w-[1100px] gap-10">
+      <div className="flex w-full max-w-[1100px] flex-col gap-6 md:flex-row md:gap-10">
         {benefits.map((benefit, i) => (
           <FadeIn
             key={benefit.titleKey}
