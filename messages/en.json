@@ -117,6 +117,11 @@
       "answerOptions": "Answer options:",
       "answer": "Answer",
       "tolerance": "Tolerance"
+    },
+    "pdf": {
+      "nameLabel": "Name:",
+      "dateLabel": "Date:",
+      "items": "Items:"
     }
   },
   "landing": {

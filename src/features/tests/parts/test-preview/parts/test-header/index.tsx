@@ -1,6 +1,6 @@
 "use client";
 
-import { Download, Eye, Pencil } from "lucide-react";
+import { Download, Eye, Loader, Pencil } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
@@ -9,6 +9,7 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
 import { useTestEditMode } from "../../context";
 import { useTestEditFormContext } from "../../hooks/use-test-edit-form";
+import { useGeneratePdf } from "./hooks/use-generate-pdf";
 
 interface TestHeaderProps {
   totalQuestions: number;
@@ -17,7 +18,8 @@ interface TestHeaderProps {
 export function TestHeader({ totalQuestions }: TestHeaderProps) {
   const t = useTranslations();
   const { mode, setMode } = useTestEditMode();
-  const { register, watch } = useTestEditFormContext();
+  const { register, watch, getValues } = useTestEditFormContext();
+  const { generate, isGenerating } = useGeneratePdf();
   const title = watch("title");
   const difficulty = watch("difficulty");
   const language = watch("language");
@@ -33,6 +35,22 @@ export function TestHeader({ totalQuestions }: TestHeaderProps) {
     if (next === "preview" || next === "edit") {
       setMode(next);
     }
+  }
+
+  async function handleExportPdf() {
+    const data = getValues();
+    await generate(data, {
+      nameLabel: t("tests.pdf.nameLabel"),
+      dateLabel: t("tests.pdf.dateLabel"),
+      items: t("tests.pdf.items"),
+      subtitle: t("tests.preview.subtitle", {
+        count: totalQuestions,
+        difficulty: t(`landing.testForm.difficulties.${data.difficulty}`),
+        language: data.language,
+      }),
+      sectionTitle: (index, name) =>
+        t("tests.preview.sectionTitle", { number: index + 1, name }),
+    });
   }
 
   return (
@@ -62,8 +80,12 @@ export function TestHeader({ totalQuestions }: TestHeaderProps) {
               {t("tests.preview.edit")}
             </ToggleGroupItem>
           </ToggleGroup>
-          <Button>
-            <Download />
+          <Button onClick={handleExportPdf} disabled={isGenerating}>
+            {isGenerating ? (
+              <Loader className="animate-spin" />
+            ) : (
+              <Download />
+            )}
             {t("tests.preview.exportPdf")}
           </Button>
         </div>
