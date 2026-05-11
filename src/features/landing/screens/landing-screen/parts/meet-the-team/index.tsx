@@ -10,18 +10,26 @@ const members = [
     nameKey: "zarifName",
     roleKey: "zarifRole",
     avatar: "/images/team/zarif.png",
+    linkedin: "https://www.linkedin.com/in/zarif-abdalimov/",
   },
   {
     nameKey: "kayleeName",
     roleKey: "kayleeRole",
     avatar: "/images/team/kaylee.png",
+    linkedin: "https://www.linkedin.com/in/kiwipetal/",
   },
   {
     nameKey: "filipName",
     roleKey: "filipRole",
     avatar: "/images/team/filip.png",
+    linkedin: "https://www.linkedin.com/in/filip-ohanka-bb1419200/",
   },
-  { nameKey: "janName", roleKey: "janRole", avatar: "/images/team/jan.png" },
+  {
+    nameKey: "janName",
+    roleKey: "janRole",
+    avatar: "/images/team/jan.png",
+    linkedin: "https://www.linkedin.com/in/jan-zabloudil/",
+  },
 ] as const;
 
 export function MeetTheTeam() {
@@ -48,19 +56,26 @@ export function MeetTheTeam() {
             delay={i * 0.1}
             className="flex flex-1 flex-col items-center gap-4"
           >
-            <Image
-              src={member.avatar}
-              alt={t(member.nameKey)}
-              width={120}
-              height={120}
-              className="size-30 rounded-full object-cover"
-            />
-            <h3 className="font-heading text-deep-brown text-center text-lg font-semibold">
-              {t(member.nameKey)}
-            </h3>
-            <p className="text-deep-brown/50 text-center text-sm">
-              {t(member.roleKey)}
-            </p>
+            <a
+              href={member.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center gap-4"
+            >
+              <Image
+                src={member.avatar}
+                alt={t(member.nameKey)}
+                width={120}
+                height={120}
+                className="size-30 rounded-full object-cover"
+              />
+              <h3 className="font-heading text-deep-brown text-center text-lg font-semibold">
+                {t(member.nameKey)}
+              </h3>
+              <p className="text-deep-brown/50 text-center text-sm">
+                {t(member.roleKey)}
+              </p>
+            </a>
           </FadeIn>
         ))}
       </div>

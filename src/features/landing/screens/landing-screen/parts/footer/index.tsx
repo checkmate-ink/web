@@ -38,7 +38,7 @@ export function Footer() {
           {t("footer.tagline")}
         </span>
         <span className="text-deep-brown/40 text-sm">
-          {t("footer.copyright")}
+          {t("footer.copyright", { year: new Date().getFullYear() })}
         </span>
       </div>
     </footer>

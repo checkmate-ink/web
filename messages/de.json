@@ -2,6 +2,20 @@
   "common": {
     "appName": "Checkmate"
   },
+  "metadata": {
+    "landing": {
+      "title": "Checkmate — KI-gestützte Testerstellung",
+      "description": "Checkmate hilft Lehrkräften bei Routineaufgaben, damit sie sich auf das konzentrieren können, was wirklich zählt — ihre Schüler."
+    },
+    "tests": {
+      "title": "Tests — Checkmate",
+      "description": "Erstellen und verwalten Sie KI-generierte Tests mit Checkmate."
+    },
+    "marketplace": {
+      "title": "Marktplatz — Checkmate",
+      "description": "Durchsuchen Sie fertige Tests von Lehrkräften. Nutzen Sie sie direkt oder passen Sie sie für Ihren Unterricht an."
+    }
+  },
   "dropZone": {
     "title": "Datei hierher ziehen & ablegen",
     "description": "PDF, DOC bis zu 10 MB",
@@ -289,7 +303,7 @@
     },
     "footer": {
       "tagline": "Bildung transformieren mit KI-gestützten Prüfungen",
-      "copyright": "© 2025 CheckMate.ink"
+      "copyright": "© {year} CheckMate.ink"
     }
   }
 }

@@ -22,6 +22,13 @@ const besley = Besley({
 export const metadata: Metadata = {
   title: "Checkmate",
   description: "Checkmate — AI-Powered Test Generation",
+  openGraph: {
+    images: ["/images/banner.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/images/banner.png"],
+  },
 };
 
 export function generateStaticParams() {

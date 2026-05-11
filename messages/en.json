@@ -2,6 +2,20 @@
   "common": {
     "appName": "Checkmate"
   },
+  "metadata": {
+    "landing": {
+      "title": "Checkmate — AI-Powered Test Generation",
+      "description": "Checkmate helps teachers handle routine tasks so they can focus on what truly matters — their students."
+    },
+    "tests": {
+      "title": "Tests — Checkmate",
+      "description": "Create and manage AI-generated tests with Checkmate."
+    },
+    "marketplace": {
+      "title": "Marketplace — Checkmate",
+      "description": "Browse ready-made tests created by teachers. Use them as-is or customize them to fit your classroom."
+    }
+  },
   "dropZone": {
     "title": "Drag & drop your file here",
     "description": "PDF, DOC up to 10MB",
@@ -289,7 +303,7 @@
     },
     "footer": {
       "tagline": "Transforming education with AI-powered assessments",
-      "copyright": "© 2025 CheckMate.ink"
+      "copyright": "© {year} CheckMate.ink"
     }
   }
 }

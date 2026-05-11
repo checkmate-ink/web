@@ -21,11 +21,10 @@ export function LandingScreen() {
       <FeaturesSection />
       <Marketplace />
       <HowItWorks />
-      <MeetTheTeam />
       <HelpUs />
-      <OurPartners />
+      <MeetTheTeam />
       <Hackathon />
-      <CtaSection />
+      <OurPartners />
       <ContactUs />
       <Footer />
     </div>

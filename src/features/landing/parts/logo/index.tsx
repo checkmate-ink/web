@@ -1,5 +1,6 @@
-import { useTranslations } from "next-intl";
+import Image from "next/image";
 
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
 interface LogoProps {
@@ -7,11 +8,18 @@ interface LogoProps {
 }
 
 export function Logo({ className }: LogoProps) {
-  const t = useTranslations("landing.nav");
-
   return (
-    <span className={cn("font-heading text-deep-brown font-bold", className)}>
-      {t("logo")}
-    </span>
+    <Link href="/" className="flex flex-row gap-2">
+      <Image src="/images/logo.png" alt="" width={32} height={32} />
+      <span
+        className={cn(
+          "font-heading text-deep-brown",
+          className,
+        )}
+      >
+        check
+        <span className="font-bold italic">mate.</span>
+      </span>
+    </Link>
   );
 }

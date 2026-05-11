@@ -2,6 +2,20 @@
   "common": {
     "appName": "Checkmate"
   },
+  "metadata": {
+    "landing": {
+      "title": "Checkmate — Generování testů pomocí AI",
+      "description": "Checkmate pomáhá učitelům zvládnout rutinní úkoly, aby se mohli soustředit na to, co je skutečně důležité — své studenty."
+    },
+    "tests": {
+      "title": "Testy — Checkmate",
+      "description": "Vytvářejte a spravujte testy generované pomocí AI s Checkmate."
+    },
+    "marketplace": {
+      "title": "Tržiště — Checkmate",
+      "description": "Procházejte hotové testy vytvořené učiteli. Použijte je tak, jak jsou, nebo si je přizpůsobte pro svou třídu."
+    }
+  },
   "dropZone": {
     "title": "Přetáhněte soubor sem",
     "description": "PDF, DOC do 10 MB",
@@ -289,7 +303,7 @@
     },
     "footer": {
       "tagline": "Transformujeme vzdělávání pomocí hodnocení poháněných AI",
-      "copyright": "© 2025 CheckMate.ink"
+      "copyright": "© {year} CheckMate.ink"
     }
   }
 }
