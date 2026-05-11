@@ -23,7 +23,7 @@ export function PdfOrdering({ items }: PdfOrderingProps) {
     <View style={styles.container}>
       {shuffled.map((item, i) => (
         <Text key={i} style={styles.item}>
-          {"___"}   {item.text}
+          {"___"} {item.text}
         </Text>
       ))}
     </View>

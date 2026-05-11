@@ -27,7 +27,7 @@ export function PdfPairs({ pairs }: PdfPairsProps) {
       <View style={styles.column}>
         {leftItems.map((item, i) => (
           <Text key={i} style={styles.item}>
-            {"___"}   {item}
+            {"___"} {item}
           </Text>
         ))}
       </View>

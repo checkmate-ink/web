@@ -26,10 +26,7 @@ export function PdfQuestion({
       <Text style={styles.questionText}>
         {questionNumber}. {question.question}
       </Text>
-      <PdfQuestionContent
-        question={question}
-        itemsLabel={itemsLabel}
-      />
+      <PdfQuestionContent question={question} itemsLabel={itemsLabel} />
     </View>
   );
 }

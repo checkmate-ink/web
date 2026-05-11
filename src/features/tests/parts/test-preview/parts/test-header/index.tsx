@@ -81,11 +81,7 @@ export function TestHeader({ totalQuestions }: TestHeaderProps) {
             </ToggleGroupItem>
           </ToggleGroup>
           <Button onClick={handleExportPdf} disabled={isGenerating}>
-            {isGenerating ? (
-              <Loader className="animate-spin" />
-            ) : (
-              <Download />
-            )}
+            {isGenerating ? <Loader className="animate-spin" /> : <Download />}
             {t("tests.preview.exportPdf")}
           </Button>
         </div>

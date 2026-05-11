@@ -14,10 +14,7 @@ function sanitizeFilename(name: string): string {
     .replace(/\s+/g, "-");
 }
 
-export async function generateTestPdf(
-  data: TestEditValues,
-  labels: PdfLabels,
-) {
+export async function generateTestPdf(data: TestEditValues, labels: PdfLabels) {
   const blob = await pdf(<TestDocument data={data} labels={labels} />).toBlob();
 
   const url = URL.createObjectURL(blob);

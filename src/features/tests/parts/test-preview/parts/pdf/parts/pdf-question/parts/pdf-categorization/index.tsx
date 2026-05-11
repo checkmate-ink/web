@@ -18,7 +18,10 @@ export function PdfCategorization({
     <View>
       <View style={styles.table}>
         {categories.map((cat, i) => (
-          <View key={i} style={i === 0 ? styles.column : styles.columnWithBorder}>
+          <View
+            key={i}
+            style={i === 0 ? styles.column : styles.columnWithBorder}
+          >
             <View style={styles.headerCell}>
               <Text style={styles.headerText}>{cat.category}</Text>
             </View>
