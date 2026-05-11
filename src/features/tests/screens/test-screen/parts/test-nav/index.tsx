@@ -16,9 +16,7 @@ export function TestNav({ showCreateNew }: TestNavProps) {
 
   return (
     <nav className="border-deep-brown/5 flex h-16 w-full items-center justify-between border-b px-10">
-      <Link href="/">
-        <Logo className="text-2xl" />
-      </Link>
+      <Logo className="text-2xl" />
       <div className="flex items-center gap-4">
         {showCreateNew && (
           <Link href="/tests">
