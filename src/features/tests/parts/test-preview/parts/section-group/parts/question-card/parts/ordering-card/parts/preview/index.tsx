@@ -1,5 +1,3 @@
-import { GripVertical } from "lucide-react";
-
 import type { EditableQuestion } from "../../../../../../../../types";
 
 interface OrderingPreviewProps {
