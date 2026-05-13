@@ -26,7 +26,7 @@ export function TestCard({ test, index }: TestCardProps) {
 
   return (
     <Link href={`/tests/${test.id}`}>
-      <div className="border-deep-brown/4 hover:border-deep-brown/10 flex flex-col gap-4 rounded-[20px] border bg-white p-6 transition-colors">
+      <div className="border-deep-brown/4 hover:border-deep-brown/10 flex flex-col gap-4 rounded-[20px] border bg-white p-5 transition-colors md:p-6">
         <Badge variant={BADGE_VARIANTS[index % BADGE_VARIANTS.length]}>
           {subject}
         </Badge>
