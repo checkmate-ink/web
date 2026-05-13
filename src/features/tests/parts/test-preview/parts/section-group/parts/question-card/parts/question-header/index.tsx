@@ -24,7 +24,7 @@ export function QuestionHeader({
   const t = useTranslations("tests.preview.questionTypes");
 
   return (
-    <div className="flex w-full items-center gap-3">
+    <div className="flex w-full flex-wrap items-center gap-x-3 gap-y-2">
       <div
         className={cn(
           "text-deep-brown flex size-7 shrink-0 items-center justify-center rounded-full text-xs font-semibold",
@@ -34,11 +34,14 @@ export function QuestionHeader({
         {questionNumber}
       </div>
       {!compact && (
-        <p className="text-deep-brown text-md min-w-0 flex-1 font-medium">
+        <p className="text-deep-brown text-md order-last basis-full font-medium sm:order-0 sm:min-w-0 sm:flex-1 sm:basis-0">
           {questionText}
         </p>
       )}
-      <Badge variant={QUESTION_TYPE_BADGE[questionType]} className="shrink-0">
+      <Badge
+        variant={QUESTION_TYPE_BADGE[questionType]}
+        className="ml-auto shrink-0 sm:ml-0"
+      >
         {t(questionType)}
       </Badge>
     </div>

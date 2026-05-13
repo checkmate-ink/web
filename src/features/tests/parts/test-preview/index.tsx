@@ -31,7 +31,7 @@ export function TestPreview({ test }: TestPreviewProps) {
   return (
     <TestEditModeProvider value={{ mode, setMode }}>
       <Form {...form}>
-        <div className="flex w-190 flex-col gap-8">
+        <div className="flex w-full flex-col gap-6 md:gap-8">
           <TestHeader totalQuestions={totalQuestions} />
           {groups.map((group, i) => (
             <SectionGroup

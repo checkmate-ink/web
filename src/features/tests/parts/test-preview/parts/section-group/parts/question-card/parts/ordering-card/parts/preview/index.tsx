@@ -18,7 +18,6 @@ export function OrderingPreview({ question }: OrderingPreviewProps) {
           key={item.correct_index}
           className="border-deep-brown/4 bg-cream-background flex items-center gap-3 rounded-md border px-4 py-3"
         >
-          <GripVertical className="text-deep-brown/30 size-4 shrink-0" />
           <span className="text-deep-brown/33 text-sm font-semibold">
             {item.correct_index}.
           </span>

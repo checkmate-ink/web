@@ -26,7 +26,6 @@ export function CategorizationPreview({
                 key={item.value}
                 className="border-deep-brown/4 flex items-center gap-2 rounded-lg border bg-white px-3.5 py-2.5"
               >
-                <GripVertical className="text-deep-brown/25 size-3.5 shrink-0" />
                 <span className="text-deep-brown text-2xs">{item.value}</span>
               </div>
             ))}

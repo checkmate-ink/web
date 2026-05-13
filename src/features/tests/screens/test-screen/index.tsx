@@ -21,7 +21,7 @@ export function TestScreen({ testId }: TestScreenProps) {
   return (
     <div className="bg-cream-background flex min-h-full flex-col">
       <TestNav showCreateNew={!!testId} />
-      <main className="flex flex-1 justify-center py-10">
+      <main className="flex w-full flex-1 flex-col items-center px-5 py-6 md:px-10 md:py-10 lg:px-20">
         <AnimatePresence mode="wait">
           {testId ? (
             testQuery.isLoading ? (
@@ -38,6 +38,7 @@ export function TestScreen({ testId }: TestScreenProps) {
               testQuery.data && (
                 <m.div
                   key="preview"
+                  className="flex w-full max-w-190 flex-col"
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -12 }}
@@ -50,6 +51,7 @@ export function TestScreen({ testId }: TestScreenProps) {
           ) : (
             <m.div
               key="form"
+              className="flex w-full max-w-190 flex-col"
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}

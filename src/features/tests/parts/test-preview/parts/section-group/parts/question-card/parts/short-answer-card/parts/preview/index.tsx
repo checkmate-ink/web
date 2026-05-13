@@ -18,8 +18,8 @@ export function ShortAnswerPreview({ question }: ShortAnswerPreviewProps) {
           {t("answer")}
         </span>
       </div>
-      <div className="border-deep-brown/4 bg-cream-background flex h-11 items-center rounded-md border px-4">
-        <span className="text-deep-brown text-sm font-medium">
+      <div className="border-deep-brown/4 bg-cream-background flex min-h-11 items-center rounded-md border px-4 py-2">
+        <span className="text-deep-brown text-sm font-medium wrap-break-word">
           {question.possible_answers[0]?.value}
         </span>
       </div>

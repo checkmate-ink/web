@@ -60,16 +60,16 @@ export function TestHeader({ totalQuestions }: TestHeaderProps) {
           {mode === "edit" ? (
             <Input
               {...register("title")}
-              className="font-heading text-deep-brown border-deep-brown/12 h-auto rounded-xl border bg-white px-4 py-2 text-2xl font-semibold"
+              className="font-heading text-deep-brown border-deep-brown/12 h-auto rounded-xl border bg-white px-4 py-2 text-xl font-semibold md:text-2xl"
             />
           ) : (
-            <h1 className="font-heading text-deep-brown text-2xl font-semibold">
+            <h1 className="font-heading text-deep-brown text-xl font-semibold md:text-2xl">
               {title}
             </h1>
           )}
           <p className="text-deep-brown/50 text-sm">{subtitle}</p>
         </div>
-        <div className="flex w-full items-center gap-3">
+        <div className="flex w-full flex-col items-stretch gap-3 sm:flex-row sm:items-center">
           <ToggleGroup value={[mode]} onValueChange={handleToggle}>
             <ToggleGroupItem value="preview">
               <Eye />

@@ -43,7 +43,7 @@ export function SectionCard({ index, onRemove, canRemove }: SectionCardProps) {
   const colorClass = SECTION_COLORS[index % SECTION_COLORS.length];
 
   return (
-    <div className="border-deep-brown/4 flex w-full flex-col gap-4 rounded-2xl border bg-white p-6">
+    <div className="border-deep-brown/4 flex w-full flex-col gap-4 rounded-2xl border bg-white p-5 md:p-6">
       <div className="flex w-full items-center justify-between">
         <div className="flex items-center gap-2.5">
           <div
@@ -65,7 +65,7 @@ export function SectionCard({ index, onRemove, canRemove }: SectionCardProps) {
         )}
       </div>
 
-      <div className="flex gap-4">
+      <div className="flex flex-col gap-4 md:flex-row">
         <FormField
           control={control}
           name={`sections.${index}.topic`}

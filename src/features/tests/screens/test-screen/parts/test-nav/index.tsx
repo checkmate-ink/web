@@ -17,19 +17,19 @@ export function TestNav({ showCreateNew }: TestNavProps) {
   return (
     <nav className="border-deep-brown/5 flex h-[72px] w-full items-center justify-between border-b px-5 md:px-10 lg:px-20">
       <Logo className="text-2xl" />
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2 md:gap-4">
         {showCreateNew && (
           <Link href="/tests">
             <Button variant="secondary" size="sm">
               <Plus className="size-4.5" />
-              {t("createNew")}
+              <span className="hidden sm:inline">{t("createNew")}</span>
             </Button>
           </Link>
         )}
         <Link href="/">
           <Button variant="ghost" size="sm">
             <ArrowLeft className="size-4.5" />
-            {t("back")}
+            <span className="hidden sm:inline">{t("back")}</span>
           </Button>
         </Link>
       </div>

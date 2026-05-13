@@ -115,18 +115,18 @@ export function TestCreationForm() {
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className="flex w-190 flex-col items-center gap-8"
+              className="flex w-full flex-col items-center gap-6 md:gap-8"
             >
-              <div className="flex flex-col items-center gap-2">
-                <h1 className="font-heading text-deep-brown text-3xl-plus font-bold">
+              <div className="flex flex-col items-center gap-2 text-center">
+                <h1 className="font-heading text-deep-brown text-2xl font-bold md:text-3xl-plus">
                   {t("tests.creation.title")}
                 </h1>
-                <p className="text-deep-brown/50 text-base">
+                <p className="text-deep-brown/50 text-sm md:text-base">
                   {t("tests.creation.subtitle")}
                 </p>
               </div>
 
-              <div className="border-deep-brown/4 flex w-full flex-col gap-5 rounded-2xl border bg-white p-7">
+              <div className="border-deep-brown/4 flex w-full flex-col gap-5 rounded-2xl border bg-white p-5 md:p-7">
                 <h2 className="font-heading text-deep-brown text-xl font-semibold">
                   {t("tests.creation.settingsTitle")}
                 </h2>
@@ -138,7 +138,7 @@ export function TestCreationForm() {
                   }
                 />
 
-                <div className="flex gap-4">
+                <div className="flex flex-col gap-4 md:flex-row">
                   <FormField
                     control={form.control}
                     name="subject"
@@ -215,7 +215,7 @@ export function TestCreationForm() {
               </div>
 
               <div className="flex w-full items-center">
-                <h2 className="font-heading text-deep-brown text-xl-plus font-semibold">
+                <h2 className="font-heading text-deep-brown text-lg-plus font-semibold md:text-xl-plus">
                   {t("tests.creation.sectionsTitle")}
                 </h2>
               </div>
@@ -238,14 +238,18 @@ export function TestCreationForm() {
                 {t("tests.creation.addSection")}
               </Button>
 
-              <div className="flex w-full items-center justify-between">
-                <span className="text-deep-brown/45 text-sm">
+              <div className="flex w-full flex-col items-center justify-between gap-3 sm:flex-row">
+                <span className="text-deep-brown/45 text-center text-sm sm:text-left">
                   {t("tests.creation.summary", {
                     sections: fields.length,
                     questions: totalQuestions,
                   })}
                 </span>
-                <Button type="submit" disabled={createTest.isPending}>
+                <Button
+                  type="submit"
+                  className="w-full sm:w-auto"
+                  disabled={createTest.isPending}
+                >
                   {createTest.isPending ? (
                     <Sparkles className="animate-spin" />
                   ) : (

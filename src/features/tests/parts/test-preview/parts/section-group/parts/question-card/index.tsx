@@ -52,7 +52,7 @@ export function QuestionCard({
   if (isEdit) {
     return (
       <div className="flex w-full">
-        <div className="flex w-10 shrink-0 items-start justify-center pt-6">
+        <div className="flex w-8 shrink-0 items-start justify-center pt-6 md:w-10">
           <Button
             type="button"
             variant="ghost"
@@ -64,7 +64,7 @@ export function QuestionCard({
             <GripVertical className="size-5" />
           </Button>
         </div>
-        <div className="border-deep-brown/4 flex min-w-0 flex-1 flex-col gap-4 rounded-2xl border bg-white p-6">
+        <div className="border-deep-brown/4 flex min-w-0 flex-1 flex-col gap-4 rounded-2xl border bg-white p-5 md:p-6">
           <div className="flex items-center justify-between">
             <QuestionHeader
               questionNumber={questionNumber}
@@ -95,7 +95,7 @@ export function QuestionCard({
   }
 
   return (
-    <div className="border-deep-brown/4 flex flex-col gap-5 rounded-2xl border bg-white p-7">
+    <div className="border-deep-brown/4 flex flex-col gap-5 rounded-2xl border bg-white p-5 md:p-7">
       <QuestionHeader
         questionNumber={questionNumber}
         questionText={question.question}

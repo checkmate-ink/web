@@ -75,14 +75,14 @@ export function SectionGroup({
 
   return (
     <div className="flex flex-col gap-5">
-      <div className="flex w-full items-center justify-between">
-        <h2 className="font-heading text-deep-brown text-lg font-semibold">
+      <div className="flex w-full flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
+        <h2 className="font-heading text-deep-brown min-w-0 text-base font-semibold md:text-lg">
           {t("tests.preview.sectionTitle", {
             number: sectionIndex + 1,
             name: group.name,
           })}
         </h2>
-        <div className="flex items-center gap-2.5">
+        <div className="flex shrink-0 items-center gap-2.5">
           <Badge variant={badgeVariant}>
             {t("tests.preview.questionCount", {
               count: group.questions.length,
