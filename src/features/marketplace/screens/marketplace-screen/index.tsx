@@ -51,7 +51,7 @@ export function MarketplaceScreen() {
             <Store />
             {t("title")}
           </Badge>
-          <h1 className="font-heading text-deep-brown text-2xl font-bold md:text-3xl-plus">
+          <h1 className="font-heading text-deep-brown md:text-3xl-plus text-2xl font-bold">
             {t("title")}
           </h1>
           <p className="text-deep-brown/55 text-sm md:text-base">

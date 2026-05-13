@@ -118,7 +118,7 @@ export function TestCreationForm() {
               className="flex w-full flex-col items-center gap-6 md:gap-8"
             >
               <div className="flex flex-col items-center gap-2 text-center">
-                <h1 className="font-heading text-deep-brown text-2xl font-bold md:text-3xl-plus">
+                <h1 className="font-heading text-deep-brown md:text-3xl-plus text-2xl font-bold">
                   {t("tests.creation.title")}
                 </h1>
                 <p className="text-deep-brown/50 text-sm md:text-base">
@@ -215,7 +215,7 @@ export function TestCreationForm() {
               </div>
 
               <div className="flex w-full items-center">
-                <h2 className="font-heading text-deep-brown text-lg-plus font-semibold md:text-xl-plus">
+                <h2 className="font-heading text-deep-brown text-lg-plus md:text-xl-plus font-semibold">
                   {t("tests.creation.sectionsTitle")}
                 </h2>
               </div>
