@@ -51,7 +51,6 @@ export function NavBar() {
 
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger
-          nativeButton={false}
           render={
             <Button
               variant="ghost"
