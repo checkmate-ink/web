@@ -15,6 +15,7 @@ import {
 import { Plus } from "lucide-react";
 import { useFieldArray } from "react-hook-form";
 import { useTranslations } from "next-intl";
+import posthog from "posthog-js";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -60,6 +61,11 @@ export function SectionGroup({
 
   function handleAddQuestion() {
     append(createDefaultQuestion(group.type));
+    posthog.capture("test_question_added", {
+      question_type: group.type,
+      section_index: sectionIndex,
+      question_count: fields.length + 1,
+    });
   }
 
   function handleDragEnd(event: DragEndEvent) {

@@ -1,4 +1,7 @@
+"use client";
+
 import { useTranslations } from "next-intl";
+import posthog from "posthog-js";
 
 import { Badge } from "@/components/ui/badge";
 import { BADGE_VARIANTS } from "@/features/marketplace/presets";
@@ -28,9 +31,22 @@ export function MarketplaceCard({ test, index }: MarketplaceCardProps) {
     .join(", ");
   const meta = `${totalQuestions} questions · ${t(`testForm.difficulties.${difficulty_level}`)} · ${typeLabels}`;
 
+  function handleClick() {
+    posthog.capture("marketplace_test_clicked", {
+      test_id: test.id,
+      subject,
+      difficulty_level,
+      total_questions: totalQuestions,
+    });
+  }
+
   return (
     <FadeIn delay={index * 0.1} className="flex flex-1">
-      <Link href={`/tests/${test.id}`} className="flex flex-1">
+      <Link
+        href={`/tests/${test.id}`}
+        className="flex flex-1"
+        onClick={handleClick}
+      >
         <div className="border-deep-brown/4 hover:border-deep-brown/10 flex flex-1 flex-col gap-4 rounded-[20px] border bg-white p-6 transition-colors">
           <Badge variant={BADGE_VARIANTS[index % BADGE_VARIANTS.length]}>
             {subject}

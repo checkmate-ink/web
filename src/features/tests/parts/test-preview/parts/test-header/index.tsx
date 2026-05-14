@@ -2,6 +2,7 @@
 
 import { Download, Eye, Loader, Pencil } from "lucide-react";
 import { useTranslations } from "next-intl";
+import posthog from "posthog-js";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -34,11 +35,20 @@ export function TestHeader({ totalQuestions }: TestHeaderProps) {
     const next = value.find((v) => v !== mode);
     if (next === "preview" || next === "edit") {
       setMode(next);
+      posthog.capture("test_edit_mode_toggled", {
+        mode: next,
+      });
     }
   }
 
   async function handleExportPdf() {
     const data = getValues();
+    posthog.capture("test_pdf_exported", {
+      title: data.title,
+      difficulty: data.difficulty,
+      language: data.language,
+      total_questions: totalQuestions,
+    });
     await generate(data, {
       nameLabel: t("tests.pdf.nameLabel"),
       dateLabel: t("tests.pdf.dateLabel"),

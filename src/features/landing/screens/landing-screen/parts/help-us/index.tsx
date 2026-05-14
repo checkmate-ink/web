@@ -2,6 +2,7 @@
 
 import { ClipboardList } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
+import posthog from "posthog-js";
 
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
@@ -29,7 +30,12 @@ export function HelpUs() {
         <p className="text-deep-brown/60 text-center text-lg">
           {t("subtitle")}
         </p>
-        <Link href={surveyHref} target="_blank" rel="noopener noreferrer">
+        <Link
+          href={surveyHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => posthog.capture("survey_cta_clicked", { locale })}
+        >
           <Button>
             <ClipboardList />
             {t("cta")}

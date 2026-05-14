@@ -7,6 +7,7 @@ import { useRouter } from "@/i18n/navigation";
 import { useEffect } from "react";
 import { useFieldArray } from "react-hook-form";
 import { useTranslations } from "next-intl";
+import posthog from "posthog-js";
 
 import { Button } from "@/components/ui/button";
 import { DropZone } from "@/components/ui/drop-zone";
@@ -66,6 +67,16 @@ export function TestCreationForm() {
   );
 
   function onSubmit(data: TestCreationValues) {
+    posthog.capture("advanced_test_creation_submitted", {
+      subject: data.subject,
+      language: data.language,
+      difficulty: data.difficulty,
+      section_count: data.sections.length,
+      total_questions: data.sections.reduce(
+        (sum, s) => sum + (Number(s.amount) || 0),
+        0,
+      ),
+    });
     createTest.mutate({
       body: {
         test_request: {
@@ -131,11 +142,19 @@ export function TestCreationForm() {
                   {t("tests.creation.settingsTitle")}
                 </h2>
                 <PresetBadges
-                  onSelect={(key) =>
-                    form.reset(
-                      getPreset(key, (k) => t(`landing.testForm.presets.${k}`)),
-                    )
-                  }
+                  onSelect={(key) => {
+                    const preset = getPreset(key, (k) =>
+                      t(`landing.testForm.presets.${k}`),
+                    );
+                    form.reset(preset);
+                    posthog.capture("test_preset_selected", {
+                      preset_key: key,
+                      subject: preset.subject,
+                      difficulty: preset.difficulty,
+                      language: preset.language,
+                      source: "advanced",
+                    });
+                  }}
                 />
 
                 <div className="flex flex-col gap-4 md:flex-row">
@@ -232,7 +251,12 @@ export function TestCreationForm() {
               <Button
                 type="button"
                 variant="secondary"
-                onClick={() => append(DEFAULT_SECTION)}
+                onClick={() => {
+                  append(DEFAULT_SECTION);
+                  posthog.capture("test_section_added", {
+                    section_count: fields.length + 1,
+                  });
+                }}
               >
                 <Plus />
                 {t("tests.creation.addSection")}

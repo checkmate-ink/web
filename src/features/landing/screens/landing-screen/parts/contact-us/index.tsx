@@ -2,6 +2,7 @@
 
 import { Mail, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
+import posthog from "posthog-js";
 
 import { FadeIn } from "../fade-in";
 
@@ -23,6 +24,7 @@ export function ContactUs() {
         <a
           href={`mailto:${t("email")}`}
           className="flex items-center gap-2.5 transition-opacity hover:opacity-70"
+          onClick={() => posthog.capture("contact_email_clicked")}
         >
           <Mail className="text-deep-brown/50 size-5" />
           <span className="text-deep-brown text-base font-medium">
@@ -32,6 +34,7 @@ export function ContactUs() {
         <a
           href={`tel:${t("phone").replace(/\s/g, "")}`}
           className="flex items-center gap-2.5 transition-opacity hover:opacity-70"
+          onClick={() => posthog.capture("contact_phone_clicked")}
         >
           <Phone className="text-deep-brown/50 size-5" />
           <span className="text-deep-brown text-base font-medium">

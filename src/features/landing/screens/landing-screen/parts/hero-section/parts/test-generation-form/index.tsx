@@ -6,6 +6,7 @@ import * as m from "motion/react-client";
 import { Link, useRouter } from "@/i18n/navigation";
 import { useEffect } from "react";
 import { useTranslations } from "next-intl";
+import posthog from "posthog-js";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -59,9 +60,25 @@ export function TestGenerationForm() {
       difficulty: preset.difficulty,
       questionType: preset.sections[0].questionType,
     });
+    posthog.capture("test_preset_selected", {
+      preset_key: key,
+      subject: preset.subject,
+      difficulty: preset.difficulty,
+      language: preset.language,
+      question_type: preset.sections[0].questionType,
+      source: "landing",
+    });
   }
 
   function onSubmit(data: TestFormValues) {
+    posthog.capture("test_generation_submitted", {
+      subject: data.subject,
+      topic: data.topic,
+      language: data.language,
+      difficulty: data.difficulty,
+      question_type: data.questionType,
+      source: "landing",
+    });
     createTest.mutate({
       body: {
         test_request: {
