@@ -77,7 +77,7 @@ export function TestLoadingCard({
   }, [currentStep, stepDuration, totalSteps]);
 
   return (
-    <div className="border-deep-brown/4 flex w-full max-w-130 flex-col items-center gap-6 rounded-3xl border bg-white p-6 md:gap-8 md:p-10">
+    <div className="border-deep-brown/4 flex w-full max-w-130 flex-col items-center gap-6 rounded-3xl border bg-white p-6 md:max-w-190 md:gap-8 md:p-10">
       <div className="flex flex-col items-center gap-2">
         <Sparkles className="text-warm-yellow size-12 opacity-80" />
         <h2 className="font-heading text-deep-brown text-2xl font-semibold">
