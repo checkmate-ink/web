@@ -31,7 +31,7 @@
     "back": "Zurück zur Startseite",
     "questions": "{count} Fragen",
     "questionTypes": {
-      "MCQ_SINGLE": "Multiple Choice",
+      "MCQ_SINGLE": "Einzelauswahlfrage",
       "MCQ_MULTIPLE": "Mehrfachauswahl",
       "TRUE_FALSE": "Richtig / Falsch",
       "FILL_IN": "Lückentext",
@@ -84,7 +84,7 @@
       "summary": "{sections, plural, one {# Abschnitt} other {# Abschnitte}} · {questions} Fragen insgesamt",
       "generate": "Test generieren",
       "questionTypes": {
-        "MCQ_SINGLE": "Multiple Choice (Einzelauswahl)",
+        "MCQ_SINGLE": "Einzelauswahlfrage",
         "MCQ_MULTIPLE": "Multiple Choice (Mehrfachauswahl)",
         "OPEN_ENDED": "Offene Frage",
         "TRUE_FALSE": "Richtig / Falsch",
@@ -105,7 +105,7 @@
       "answer": "Antwort:",
       "questionCount": "{count} Fragen",
       "questionTypes": {
-        "MCQ_SINGLE": "Multiple Choice",
+        "MCQ_SINGLE": "Einzelauswahlfrage",
         "MCQ_MULTIPLE": "Mehrfachauswahl",
         "TRUE_FALSE": "Richtig / Falsch",
         "FILL_IN": "Lückentext",
@@ -212,7 +212,7 @@
         "advanced": "Fortgeschritten"
       },
       "questionTypes": {
-        "MCQ_SINGLE": "Multiple Choice (Einzelauswahl)",
+        "MCQ_SINGLE": "Einzelauswahlfrage",
         "MCQ_MULTIPLE": "Multiple Choice (Mehrfachauswahl)",
         "OPEN_ENDED": "Offene Frage",
         "TRUE_FALSE": "Richtig / Falsch",

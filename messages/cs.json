@@ -31,7 +31,7 @@
     "back": "Zpět na hlavní stránku",
     "questions": "{count} otázek",
     "questionTypes": {
-      "MCQ_SINGLE": "Výběr z možností",
+      "MCQ_SINGLE": "Otázka s jedním výběrem",
       "MCQ_MULTIPLE": "Více odpovědí",
       "TRUE_FALSE": "Pravda / Nepravda",
       "FILL_IN": "Doplňování",
@@ -84,7 +84,7 @@
       "summary": "{sections, plural, one {# sekce} few {# sekce} other {# sekcí}} · {questions} otázek celkem",
       "generate": "Vygenerovat test",
       "questionTypes": {
-        "MCQ_SINGLE": "Výběr z možností (jedna)",
+        "MCQ_SINGLE": "Otázka s jedním výběrem",
         "MCQ_MULTIPLE": "Výběr z možností (více)",
         "OPEN_ENDED": "Otevřená odpověď",
         "TRUE_FALSE": "Pravda / Nepravda",
@@ -105,7 +105,7 @@
       "answer": "Odpověď:",
       "questionCount": "{count} otázek",
       "questionTypes": {
-        "MCQ_SINGLE": "Výběr z možností",
+        "MCQ_SINGLE": "Otázka s jedním výběrem",
         "MCQ_MULTIPLE": "Vícenásobný výběr",
         "TRUE_FALSE": "Pravda / Nepravda",
         "FILL_IN": "Doplňování",
@@ -212,7 +212,7 @@
         "advanced": "Pokročilý"
       },
       "questionTypes": {
-        "MCQ_SINGLE": "Výběr z možností (jedna)",
+        "MCQ_SINGLE": "Otázka s jedním výběrem",
         "MCQ_MULTIPLE": "Výběr z možností (více)",
         "OPEN_ENDED": "Otevřená odpověď",
         "TRUE_FALSE": "Pravda / Nepravda",

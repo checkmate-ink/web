@@ -31,7 +31,7 @@
     "back": "Back to home",
     "questions": "{count} questions",
     "questionTypes": {
-      "MCQ_SINGLE": "Multiple Choice",
+      "MCQ_SINGLE": "Single Select Question",
       "MCQ_MULTIPLE": "Multi Select",
       "TRUE_FALSE": "True / False",
       "FILL_IN": "Fill in the Blank",
@@ -84,7 +84,7 @@
       "summary": "{sections, plural, one {# section} other {# sections}} · {questions} questions total",
       "generate": "Generate Test",
       "questionTypes": {
-        "MCQ_SINGLE": "Multiple Choice (Single)",
+        "MCQ_SINGLE": "Single Select Question",
         "MCQ_MULTIPLE": "Multiple Choice (Multiple)",
         "OPEN_ENDED": "Open Ended",
         "TRUE_FALSE": "True / False",
@@ -105,7 +105,7 @@
       "answer": "Answer:",
       "questionCount": "{count} questions",
       "questionTypes": {
-        "MCQ_SINGLE": "Multiple Choice",
+        "MCQ_SINGLE": "Single Select Question",
         "MCQ_MULTIPLE": "Multi Select",
         "TRUE_FALSE": "True / False",
         "FILL_IN": "Fill in the Blank",
@@ -212,7 +212,7 @@
         "advanced": "Advanced"
       },
       "questionTypes": {
-        "MCQ_SINGLE": "Multiple Choice (Single)",
+        "MCQ_SINGLE": "Single Select Question",
         "MCQ_MULTIPLE": "Multiple Choice (Multiple)",
         "OPEN_ENDED": "Open Ended",
         "TRUE_FALSE": "True / False",
