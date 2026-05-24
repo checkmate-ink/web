@@ -21,7 +21,11 @@ export function TestDocument({ data, labels }: TestDocumentProps) {
         <PdfHeader title={data.title} labels={labels} />
         <View style={styles.content}>
           {data.groups.map((group, groupIndex) => (
-            <View key={groupIndex} style={{ gap: 28 }}>
+            <View
+              key={groupIndex}
+              break={groupIndex > 0}
+              style={{ gap: 28 }}
+            >
               <PdfSection title={labels.sectionTitle(groupIndex, group.name)} />
               {group.questions.map((question, qIndex) => {
                 questionCounter++;
