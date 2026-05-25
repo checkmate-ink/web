@@ -12,11 +12,12 @@ import {
   sortableKeyboardCoordinates,
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
-import { Plus } from "lucide-react";
+import { Info, Plus } from "lucide-react";
 import { useFieldArray } from "react-hook-form";
 import { useTranslations } from "next-intl";
 import posthog from "posthog-js";
 
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
@@ -107,6 +108,12 @@ export function SectionGroup({
           )}
         </div>
       </div>
+      {(group.type === "ORDERING" || group.type === "PAIRS") && (
+        <Alert variant="info">
+          <Info />
+          <AlertDescription>{t("tests.preview.pdfShuffleNote")}</AlertDescription>
+        </Alert>
+      )}
       <div className="flex flex-col gap-4">
         {isEdit ? (
           <DndContext

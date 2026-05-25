@@ -133,6 +133,7 @@
       "saveToBrowser": "Save to Browser",
       "answer": "Answer:",
       "questionCount": "{count} questions",
+      "pdfShuffleNote": "When exported to PDF, the order of the items will be shuffled.",
       "questionTypes": {
         "MCQ_SINGLE": "Single Select Question",
         "MCQ_MULTIPLE": "Multi Select",

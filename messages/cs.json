@@ -133,6 +133,7 @@
       "saveToBrowser": "Uložit do prohlížeče",
       "answer": "Odpověď:",
       "questionCount": "{count} otázek",
+      "pdfShuffleNote": "Při exportu do PDF bude pořadí položek zamícháno.",
       "questionTypes": {
         "MCQ_SINGLE": "Otázka s jedním výběrem",
         "MCQ_MULTIPLE": "Vícenásobný výběr",

@@ -133,6 +133,7 @@
       "saveToBrowser": "Im Browser speichern",
       "answer": "Antwort:",
       "questionCount": "{count} Fragen",
+      "pdfShuffleNote": "Beim Export als PDF wird die Reihenfolge der Elemente gemischt.",
       "questionTypes": {
         "MCQ_SINGLE": "Einzelauswahlfrage",
         "MCQ_MULTIPLE": "Mehrfachauswahl",
