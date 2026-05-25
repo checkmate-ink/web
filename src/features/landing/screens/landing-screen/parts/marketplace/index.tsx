@@ -21,7 +21,10 @@ export function Marketplace() {
   const tests = data?.items ?? [];
 
   return (
-    <section className="flex w-full flex-col items-center gap-8 px-5 py-16 md:gap-12 md:px-10 lg:px-20 lg:py-25">
+    <section
+      id="marketplace"
+      className="flex w-full flex-col items-center gap-8 px-5 py-16 md:gap-12 md:px-10 lg:px-20 lg:py-25"
+    >
       <FadeIn className="flex flex-col items-center gap-5">
         <Badge variant="green" hasIcon>
           <Store />
