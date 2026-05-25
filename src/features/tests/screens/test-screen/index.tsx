@@ -19,7 +19,7 @@ export function TestScreen({ testId }: TestScreenProps) {
   const testQuery = useTestPollingQuery(testId);
 
   return (
-    <div className="bg-cream-background flex min-h-full flex-col">
+    <div className="bg-cream-background flex min-h-svh flex-col">
       <TestNav showCreateNew={!!testId} />
       <main className="flex w-full flex-1 flex-col items-center px-5 py-6 md:px-10 md:py-10 lg:px-20">
         <AnimatePresence mode="wait">

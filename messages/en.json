@@ -51,7 +51,35 @@
   "tests": {
     "nav": {
       "createNew": "Create New Test",
-      "back": "Back to home"
+      "back": "Back to home",
+      "savedTests": "Saved Tests"
+    },
+    "saveDialog": {
+      "title": "Save Test Locally",
+      "description": "Your test will be saved to your browser's local storage. You can access it anytime from this device without an account.",
+      "warning": "Data is stored on this device only and is not synced across devices. Clearing your browser data will permanently delete all saved tests.",
+      "cancel": "Cancel",
+      "confirm": "Save Test"
+    },
+    "saved": {
+      "title": "My Saved Tests",
+      "subtitle": "Tests saved to your browser's local storage. Click on a test to view or edit it.",
+      "warningTitle": "Work in Progress",
+      "warningBody": "This feature is currently in development. Saved tests are stored only in this browser and are not synced across devices. Clearing your browser data or using a different browser will result in data loss.",
+      "listTitle": "Saved Tests",
+      "count": "{count, plural, =0 {No tests} one {# test} other {# tests}}",
+      "questionCount": "{count, plural, =0 {No questions} one {# question} other {# questions}}",
+      "savedOn": "Saved {date}",
+      "emptyTitle": "No saved tests yet",
+      "emptyBody": "Generate a test and click Save to Browser to keep it here.",
+      "deleteLabel": "Delete saved test",
+      "deleteConfirm": "Delete \"{title}\"? This cannot be undone."
+    },
+    "savedDetail": {
+      "metaTitle": "Saved Test",
+      "missingTitle": "Test not found",
+      "missingBody": "This test isn't in your browser's local storage. It may have been saved on a different device or cleared.",
+      "backToSaved": "Back to saved tests"
     },
     "loading": {
       "progress": "Progress",
@@ -102,6 +130,7 @@
       "subtitle": "{count} questions · {difficulty} · {language}",
       "sectionTitle": "Section {number}: {name}",
       "exportPdf": "Export PDF",
+      "saveToBrowser": "Save to Browser",
       "answer": "Answer:",
       "questionCount": "{count} questions",
       "questionTypes": {

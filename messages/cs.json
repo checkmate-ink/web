@@ -51,7 +51,35 @@
   "tests": {
     "nav": {
       "createNew": "Vytvořit nový test",
-      "back": "Zpět na úvod"
+      "back": "Zpět na úvod",
+      "savedTests": "Uložené testy"
+    },
+    "saveDialog": {
+      "title": "Uložit test lokálně",
+      "description": "Tvůj test se uloží do lokálního úložiště prohlížeče. Můžeš se k němu kdykoli vrátit z tohoto zařízení, a to bez účtu.",
+      "warning": "Data se ukládají pouze na tomto zařízení a nesynchronizují se mezi zařízeními. Vymazání dat prohlížeče trvale smaže všechny uložené testy.",
+      "cancel": "Zrušit",
+      "confirm": "Uložit test"
+    },
+    "saved": {
+      "title": "Mé uložené testy",
+      "subtitle": "Testy uložené v lokálním úložišti prohlížeče. Kliknutím na test ho zobrazíš nebo upravíš.",
+      "warningTitle": "Ve vývoji",
+      "warningBody": "Tato funkce je teprve ve vývoji. Uložené testy se nacházejí pouze v tomto prohlížeči a nesynchronizují se mezi zařízeními. Vymazání dat prohlížeče nebo použití jiného prohlížeče způsobí ztrátu dat.",
+      "listTitle": "Uložené testy",
+      "count": "{count, plural, =0 {Žádné testy} one {# test} few {# testy} other {# testů}}",
+      "questionCount": "{count, plural, =0 {Žádné otázky} one {# otázka} few {# otázky} other {# otázek}}",
+      "savedOn": "Uloženo {date}",
+      "emptyTitle": "Zatím žádné uložené testy",
+      "emptyBody": "Vygeneruj test a klikni na „Uložit do prohlížeče“, aby se sem uložil.",
+      "deleteLabel": "Smazat uložený test",
+      "deleteConfirm": "Smazat „{title}“? Tuto akci nelze vrátit zpět."
+    },
+    "savedDetail": {
+      "metaTitle": "Uložený test",
+      "missingTitle": "Test nebyl nalezen",
+      "missingBody": "Tento test není v lokálním úložišti tohoto prohlížeče. Možná byl uložen na jiném zařízení nebo byl vymazán.",
+      "backToSaved": "Zpět na uložené testy"
     },
     "loading": {
       "progress": "Průběh",
@@ -102,6 +130,7 @@
       "subtitle": "{count} otázek · {difficulty} · {language}",
       "sectionTitle": "Sekce {number}: {name}",
       "exportPdf": "Exportovat PDF",
+      "saveToBrowser": "Uložit do prohlížeče",
       "answer": "Odpověď:",
       "questionCount": "{count} otázek",
       "questionTypes": {

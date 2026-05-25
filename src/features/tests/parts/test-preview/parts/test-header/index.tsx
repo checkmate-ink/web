@@ -1,26 +1,50 @@
 "use client";
 
-import { Download, Eye, Loader, Pencil } from "lucide-react";
+import {
+  Bookmark,
+  Download,
+  Eye,
+  Loader,
+  Pencil,
+  TriangleAlert,
+} from "lucide-react";
 import { useTranslations } from "next-intl";
 import posthog from "posthog-js";
+import { useState } from "react";
 
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { saveTest } from "@/features/tests/lib/saved-tests";
+import type { TestItemV2 } from "@/features/tests/types";
+import { useRouter } from "@/i18n/navigation";
 
 import { useTestEditMode } from "../../context";
 import { useTestEditFormContext } from "../../hooks/use-test-edit-form";
 import { useGeneratePdf } from "./hooks/use-generate-pdf";
 
 interface TestHeaderProps {
+  test: TestItemV2;
   totalQuestions: number;
 }
 
-export function TestHeader({ totalQuestions }: TestHeaderProps) {
+export function TestHeader({ test, totalQuestions }: TestHeaderProps) {
   const t = useTranslations();
+  const router = useRouter();
   const { mode, setMode } = useTestEditMode();
   const { register, watch, getValues } = useTestEditFormContext();
   const { generate, isGenerating } = useGeneratePdf();
+  const [saveDialogOpen, setSaveDialogOpen] = useState(false);
   const title = watch("title");
   const difficulty = watch("difficulty");
   const language = watch("language");
@@ -39,6 +63,17 @@ export function TestHeader({ totalQuestions }: TestHeaderProps) {
         mode: next,
       });
     }
+  }
+
+  function handleSaveLocally() {
+    const data = getValues();
+    saveTest(test, { title: data.title, formValues: data });
+    posthog.capture("test_saved_locally", {
+      title: data.title,
+      total_questions: totalQuestions,
+    });
+    setSaveDialogOpen(false);
+    router.push("/tests/saved");
   }
 
   async function handleExportPdf() {
@@ -80,6 +115,10 @@ export function TestHeader({ totalQuestions }: TestHeaderProps) {
           <p className="text-deep-brown/50 text-sm">{subtitle}</p>
         </div>
         <div className="flex w-full flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+          <Button variant="secondary" onClick={() => setSaveDialogOpen(true)}>
+            <Bookmark />
+            {t("tests.preview.saveToBrowser")}
+          </Button>
           <ToggleGroup value={[mode]} onValueChange={handleToggle}>
             <ToggleGroupItem value="preview">
               <Eye />
@@ -97,6 +136,33 @@ export function TestHeader({ totalQuestions }: TestHeaderProps) {
         </div>
       </div>
       <div className="bg-deep-brown/5 h-px w-full" />
+
+      <Dialog open={saveDialogOpen} onOpenChange={setSaveDialogOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>{t("tests.saveDialog.title")}</DialogTitle>
+            <DialogDescription>
+              {t("tests.saveDialog.description")}
+            </DialogDescription>
+          </DialogHeader>
+          <Alert variant="warning">
+            <TriangleAlert />
+            <AlertDescription>{t("tests.saveDialog.warning")}</AlertDescription>
+          </Alert>
+          <DialogFooter>
+            <DialogClose
+              render={
+                <Button variant="secondary">
+                  {t("tests.saveDialog.cancel")}
+                </Button>
+              }
+            />
+            <Button onClick={handleSaveLocally}>
+              {t("tests.saveDialog.confirm")}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

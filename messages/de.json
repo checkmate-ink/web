@@ -51,7 +51,35 @@
   "tests": {
     "nav": {
       "createNew": "Neuen Test erstellen",
-      "back": "Zurück zur Startseite"
+      "back": "Zurück zur Startseite",
+      "savedTests": "Gespeicherte Tests"
+    },
+    "saveDialog": {
+      "title": "Test lokal speichern",
+      "description": "Dein Test wird im lokalen Speicher deines Browsers gesichert. Du kannst ihn jederzeit von diesem Gerät aus ohne Konto abrufen.",
+      "warning": "Die Daten werden nur auf diesem Gerät gespeichert und nicht zwischen Geräten synchronisiert. Wenn du deine Browserdaten löschst, werden alle gespeicherten Tests dauerhaft entfernt.",
+      "cancel": "Abbrechen",
+      "confirm": "Test speichern"
+    },
+    "saved": {
+      "title": "Meine gespeicherten Tests",
+      "subtitle": "Im Browser gespeicherte Tests. Klicke auf einen Test, um ihn anzusehen oder zu bearbeiten.",
+      "warningTitle": "In Arbeit",
+      "warningBody": "Diese Funktion ist noch in Entwicklung. Gespeicherte Tests liegen nur in diesem Browser und werden nicht zwischen Geräten synchronisiert. Wenn du deine Browserdaten löschst oder einen anderen Browser nutzt, gehen die Daten verloren.",
+      "listTitle": "Gespeicherte Tests",
+      "count": "{count, plural, =0 {Keine Tests} one {# Test} other {# Tests}}",
+      "questionCount": "{count, plural, =0 {Keine Fragen} one {# Frage} other {# Fragen}}",
+      "savedOn": "Gespeichert am {date}",
+      "emptyTitle": "Noch keine gespeicherten Tests",
+      "emptyBody": "Erstelle einen Test und klicke auf „Im Browser speichern“, um ihn hier abzulegen.",
+      "deleteLabel": "Gespeicherten Test löschen",
+      "deleteConfirm": "„{title}“ wirklich löschen? Das lässt sich nicht rückgängig machen."
+    },
+    "savedDetail": {
+      "metaTitle": "Gespeicherter Test",
+      "missingTitle": "Test nicht gefunden",
+      "missingBody": "Dieser Test liegt nicht im lokalen Speicher deines Browsers. Er wurde möglicherweise auf einem anderen Gerät gespeichert oder gelöscht.",
+      "backToSaved": "Zurück zu gespeicherten Tests"
     },
     "loading": {
       "progress": "Fortschritt",
@@ -102,6 +130,7 @@
       "subtitle": "{count} Fragen · {difficulty} · {language}",
       "sectionTitle": "Abschnitt {number}: {name}",
       "exportPdf": "PDF exportieren",
+      "saveToBrowser": "Im Browser speichern",
       "answer": "Antwort:",
       "questionCount": "{count} Fragen",
       "questionTypes": {
